@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  rasa-core:
+    image: rasa/rasa_core:latest
+  rasa-nlu:
+    image: rasa/rasa_nlu:latest-spacy
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./nlu/config.yml:/app/config.yml
+      - ./nlu/data:/app/data
+      - ./nlu/logs:/app/logs
+      - ./nlu/projects:/app/projects
+  rasa-ui:
+    image: paschmann/rasa-ui
+    ports: 
+      - "5001:5001"
+    environment:
+      - rasacoreendpoint=http://rasa-core:5005
+      - rasanluendpoint=http://rasa-nlu:5000
+    depends_on:
+      - rasa-core
+      - rasa-nlu
