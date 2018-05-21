@@ -1,21 +1,42 @@
 version: "3"
 
 services:
-  rasa-stack:
+  rasa-core:
     build:
-      context: ./rasa-stack
+      context: ./rasa-core
       dockerfile: Dockerfile
-    command: ["python", "-m", "rasa_core.server", "-d", "models/dialogue", "-u", "models/nlu/default/current"]
+    command: ["python", "run_server.py"]
+    environment:
+      - RASA_CORE_MODEL_PATH=./model
+      - RASA_NLU_MODEL_NAME=model_20180520-215033
+      - RASA_NLU_SERVER_ADDRESS=http://rasa-nlu:5000
+      - RASA_NLU_SERVER_TOKEN=
+      - RASA_NLU_PROJECT_NAME=default
     ports:
       - "5005:5005"
     volumes:
-      - ./rasa-stack:/app
-  # rasa-ui:
-  #   image: paschmann/rasa-ui
-  #   ports: 
-  #     - "5001:5001"
-  #   environment:
-  #     - rasacoreendpoint=http://rasa-stack:5005
-  #     - rasanluendpoint=http://rasa-stack:5000
-  #   depends_on:
-  #     - rasa-stack
+      - ./rasa-core/data:/app/data
+      - ./rasa-core/model:/app/model
+    depends_on:
+      - rasa-nlu
+  rasa-nlu:
+    build:
+      context: ./rasa-nlu
+      dockerfile: Dockerfile
+    command: ["python", "-m", "rasa_nlu.server", "--path", "./projects"]
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./rasa-nlu/config.yml:/app/config.yml
+      - ./rasa-nlu/data:/app/data
+      - ./rasa-nlu/projects:/app/projects
+  rasa-ui:
+    image: paschmann/rasa-ui
+    ports: 
+      - "5001:5001"
+    environment:
+      - rasacoreendpoint=http://rasa-core:5005
+      - rasanluendpoint=http://rasa-nlu:5000
+    depends_on:
+      - rasa-core
+      - rasa-nlu

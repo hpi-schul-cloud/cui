@@ -1,11 +1,11 @@
 {
-    "rasa_nlu_version": "0.12.3",
+    "language": "en",
     "pipeline": [
         {
+            "model": "en",
             "case_sensitive": false,
-            "class": "rasa_nlu.utils.spacy_utils.SpacyNLP",
             "name": "nlp_spacy",
-            "model": "en"
+            "class": "rasa_nlu.utils.spacy_utils.SpacyNLP"
         },
         {
             "name": "tokenizer_spacy",
@@ -21,10 +21,7 @@
             "class": "rasa_nlu.featurizers.regex_featurizer.RegexFeaturizer"
         },
         {
-            "class": "rasa_nlu.extractors.crf_entity_extractor.CRFEntityExtractor",
-            "L2_c": 0.001,
-            "L1_c": 1,
-            "max_iterations": 50,
+            "BILOU_flag": true,
             "features": [
                 [
                     "low",
@@ -53,17 +50,19 @@
                     "pos2"
                 ]
             ],
+            "max_iterations": 50,
+            "L1_c": 1,
+            "L2_c": 0.001,
             "name": "ner_crf",
             "classifier_file": "crf_model.pkl",
-            "BILOU_flag": true
+            "class": "rasa_nlu.extractors.crf_entity_extractor.CRFEntityExtractor"
         },
         {
             "name": "ner_synonyms",
-            "class": "rasa_nlu.extractors.entity_synonyms.EntitySynonymMapper",
-            "synonyms_file": "entity_synonyms.json"
+            "synonyms_file": "entity_synonyms.json",
+            "class": "rasa_nlu.extractors.entity_synonyms.EntitySynonymMapper"
         },
         {
-            "max_cross_validation_folds": 5,
             "C": [
                 1,
                 2,
@@ -75,12 +74,13 @@
             "kernels": [
                 "linear"
             ],
+            "max_cross_validation_folds": 5,
             "name": "intent_classifier_sklearn",
             "classifier_file": "intent_classifier_sklearn.pkl",
             "class": "rasa_nlu.classifiers.sklearn_intent_classifier.SklearnIntentClassifier"
         }
     ],
     "training_data": "training_data.json",
-    "trained_at": "20180520-181647",
-    "language": "en"
+    "trained_at": "20180520-215033",
+    "rasa_nlu_version": "0.12.3"
 }
