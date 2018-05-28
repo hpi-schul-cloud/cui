@@ -30,6 +30,6 @@ RUN pip install -r requirements.txt
 
 ADD . /app
 
-VOLUME ["/app/data", "/app/model"]
+VOLUME ["/app/data", "/app/model", "/app/logs"]
 
 EXPOSE 5005

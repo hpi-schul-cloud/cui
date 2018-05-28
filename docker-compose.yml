@@ -7,16 +7,17 @@ services:
       dockerfile: Dockerfile
     command: ["python", "run_server.py"]
     environment:
-      - RASA_CORE_MODEL_PATH=./model
-      - RASA_NLU_MODEL_NAME=model_20180520-215033
+      - RASA_CORE_MODEL_PATH=./model/opensap_faq
+      - RASA_NLU_MODEL_NAME=model_20180525-195114
       - RASA_NLU_SERVER_ADDRESS=http://rasa-nlu:5000
       - RASA_NLU_SERVER_TOKEN=
-      - RASA_NLU_PROJECT_NAME=default
+      - RASA_NLU_PROJECT_NAME=opensap_faq
     ports:
       - "5005:5005"
     volumes:
       - ./rasa-core/data:/app/data
       - ./rasa-core/model:/app/model
+      - ./rasa-core/logs:/app/logs
     depends_on:
       - rasa-nlu
   rasa-nlu:

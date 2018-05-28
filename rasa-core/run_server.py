@@ -8,5 +8,9 @@ nlu_interpreter = RasaNLUHttpInterpreter(
     server = env["RASA_NLU_SERVER_ADDRESS"],
     project_name = env["RASA_NLU_PROJECT_NAME"])
 
-rasa = RasaCoreServer(env["RASA_CORE_MODEL_PATH"], interpreter = nlu_interpreter)
+rasa = RasaCoreServer(
+    model_directory = env["RASA_CORE_MODEL_PATH"],
+    loglevel = "DEBUG",
+    logfile = "./logs/rasa_core.log",
+    interpreter = nlu_interpreter)
 rasa.app.run("0.0.0.0", 5005)
