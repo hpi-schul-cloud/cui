@@ -1,6 +1,10 @@
 ## intent:certificate
 - What qualification do I earn after I complete a course?
 - Is there a certificate for attending this course ?
+- What kind of certificate do I get?
+- When do I get my certificate?
+- Can I get muliple certificates in the same course?
+- How much does the certificate cost me?
 
 ## intent:certificate_deadline_extension
 - I cannot complete the whole course because I am on vacation. Can I still earn a record of achievement?

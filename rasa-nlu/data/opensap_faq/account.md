@@ -1,9 +1,17 @@
 ## intent:account_settings_notifications
 - Where can I maintain my notification settings?
 - how can i change my notification settings
+- I want to change my account notification settings
+- I am getting too many emails, please change the settings
+- How can I update my settings for the notifications?
 
 ## intent:account_deletion
 - How can I delete my account?
+- I want to delete my account
+- Please delete my sap user account
+- I am no longer working for SAP, please delete all my personal data
+- Can I delete my account?
+
 
 ## intent:account_activation
 - I have problems registering or activating my openSAP account. Who can help me?
@@ -19,6 +27,10 @@
 ## intent:account_sap_id
 - Do I need to maintain the SAP User ID in my profile?
 - How to get SAP User ID ?
+- What do I do when I forget my User ID?
+- Is my SAP User ID confidential?
+- What do I need my SAP User ID for?
+- Whats my SAP User ID?
 
 ## intent:account_email_change
 - I'd like to change my e-mail address. Is this possible?
