@@ -8,10 +8,10 @@ services:
     command: ["python", "run_server.py"]
     environment:
       - RASA_CORE_MODEL_PATH=./model/opensap_faq
-      - RASA_NLU_MODEL_NAME=model_20180525-195114
+      - RASA_NLU_PROJECT_NAME=opensap_faq
+      - RASA_NLU_MODEL_NAME=
       - RASA_NLU_SERVER_ADDRESS=http://rasa-nlu:5000
       - RASA_NLU_SERVER_TOKEN=
-      - RASA_NLU_PROJECT_NAME=opensap_faq
     ports:
       - "5005:5005"
     volumes:
@@ -32,7 +32,7 @@ services:
       - ./rasa-nlu/data:/app/data
       - ./rasa-nlu/projects:/app/projects
   rasa-ui:
-    image: paschmann/rasa-ui
+    image: franticbit/rasa-ui
     ports: 
       - "5001:5001"
     environment:
