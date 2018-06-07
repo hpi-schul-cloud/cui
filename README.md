@@ -16,3 +16,5 @@ Then run:
 - docker-compose up rasa-nlu
 
 --> localhost:5000/parse?q=hello
+
+RasaUI will run on http://localhost:5001/
