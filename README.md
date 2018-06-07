@@ -7,12 +7,12 @@ A Conversational UI experiment
 - docker-compose up --build
 
 
-Training:
+### Training:
  
-docker-compose run rasa-nlu python -m rasa_nlu.train -d data/opensap_faq/account.md -o projects --project opensap_faq -c config.yml
+- docker-compose run rasa-nlu python -m rasa_nlu.train -d data/opensap_faq/account.md -o projects --project opensap_faq -c config.yml
 
 Then run:
 
-docker-compose up rasa-nlu
+- docker-compose up rasa-nlu
 
 --> localhost:5000/parse?q=hello
