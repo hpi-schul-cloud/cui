@@ -1,26 +1,34 @@
-# cui
-A Conversational UI experiment
+# A Conversational UI experiment
 
 
-## How to run:
+## How to run
 
 ```
 docker-compose up --build
 ```
 
 
-### Training:
+## Training
+
+To train the respective service run one of the following commands from the root directory.
+
+### Rasa Core
+
+```
+docker-compose run rasa-core python -m rasa_core.train -d data/opensap_faq/domain.yml -s data/opensap_faq/stories.md -o model/opensap_faq --epochs 200
+```
+
+### Rasa NLU
  
 ```
 docker-compose run rasa-nlu python -m rasa_nlu.train -d data/opensap_faq/account.md -o projects --project opensap_faq -c config.yml
 ```
 
-Then run:
 
-```
-docker-compose up rasa-nlu
-```
+## Ports
 
---> http://localhost:5000/parse?q=hello&project=opensap_faq
-
-RasaUI will run on http://localhost:5001/
+Service | Port | URL
+---|---|---
+Rasa UI | 5001 | http://localhost:5001
+Rasa NLU | 5000 | http://localhost:5000/parse?q=hello&project=opensap_faq
+Rasa Core | 5005 | http://localhost:5005/conversations/default/respond?q=hello
