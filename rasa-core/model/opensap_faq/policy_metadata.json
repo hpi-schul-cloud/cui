@@ -1,7 +1,9 @@
 {
   "action_fingerprints": {
     "action_listen": {
-      "slots": []
+      "slots": [
+        "email"
+      ]
     }
   },
   "rasa_core": "0.9.0a3",

@@ -1,0 +1,348 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "intent": "account_settings_notifications",
+        "text": "where can i maintain my notification settings?"
+      },
+      {
+        "intent": "account_settings_notifications",
+        "text": "how can i change my notification settings"
+      },
+      {
+        "intent": "account_settings_notifications",
+        "text": "i want to change my account notification settings"
+      },
+      {
+        "intent": "account_settings_notifications",
+        "text": "i am getting too many emails, please change the settings"
+      },
+      {
+        "intent": "account_settings_notifications",
+        "text": "how can i update my settings for the notifications?"
+      },
+      {
+        "intent": "account_settings_notifications",
+        "text": "the notifications are annoying. how can i turn them off?"
+      },
+      {
+        "intent": "account_settings_notifications",
+        "text": "i want to turn off all notifications."
+      },
+      {
+        "intent": "account_deletion",
+        "text": "how can i delete my account?"
+      },
+      {
+        "intent": "account_deletion",
+        "text": "i want to delete my account"
+      },
+      {
+        "intent": "account_deletion",
+        "text": "please delete my sap user account"
+      },
+      {
+        "intent": "account_deletion",
+        "text": "i am no longer working for sap, please delete all my personal data"
+      },
+      {
+        "intent": "account_deletion",
+        "text": "can i delete my account?"
+      },
+      {
+        "intent": "account_deletion",
+        "text": "where can i delete my opensap account?"
+      },
+      {
+        "intent": "account_deletion",
+        "text": "please delete all my data"
+      },
+      {
+        "intent": "account_deletion",
+        "text": "is there a way to delete my user account?"
+      },
+      {
+        "intent": "account_activation",
+        "text": "i have problems registering or activating my opensap account. who can help me?"
+      },
+      {
+        "intent": "account_activation",
+        "text": "i did not receive the confirmation e-mail."
+      },
+      {
+        "intent": "account_activation",
+        "text": "i am starting a opensap course today, and i want to enter the system, but my password seems to be out of date.i asked for a reset about half an hour ago and it did not arrive yet. what may i do?"
+      },
+      {
+        "intent": "account_activation",
+        "text": "i tried to change my password, but i did not get the e-mail."
+      },
+      {
+        "intent": "account_activation",
+        "text": "i did not receive the confirmation mail to change my password."
+      },
+      {
+        "intent": "account_activation",
+        "text": "i registered my account and was told to wait for an email for the verification, but i haven't received any. what do i do?"
+      },
+      {
+        "intent": "account_activation",
+        "text": "i didn't receive any of the several confirmation e-mails that you have sent me"
+      },
+      {
+        "intent": "account_activation",
+        "text": "i have forgot password"
+      },
+      {
+        "intent": "account_activation",
+        "text": "i can't login, and it won't allow me to reset my password."
+      },
+      {
+        "intent": "account_sap_id",
+        "text": "do i need to maintain the sap user id in my profile?"
+      },
+      {
+        "intent": "account_sap_id",
+        "text": "how to get sap user id?"
+      },
+      {
+        "intent": "account_sap_id",
+        "text": "what do i do when i forget my user id?"
+      },
+      {
+        "intent": "account_sap_id",
+        "text": "is my sap user id confidential?"
+      },
+      {
+        "intent": "account_sap_id",
+        "text": "what do i need my sap user id for?"
+      },
+      {
+        "intent": "account_sap_id",
+        "text": "whats my sap user id?"
+      },
+      {
+        "intent": "account_change_email",
+        "text": "how can i change my email address?"
+      },
+      {
+        "intent": "account_change_email",
+        "text": "how can i change my e-mail?"
+      },
+      {
+        "intent": "account_change_email",
+        "text": "i have a new email addres. how can i change it?"
+      },
+      {
+        "intent": "account_change_email",
+        "text": "i'd like to change my e-mail address. is this possible?"
+      },
+      {
+        "intent": "account_change_email",
+        "text": "i'd like to change my e-mail address. where can i do it?"
+      },
+      {
+        "intent": "account_change_email",
+        "text": "i'm going to work for another consulting company. can i keep my current account? what do i need to do?"
+      },
+      {
+        "intent": "account_change_email",
+        "text": "is it possible to change my email address?"
+      },
+      {
+        "intent": "account_change_email_to",
+        "entities": [
+          {
+            "start": 38,
+            "end": 56,
+            "value": "max.mueller@web.de",
+            "entity": "email"
+          }
+        ],
+        "text": "how can i change my e-mail address to max.mueller@web.de?"
+      },
+      {
+        "intent": "account_change_email_to",
+        "entities": [
+          {
+            "start": 31,
+            "end": 48,
+            "value": "p.schmidt@sap.com",
+            "entity": "email"
+          }
+        ],
+        "text": "where can i change my email to p.schmidt@sap.com?"
+      },
+      {
+        "intent": "account_change_email_to",
+        "entities": [
+          {
+            "start": 66,
+            "end": 90,
+            "value": "max.mustermann@gmail.com",
+            "entity": "email"
+          }
+        ],
+        "text": "i have a new email address. how can i change my accounts email to max.mustermann@gmail.com?"
+      },
+      {
+        "intent": "account_change_email_to",
+        "entities": [
+          {
+            "start": 39,
+            "end": 56,
+            "value": "p.schmidt@sap.com",
+            "entity": "email"
+          }
+        ],
+        "text": "i'd like to change my email address to p.schmidt@sap.com. is this possible?"
+      },
+      {
+        "intent": "account_change_email_to",
+        "entities": [
+          {
+            "start": 45,
+            "end": 63,
+            "value": "max.mueller@web.de",
+            "entity": "email"
+          }
+        ],
+        "text": "is it possible to change my email address to max.mueller@web.de?"
+      },
+      {
+        "intent": "account_change_email_to",
+        "entities": [
+          {
+            "start": 60,
+            "end": 78,
+            "value": "max.mueller@web.de",
+            "entity": "email"
+          }
+        ],
+        "text": "is it possible to change my email from max@mustermann.de to max.mueller@web.de?"
+      },
+      {
+        "intent": "account_change_email_to",
+        "entities": [
+          {
+            "start": 36,
+            "end": 60,
+            "value": "max.mustermann@gmail.com",
+            "entity": "email"
+          }
+        ],
+        "text": "i can't change max@mustermann.de to max.mustermann@gmail.com."
+      },
+      {
+        "intent": "account_change_email_to",
+        "entities": [
+          {
+            "start": 53,
+            "end": 70,
+            "value": "p.schmidt@sap.com",
+            "entity": "email"
+          }
+        ],
+        "text": "can you change my email address from peter@sap.de to p.schmidt@sap.com."
+      },
+      {
+        "intent": "account_change_email_to",
+        "entities": [
+          {
+            "start": 63,
+            "end": 87,
+            "value": "max.mustermann@gmail.com",
+            "entity": "email"
+          }
+        ],
+        "text": "i would like user name to be changed from max@mustermann.de to max.mustermann@gmail.com so that all of my activity and certifications can be maintained in one account."
+      },
+      {
+        "intent": "account_change_email_to",
+        "entities": [
+          {
+            "start": 62,
+            "end": 79,
+            "value": "p.schmidt@sap.com",
+            "entity": "email"
+          }
+        ],
+        "text": "where can i change my email address from max@mustermann.de to p.schmidt@sap.com?"
+      },
+      {
+        "intent": "account_provide_email",
+        "entities": [
+          {
+            "start": 25,
+            "end": 49,
+            "value": "max.mustermann@gmail.com",
+            "entity": "email"
+          }
+        ],
+        "text": "i'd like to change it to max.mustermann@gmail.com"
+      },
+      {
+        "intent": "account_provide_email",
+        "entities": [
+          {
+            "start": 0,
+            "end": 17,
+            "value": "p.schmidt@sap.com",
+            "entity": "email"
+          }
+        ],
+        "text": "p.schmidt@sap.com"
+      },
+      {
+        "intent": "account_provide_email",
+        "entities": [
+          {
+            "start": 0,
+            "end": 29,
+            "value": "sadfsd+asdfds-asd@sadfm.sd.at",
+            "entity": "email"
+          }
+        ],
+        "text": "sadfsd+asdfds-asd@sadfm.sd.at"
+      },
+      {
+        "intent": "account_provide_email",
+        "entities": [
+          {
+            "start": 21,
+            "end": 38,
+            "value": "p.schmidt@sap.com",
+            "entity": "email"
+          }
+        ],
+        "text": "can you change it to p.schmidt@sap.com?"
+      },
+      {
+        "intent": "account_provide_email",
+        "entities": [
+          {
+            "start": 20,
+            "end": 44,
+            "value": "max.mustermann@gmail.com",
+            "entity": "email"
+          }
+        ],
+        "text": "please change it to max.mustermann@gmail.com"
+      },
+      {
+        "intent": "account_provide_email",
+        "entities": [
+          {
+            "start": 8,
+            "end": 37,
+            "value": "sadfsd+asdfds-asd@sadfm.sd.at",
+            "entity": "email"
+          }
+        ],
+        "text": "make it sadfsd+asdfds-asd@sadfm.sd.at"
+      }
+    ],
+    "regex_features": [],
+    "entity_synonyms": []
+  }
+}
