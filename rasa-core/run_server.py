@@ -10,6 +10,7 @@ nlu_interpreter = RasaNLUHttpInterpreter(
 
 rasa = RasaCoreServer(
     model_directory = env["RASA_CORE_MODEL_PATH"],
+    cors_origins="*",
     loglevel = "DEBUG",
     logfile = "./logs/rasa_core.log",
     interpreter = nlu_interpreter)
