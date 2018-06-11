@@ -27,7 +27,7 @@ docker-compose run rasa-core python -m rasa_core.train \
 ```
 docker-compose run rasa-nlu python -m rasa_nlu.train \
     -c config.yml \
-    -d data/opensap_faq/account.md \
+    -d data/opensap_faq \
     -o projects \
     --project opensap_faq
 ```

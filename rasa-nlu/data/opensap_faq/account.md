@@ -44,8 +44,6 @@
 - i'd like to change my e-mail address. where can i do it?
 - i'm going to work for another consulting company. can i keep my current account? what do i need to do?
 - is it possible to change my email address?
-
-## intent:account_change_email_to
 - how can i change my e-mail address to [max.mueller@web.de](email)?
 - where can i change my email to [p.schmidt@sap.com](email)?
 - i have a new email address. how can i change my accounts email to [max.mustermann@gmail.com](email)?

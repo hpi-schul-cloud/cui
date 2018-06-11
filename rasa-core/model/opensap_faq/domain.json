@@ -10,7 +10,6 @@
     "intent_account_activation",
     "intent_account_sap_id",
     "intent_account_change_email",
-    "intent_account_change_email_to",
     "intent_account_provide_email",
     "entity_email",
     "slot_email_0",

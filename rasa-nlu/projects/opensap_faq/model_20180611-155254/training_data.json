@@ -150,7 +150,7 @@
         "text": "is it possible to change my email address?"
       },
       {
-        "intent": "account_change_email_to",
+        "intent": "account_change_email",
         "entities": [
           {
             "start": 38,
@@ -162,7 +162,7 @@
         "text": "how can i change my e-mail address to max.mueller@web.de?"
       },
       {
-        "intent": "account_change_email_to",
+        "intent": "account_change_email",
         "entities": [
           {
             "start": 31,
@@ -174,7 +174,7 @@
         "text": "where can i change my email to p.schmidt@sap.com?"
       },
       {
-        "intent": "account_change_email_to",
+        "intent": "account_change_email",
         "entities": [
           {
             "start": 66,
@@ -186,7 +186,7 @@
         "text": "i have a new email address. how can i change my accounts email to max.mustermann@gmail.com?"
       },
       {
-        "intent": "account_change_email_to",
+        "intent": "account_change_email",
         "entities": [
           {
             "start": 39,
@@ -198,7 +198,7 @@
         "text": "i'd like to change my email address to p.schmidt@sap.com. is this possible?"
       },
       {
-        "intent": "account_change_email_to",
+        "intent": "account_change_email",
         "entities": [
           {
             "start": 45,
@@ -210,7 +210,7 @@
         "text": "is it possible to change my email address to max.mueller@web.de?"
       },
       {
-        "intent": "account_change_email_to",
+        "intent": "account_change_email",
         "entities": [
           {
             "start": 60,
@@ -222,7 +222,7 @@
         "text": "is it possible to change my email from max@mustermann.de to max.mueller@web.de?"
       },
       {
-        "intent": "account_change_email_to",
+        "intent": "account_change_email",
         "entities": [
           {
             "start": 36,
@@ -234,7 +234,7 @@
         "text": "i can't change max@mustermann.de to max.mustermann@gmail.com."
       },
       {
-        "intent": "account_change_email_to",
+        "intent": "account_change_email",
         "entities": [
           {
             "start": 53,
@@ -246,7 +246,7 @@
         "text": "can you change my email address from peter@sap.de to p.schmidt@sap.com."
       },
       {
-        "intent": "account_change_email_to",
+        "intent": "account_change_email",
         "entities": [
           {
             "start": 63,
@@ -258,7 +258,7 @@
         "text": "i would like user name to be changed from max@mustermann.de to max.mustermann@gmail.com so that all of my activity and certifications can be maintained in one account."
       },
       {
-        "intent": "account_change_email_to",
+        "intent": "account_change_email",
         "entities": [
           {
             "start": 62,
@@ -340,9 +340,238 @@
           }
         ],
         "text": "make it sadfsd+asdfds-asd@sadfm.sd.at"
+      },
+      {
+        "intent": "conversation_greet",
+        "text": "hey"
+      },
+      {
+        "intent": "conversation_greet",
+        "text": "hello"
+      },
+      {
+        "intent": "conversation_greet",
+        "text": "hi"
+      },
+      {
+        "intent": "conversation_greet",
+        "text": "hello there"
+      },
+      {
+        "intent": "conversation_greet",
+        "text": "good morning"
+      },
+      {
+        "intent": "conversation_greet",
+        "text": "good evening"
+      },
+      {
+        "intent": "conversation_greet",
+        "text": "moin"
+      },
+      {
+        "intent": "conversation_greet",
+        "text": "hey there"
+      },
+      {
+        "intent": "conversation_greet",
+        "text": "let's go"
+      },
+      {
+        "intent": "conversation_greet",
+        "text": "hey dude"
+      },
+      {
+        "intent": "conversation_greet",
+        "text": "goodmorning"
+      },
+      {
+        "intent": "conversation_greet",
+        "text": "goodevening"
+      },
+      {
+        "intent": "conversation_greet",
+        "text": "good afternoon"
+      },
+      {
+        "intent": "conversation_goodbye",
+        "text": "cu"
+      },
+      {
+        "intent": "conversation_goodbye",
+        "text": "good by"
+      },
+      {
+        "intent": "conversation_goodbye",
+        "text": "cee you later"
+      },
+      {
+        "intent": "conversation_goodbye",
+        "text": "good night"
+      },
+      {
+        "intent": "conversation_goodbye",
+        "text": "good afternoon"
+      },
+      {
+        "intent": "conversation_goodbye",
+        "text": "bye"
+      },
+      {
+        "intent": "conversation_goodbye",
+        "text": "goodbye"
+      },
+      {
+        "intent": "conversation_goodbye",
+        "text": "have a nice day"
+      },
+      {
+        "intent": "conversation_goodbye",
+        "text": "see you around"
+      },
+      {
+        "intent": "conversation_goodbye",
+        "text": "bye bye"
+      },
+      {
+        "intent": "conversation_goodbye",
+        "text": "see you later"
+      },
+      {
+        "intent": "conversation_thank_you",
+        "text": "thank you"
+      },
+      {
+        "intent": "conversation_thank_you",
+        "text": "thanks"
+      },
+      {
+        "intent": "conversation_thank_you",
+        "text": "ta"
+      },
+      {
+        "intent": "conversation_thank_you",
+        "text": "thanks a lot"
+      },
+      {
+        "intent": "conversation_thank_you",
+        "text": "okay, thank you"
+      },
+      {
+        "intent": "conversation_thank_you",
+        "text": "okay, thanks"
+      },
+      {
+        "intent": "conversation_thank_you",
+        "text": "thats very helpful"
+      },
+      {
+        "intent": "conversation_thank_you",
+        "text": "thank you you're so helpful"
+      },
+      {
+        "intent": "conversation_thank_you",
+        "text": "thank you very much"
+      },
+      {
+        "intent": "conversation_thank_you",
+        "text": "thank you I really appreciate your help"
+      },
+      {
+        "intent": "conversation_thank_you",
+        "text": "thank you for helping me"
+      },
+      {
+        "intent": "conversation_thank_you",
+        "text": "you're the best"
+      },
+      {
+        "intent": "conversation_confirm",
+        "text": "yep"
+      },
+      {
+        "intent": "conversation_confirm",
+        "text": "yup"
+      },
+      {
+        "intent": "conversation_confirm",
+        "text": "yes"
+      },
+      {
+        "intent": "conversation_confirm",
+        "text": "yeah"
+      },
+      {
+        "intent": "conversation_confirm",
+        "text": "yes, please"
+      },
+      {
+        "intent": "conversation_confirm",
+        "text": "exactly"
+      },
+      {
+        "intent": "conversation_confirm",
+        "text": "do it"
+      },
+      {
+        "intent": "conversation_confirm",
+        "text": "okay"
+      },
+      {
+        "intent": "conversation_confirm",
+        "text": "ok"
+      },
+      {
+        "intent": "conversation_cancel",
+        "text": "no"
+      },
+      {
+        "intent": "conversation_cancel",
+        "text": "noooo"
+      },
+      {
+        "intent": "conversation_cancel",
+        "text": "forget it"
+      },
+      {
+        "intent": "conversation_cancel",
+        "text": "no don't do it"
+      },
+      {
+        "intent": "conversation_cancel",
+        "text": "not now"
+      },
+      {
+        "intent": "conversation_cancel",
+        "text": "that is not what i wanted"
+      },
+      {
+        "intent": "conversation_cancel",
+        "text": "stop"
+      },
+      {
+        "intent": "conversation_cancel",
+        "text": "nope"
+      },
+      {
+        "intent": "conversation_cancel",
+        "text": "nah"
+      },
+      {
+        "intent": "conversation_cancel",
+        "text": "don't do it"
+      },
+      {
+        "intent": "conversation_cancel",
+        "text": "please dont"
       }
     ],
-    "regex_features": [],
+    "regex_features": [
+      {
+        "name": "email",
+        "pattern": "[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+"
+      }
+    ],
     "entity_synonyms": []
   }
 }

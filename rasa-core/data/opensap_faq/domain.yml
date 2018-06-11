@@ -22,7 +22,6 @@ intents:
   - account_activation
   - account_sap_id
   - account_change_email
-  - account_change_email_to
   - account_provide_email
 
 actions:

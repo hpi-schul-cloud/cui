@@ -42,7 +42,6 @@ intents:
 - account_activation
 - account_sap_id
 - account_change_email
-- account_change_email_to
 - account_provide_email
 slots:
   email:
@@ -88,7 +87,7 @@ templates:
   - text: I will change your email to {email}. Is that okay?
   utter_conversation_canceled:
   - text: Okay, I will not do that.
-  - text: Alright.
+  - text: Alright, I won't.
   utter_conversation_goodbye:
   - text: Good bye.
   - text: Have a nice day.

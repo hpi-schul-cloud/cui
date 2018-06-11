@@ -24,7 +24,7 @@
 > cp_account_check_email
 
 ## change email 2
-* account_change_email_to{"email": "frank.gustav-held@company.lt"}
+* account_change_email{"email": "frank.gustav-held@company.lt"}
   - slot{"email": "frank.gustav-held@company.lt"}
   - utter_ask_new_email_confirmed
 > cp_account_check_email
