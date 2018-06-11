@@ -71,7 +71,7 @@ class App extends Component {
               }
             }}
           >
-            <HelpBlock>Enter any question you have to you openSAP Account!</HelpBlock>
+            <HelpBlock>Enter any question you have!</HelpBlock>
             <FormControl
               type="text"
               value={this.state.value}
