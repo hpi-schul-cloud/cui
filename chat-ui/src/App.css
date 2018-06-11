@@ -21,6 +21,7 @@
 .App-intro {
   font-size: large;
   margin-top: 5%;
+  margin-bottom: 20%;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +36,36 @@
 
 .Question-Box {
   margin-top: 4%;
+}
+
+#conversation {
+  margin-top: 5%;
+  border-radius: 25px;
+  border: 2px solid gray;
+  padding: 20px; 
+  width: 50%;
+  height: 100%;
+  margin-left: 25%;
+}
+
+.answer {
+  text-align: left;
+  width: 45%;
+  background-color: #d3d3d3;
+  border-radius: 25px;
+  border: 2px solid #d3d3d3; 
+  padding: 10px; 
+  margin-bottom: 5px;
+}
+
+.question {
+  text-align: left;
+  margin-left: 55%;
+  width: 45%;
+  background-color: #0072C6;
+  border-radius: 25px;
+  border: 2px solid #0072C6; 
+  padding: 10px; 
+  margin-bottom: 5px;
+  color: white;
 }

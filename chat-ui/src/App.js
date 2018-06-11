@@ -18,9 +18,33 @@ class App extends Component {
   }
 
   handleClick() {
-    console.log(this.state.value);
-    axios.get('http://localhost:5005/conversations/default/respond?q=hello')
-      .then(response => console.log(response))
+    const val = this.state.value;
+    this.setState({ value: '' });
+    this.addQuestionToConversation(val);
+    axios.get('http://localhost:5005/conversations/default/respond?q=' + val)
+      .then(response => this.addAnswerToConversation(response.data))
+  }
+
+  addAnswerToConversation(answers) {
+    answers.forEach((answer, index) => {
+      setTimeout( () => {
+        let newElem = document.createElement('div');
+        newElem.classList.add('answer');
+        newElem.innerHTML = answer.text.trim();
+        document.getElementById('conversation').appendChild(newElem);
+      }, 500);
+    })
+  }
+
+  sentDelayedAnswer(){
+    
+  }
+
+  addQuestionToConversation(question) {
+    let newElem = document.createElement('div');
+    newElem.classList.add('question');
+    newElem.innerHTML = question.trim();
+    document.getElementById('conversation').appendChild(newElem);
   }
 
   handleChange(e) {
@@ -34,10 +58,18 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to a Conversational UI Experiment</h1>
         </header>
+        <div id="conversation">
+
+        </div>
         <form className="App-intro">
           <FormGroup
             controlId="formBasicText"
-            
+            onKeyPress={event => {
+              if (event.key === "Enter") {
+                this.handleClick();
+                event.preventDefault();
+              }
+            }}
           >
             <HelpBlock>Enter any question you have to you openSAP Account!</HelpBlock>
             <FormControl
