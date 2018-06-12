@@ -78,6 +78,7 @@ class App extends Component {
               placeholder="Enter Question"
               className="Question-Box"
               onChange={this.handleChange}
+              autoComplete="off"
             />
           </FormGroup>
           <Button onClick={this.handleClick} bsStyle="primary">Submit</Button>
