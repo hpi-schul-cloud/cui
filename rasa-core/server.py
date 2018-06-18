@@ -19,6 +19,7 @@ from typing import Union, Text, Optional
 
 from rasa_core import utils, events
 from rasa_core.agent import Agent
+from rasa_core.actions.action import UtterAction
 from rasa_core.events import UserUttered
 from rasa_core.channels.direct import CollectingOutputChannel
 from rasa_core.interpreter import NaturalLanguageInterpreter
@@ -328,6 +329,8 @@ def create_app(model_directory,  # type: Text
         intent_ranking = user_utterance.parse_data["intent_ranking"]
 
         processor = agent()._create_processor()
+        domain = agent().domain
+        alternatives = []
         for intent in intent_ranking:
             tracker_alternative = tracker.travel_back_in_time(tracker.events[-1].timestamp)
             event = UserUttered(
@@ -336,10 +339,19 @@ def create_app(model_directory,  # type: Text
                 entities=user_utterance.entities,
                 timestamp=user_utterance.timestamp)
             tracker_alternative.update(event)
-            logger.debug(intent)
-            logger.debug(processor._predict_next_and_return_state(tracker_alternative))
+            action = processor._get_next_action(tracker_alternative)
+            if isinstance(action, UtterAction):
+                message = copy.deepcopy(domain.random_template_for(action.name()))
+                alternatives.append({
+                    "intent": intent,
+                    "response": [
+                        {
+                            "text": message
+                        }
+                    ]
+                })
 
-        return jsonify(intent_ranking)
+        return jsonify(alternatives)
 
     @app.route("/conversations/<sender_id>/parse",
                methods=['GET', 'POST', 'OPTIONS'])
