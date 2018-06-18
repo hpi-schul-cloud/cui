@@ -8,6 +8,7 @@ import logging
 import os
 import tempfile
 import zipfile
+import copy
 from functools import wraps
 
 from builtins import str
@@ -18,6 +19,7 @@ from typing import Union, Text, Optional
 
 from rasa_core import utils, events
 from rasa_core.agent import Agent
+from rasa_core.events import UserUttered
 from rasa_core.channels.direct import CollectingOutputChannel
 from rasa_core.interpreter import NaturalLanguageInterpreter
 from rasa_core.tracker_store import TrackerStore
@@ -313,14 +315,30 @@ def create_app(model_directory,  # type: Text
     def alternatives(sender_id):
         """Get a list of alternatives for latest message."""
 
-        # retrieve tracker
-        tracker = agent().tracker_store.get_or_create_tracker(sender_id)
+        # retrieve copy of tracker and go back to last user utterance
+        tracker = agent().tracker_store.get_or_create_tracker(sender_id).copy()
+        while len(tracker.events) > 0 and not isinstance(tracker.events[-1], UserUttered):
+            tracker.events.pop()
 
-        # get intent ranking for latest message
-        state = tracker.current_state()
-        intent_ranking = state['latest_message']['intent_ranking']
+        if len(tracker.events) == 0:
+            logger.debug("No user utterance in history of tracker")
+            return jsonify([])
+        
+        user_utterance = tracker.events.pop()
+        intent_ranking = user_utterance.parse_data["intent_ranking"]
 
-        # get templates for utterances and return
+        processor = agent()._create_processor()
+        for intent in intent_ranking:
+            tracker_alternative = tracker.travel_back_in_time(tracker.events[-1].timestamp)
+            event = UserUttered(
+                text=user_utterance.text,
+                intent=intent,
+                entities=user_utterance.entities,
+                timestamp=user_utterance.timestamp)
+            tracker_alternative.update(event)
+            logger.debug(intent)
+            logger.debug(processor._predict_next_and_return_state(tracker_alternative))
+
         return jsonify(intent_ranking)
 
     @app.route("/conversations/<sender_id>/parse",
