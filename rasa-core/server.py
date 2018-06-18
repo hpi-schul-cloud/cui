@@ -155,6 +155,50 @@ def _create_agent(
         return None
 
 
+def _get_alternatives(
+    agent,
+    sender_id
+):
+    """Get a list of alternatives for latest message."""
+
+    # retrieve copy of tracker and go back to last user utterance
+    tracker = agent.tracker_store.get_or_create_tracker(sender_id).copy()
+    while len(tracker.events) > 0 and not isinstance(tracker.events[-1], UserUttered):
+        tracker.events.pop()
+
+    if len(tracker.events) == 0:
+        logger.debug("No user utterance in history of tracker")
+        return []
+    
+    user_utterance = tracker.events.pop()
+    intent_ranking = user_utterance.parse_data["intent_ranking"]
+
+    processor = agent._create_processor()
+    domain = agent.domain
+    alternatives = []
+    max_num_of_alternatives = 3
+    for intent in intent_ranking[1:]:
+        tracker_alternative = tracker.travel_back_in_time(tracker.events[-1].timestamp)
+        event = UserUttered(
+            text=user_utterance.text,
+            intent=intent,
+            entities=user_utterance.entities,
+            timestamp=user_utterance.timestamp)
+        tracker_alternative.update(event)
+        action = processor._get_next_action(tracker_alternative)
+        if isinstance(action, UtterAction):
+            message = copy.deepcopy(domain.random_template_for(action.name()))
+            alternatives.append({
+                "intent": intent,
+                "responses": [ message ]
+            })
+            max_num_of_alternatives -= 1
+            if max_num_of_alternatives == 0:
+                break
+
+    return alternatives
+
+
 def create_app(model_directory,  # type: Text
                interpreter=None,  # type: Union[Text, NLI, None]
                loglevel="INFO",  # type: Optional[Text]
@@ -308,50 +352,15 @@ def create_app(model_directory,  # type: Text
         agent().tracker_store.save(tracker)
         return jsonify(tracker.current_state(should_include_events=True))
 
+
     @app.route("/conversations/<sender_id>/alternatives",
                methods=['GET', 'OPTIONS'])
     @cross_origin(origins=cors_origins)
     @requires_auth(auth_token)
     @ensure_loaded_agent(agent)
     def alternatives(sender_id):
-        """Get a list of alternatives for latest message."""
-
-        # retrieve copy of tracker and go back to last user utterance
-        tracker = agent().tracker_store.get_or_create_tracker(sender_id).copy()
-        while len(tracker.events) > 0 and not isinstance(tracker.events[-1], UserUttered):
-            tracker.events.pop()
-
-        if len(tracker.events) == 0:
-            logger.debug("No user utterance in history of tracker")
-            return jsonify([])
+        return jsonify(_get_alternatives(agent(), sender_id))
         
-        user_utterance = tracker.events.pop()
-        intent_ranking = user_utterance.parse_data["intent_ranking"]
-
-        processor = agent()._create_processor()
-        domain = agent().domain
-        alternatives = []
-        for intent in intent_ranking:
-            tracker_alternative = tracker.travel_back_in_time(tracker.events[-1].timestamp)
-            event = UserUttered(
-                text=user_utterance.text,
-                intent=intent,
-                entities=user_utterance.entities,
-                timestamp=user_utterance.timestamp)
-            tracker_alternative.update(event)
-            action = processor._get_next_action(tracker_alternative)
-            if isinstance(action, UtterAction):
-                message = copy.deepcopy(domain.random_template_for(action.name()))
-                alternatives.append({
-                    "intent": intent,
-                    "response": [
-                        {
-                            "text": message
-                        }
-                    ]
-                })
-
-        return jsonify(alternatives)
 
     @app.route("/conversations/<sender_id>/parse",
                methods=['GET', 'POST', 'OPTIONS'])
@@ -408,7 +417,13 @@ def create_app(model_directory,  # type: Text
             responses = agent().handle_message(message,
                                                output_channel=out,
                                                sender_id=sender_id)
-            return jsonify(responses)
+            tracker = agent().tracker_store.get_or_create_tracker(sender_id)    
+            result = {
+                "responses": responses,
+                "confidence": tracker.latest_message.intent["confidence"],
+                "alternatives": _get_alternatives(agent(), sender_id)
+            }
+            return jsonify(result)
 
         except Exception as e:
             logger.exception("Caught an exception during respond.")
