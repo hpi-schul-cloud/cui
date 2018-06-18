@@ -8,7 +8,6 @@ import logging
 import os
 import tempfile
 import zipfile
-import copy
 from functools import wraps
 
 from builtins import str
@@ -19,9 +18,6 @@ from typing import Union, Text, Optional
 
 from rasa_core import utils, events
 from rasa_core.agent import Agent
-from rasa_core.actions.action import UtterAction
-from rasa_core.channels.channel import UserMessage
-from rasa_core.events import UserUttered
 from rasa_core.channels.direct import CollectingOutputChannel
 from rasa_core.interpreter import NaturalLanguageInterpreter
 from rasa_core.tracker_store import TrackerStore
@@ -156,50 +152,6 @@ def _create_agent(
         return None
 
 
-def _get_alternatives(
-    agent,
-    sender_id
-):
-    """Get a list of alternatives for latest message."""
-
-    # retrieve copy of tracker and go back to last user utterance
-    tracker = agent.tracker_store.get_or_create_tracker(sender_id).copy()
-    while len(tracker.events) > 0 and not isinstance(tracker.events[-1], UserUttered):
-        tracker.events.pop()
-
-    if len(tracker.events) == 0:
-        logger.debug("No user utterance in history of tracker")
-        return []
-    
-    user_utterance = tracker.events.pop()
-    intent_ranking = user_utterance.parse_data["intent_ranking"]
-
-    processor = agent._create_processor()
-    domain = agent.domain
-    alternatives = []
-    max_num_of_alternatives = 3
-    for intent in intent_ranking[1:]:
-        tracker_alternative = tracker.travel_back_in_time(tracker.events[-1].timestamp)
-        event = UserUttered(
-            text=user_utterance.text,
-            intent=intent,
-            entities=user_utterance.entities,
-            timestamp=user_utterance.timestamp)
-        tracker_alternative.update(event)
-        action = processor._get_next_action(tracker_alternative)
-        if isinstance(action, UtterAction):
-            message = copy.deepcopy(domain.random_template_for(action.name()))
-            alternatives.append({
-                "intent": intent,
-                "responses": [ message ]
-            })
-            max_num_of_alternatives -= 1
-            if max_num_of_alternatives == 0:
-                break
-
-    return alternatives
-
-
 def create_app(model_directory,  # type: Text
                interpreter=None,  # type: Union[Text, NLI, None]
                loglevel="INFO",  # type: Optional[Text]
@@ -300,7 +252,6 @@ def create_app(model_directory,  # type: Text
         tracker = agent().tracker_store.get_or_create_tracker(sender_id)
         for e in evts:
             tracker.update(e)
-        tracker.replay_events()
         agent().tracker_store.save(tracker)
         return jsonify(tracker.current_state())
 
@@ -354,68 +305,23 @@ def create_app(model_directory,  # type: Text
         agent().tracker_store.save(tracker)
         return jsonify(tracker.current_state(should_include_events=True))
 
-    @app.route("/conversations/<sender_id>/tracker/reset_intent",
-               methods=['GET', 'PUT', 'OPTIONS'])
-    @cross_origin(origins=cors_origins)
-    @requires_auth(auth_token)
-    @ensure_loaded_agent(agent)
-    def replace_last_intent(sender_id):
-        """Replaces the last intent from the user in the tracker state with the one provided
-        and executes the next actions."""
-
-        request_params = request_parameters()
-
-        if 'intent' in request_params:
-            intent = request_params.get('intent')
-        else:
-            return Response(
-                    jsonify(error="No intent parameter specified."),
-                    status=400,
-                    mimetype="application/json")
-
-        tracker = agent().tracker_store.get_or_create_tracker(sender_id)
-        
-        while len(tracker.events) > 0 and not isinstance(tracker.events[-1], UserUttered):
-            tracker.events.pop()
-
-        if len(tracker.events) == 0:
-            logger.debug("No user utterance in history of tracker")
-            return jsonify(tracker.current_state())
-
-        user_utterance = tracker.events.pop()
-        tracker.update(UserUttered(
-            text = user_utterance.text,
-            intent = {
-                "name": intent,
-                "confidence": 1.0,
-            },
-            entities = user_utterance.entities))
-
-        out = CollectingOutputChannel()
-        message = UserMessage(
-            text = user_utterance.text,
-            output_channel = out,
-            sender_id = sender_id)
-        processor = agent()._create_processor()
-        processor._predict_and_execute_next_action(message, tracker)
-        agent().tracker_store.save(tracker)
-
-        response = {
-            "responses": message.output_channel.messages,
-            "confidence": 1,
-            "alternatives": [],
-        }
-
-        return jsonify(response)
-
     @app.route("/conversations/<sender_id>/alternatives",
                methods=['GET', 'OPTIONS'])
     @cross_origin(origins=cors_origins)
     @requires_auth(auth_token)
     @ensure_loaded_agent(agent)
     def alternatives(sender_id):
-        return jsonify(_get_alternatives(agent(), sender_id))
-        
+        """Get a list of alternatives for latest message."""
+
+        # retrieve tracker
+        tracker = agent().tracker_store.get_or_create_tracker(sender_id)
+
+        # get intent ranking for latest message
+        state = tracker.current_state()
+        intent_ranking = state['latest_message']['intent_ranking']
+
+        # get templates for utterances and return
+        return jsonify(intent_ranking)
 
     @app.route("/conversations/<sender_id>/parse",
                methods=['GET', 'POST', 'OPTIONS'])
@@ -472,13 +378,7 @@ def create_app(model_directory,  # type: Text
             responses = agent().handle_message(message,
                                                output_channel=out,
                                                sender_id=sender_id)
-            tracker = agent().tracker_store.get_or_create_tracker(sender_id)    
-            result = {
-                "responses": responses,
-                "confidence": tracker.latest_message.intent["confidence"],
-                "alternatives": _get_alternatives(agent(), sender_id)
-            }
-            return jsonify(result)
+            return jsonify(responses)
 
         except Exception as e:
             logger.exception("Caught an exception during respond.")
