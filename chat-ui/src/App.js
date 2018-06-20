@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Button, FormGroup, FormControl, HelpBlock, ControlLabel } from 'react-bootstrap';
+import { Button, FormGroup, FormControl, HelpBlock } from 'react-bootstrap';
 import axios from 'axios'
 
 class App extends Component {
@@ -71,7 +71,7 @@ class App extends Component {
               }
             }}
           >
-            <HelpBlock>Enter any question you have!</HelpBlock>
+            {/* <HelpBlock>Enter any question you have!</HelpBlock> */}
             <FormControl
               type="text"
               value={this.state.value}
