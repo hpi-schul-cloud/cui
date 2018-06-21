@@ -20,6 +20,7 @@ from typing import Union, Text, Optional
 from rasa_core import utils, events
 from rasa_core.agent import Agent
 from rasa_core.actions.action import UtterAction
+from rasa_core.channels.channel import UserMessage
 from rasa_core.events import UserUttered
 from rasa_core.channels.direct import CollectingOutputChannel
 from rasa_core.interpreter import NaturalLanguageInterpreter
@@ -299,6 +300,7 @@ def create_app(model_directory,  # type: Text
         tracker = agent().tracker_store.get_or_create_tracker(sender_id)
         for e in evts:
             tracker.update(e)
+        tracker.replay_events()
         agent().tracker_store.save(tracker)
         return jsonify(tracker.current_state())
 
@@ -352,6 +354,59 @@ def create_app(model_directory,  # type: Text
         agent().tracker_store.save(tracker)
         return jsonify(tracker.current_state(should_include_events=True))
 
+    @app.route("/conversations/<sender_id>/tracker/reset_intent",
+               methods=['GET', 'PUT', 'OPTIONS'])
+    @cross_origin(origins=cors_origins)
+    @requires_auth(auth_token)
+    @ensure_loaded_agent(agent)
+    def replace_last_intent(sender_id):
+        """Replaces the last intent from the user in the tracker state with the one provided
+        and executes the next actions."""
+
+        request_params = request_parameters()
+
+        if 'intent' in request_params:
+            intent = request_params.get('intent')
+        else:
+            return Response(
+                    jsonify(error="No intent parameter specified."),
+                    status=400,
+                    mimetype="application/json")
+
+        tracker = agent().tracker_store.get_or_create_tracker(sender_id)
+        
+        while len(tracker.events) > 0 and not isinstance(tracker.events[-1], UserUttered):
+            tracker.events.pop()
+
+        if len(tracker.events) == 0:
+            logger.debug("No user utterance in history of tracker")
+            return jsonify(tracker.current_state())
+
+        user_utterance = tracker.events.pop()
+        tracker.update(UserUttered(
+            text = user_utterance.text,
+            intent = {
+                "name": intent,
+                "confidence": 1.0,
+            },
+            entities = user_utterance.entities))
+
+        out = CollectingOutputChannel()
+        message = UserMessage(
+            text = user_utterance.text,
+            output_channel = out,
+            sender_id = sender_id)
+        processor = agent()._create_processor()
+        processor._predict_and_execute_next_action(message, tracker)
+        agent().tracker_store.save(tracker)
+
+        response = {
+            "responses": message.output_channel.messages,
+            "confidence": 1,
+            "alternatives": [],
+        }
+
+        return jsonify(response)
 
     @app.route("/conversations/<sender_id>/alternatives",
                methods=['GET', 'OPTIONS'])
