@@ -1,5 +1,5 @@
 {
-  "features": [
+  "states": [
     "intent_conversation_greet",
     "intent_conversation_goodbye",
     "intent_conversation_thank_you",

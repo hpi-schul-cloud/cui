@@ -26,6 +26,7 @@ class App extends Component {
   }
 
   addAnswerToConversation(answers) {
+    console.log(answers);
     answers.forEach((answer, index) => {
       setTimeout( () => {
         let newElem = document.createElement('div');
