@@ -406,6 +406,17 @@ def create_app(model_directory,  # type: Text
             "alternatives": [],
         }
 
+        # save utterance in training data for nlu
+        file_path = "/app/nlu/" + os.environ["RASA_NLU_PROJECT_NAME"] + "/user_input/" + intent + ".md"
+        add_intent_definition = False
+        if not os.path.exists(file_path):
+            add_intent_definition = True
+        
+        with open(file_path, "a") as file:
+            if add_intent_definition:
+                file.write("## intent:" + intent + "\n")
+            file.write("- " + user_utterance.text + "\n")
+
         return jsonify(response)
 
     @app.route("/conversations/<sender_id>/alternatives",

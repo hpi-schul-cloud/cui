@@ -1,3 +1,4 @@
+import os
 from os import environ as env
 from gevent.pywsgi import WSGIServer
 
@@ -6,6 +7,10 @@ from rasa_core import utils
 from rasa_core.interpreter import RasaNLUHttpInterpreter
 
 utils.configure_colored_logging("DEBUG")
+
+user_input_dir = "/app/nlu/" + os.environ["RASA_NLU_PROJECT_NAME"] + "/user_input"
+if not os.path.exists(user_input_dir):
+    os.makedirs(user_input_dir)
 
 nlu_interpreter = RasaNLUHttpInterpreter(
     model_name = env["RASA_NLU_MODEL_NAME"],
