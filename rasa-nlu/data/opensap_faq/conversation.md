@@ -31,4 +31,35 @@
 - thanks
 - ta
 - thanks a lot
+- okay, thank you
+- okay, thanks
 - thats very helpful
+- thank you you're so helpful
+- thank you very much
+- thank you I really appreciate your help
+- thank you for helping me
+- you're the best
+
+## intent:conversation_confirm
+- yep
+- yup
+- yes
+- yeah
+- yes, please
+- exactly
+- do it
+- okay
+- ok
+
+## intent:conversation_cancel
+- no
+- noooo
+- forget it
+- no don't do it
+- not now
+- that is not what i wanted
+- stop
+- nope
+- nah
+- don't do it
+- please dont

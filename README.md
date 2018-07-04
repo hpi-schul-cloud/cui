@@ -15,13 +15,21 @@ To train the respective service run one of the following commands from the root 
 ### Rasa Core
 
 ```
-docker-compose run rasa-core python -m rasa_core.train -d data/opensap_faq/domain.yml -s data/opensap_faq/stories.md -o model/opensap_faq --epochs 200
+docker-compose run rasa-core python -m rasa_core.train \
+    -d data/opensap_faq/domain.yml \
+    -s data/opensap_faq/stories.md \
+    -o model/opensap_faq \
+    --epochs 200
 ```
 
 ### Rasa NLU
  
 ```
-docker-compose run rasa-nlu python -m rasa_nlu.train -d data/opensap_faq/account.md -o projects --project opensap_faq -c config.yml
+docker-compose run rasa-nlu python -m rasa_nlu.train \
+    -c config.yml \
+    -d data/opensap_faq \
+    -o projects \
+    --project opensap_faq
 ```
 
 
