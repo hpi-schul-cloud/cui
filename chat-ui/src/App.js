@@ -15,30 +15,78 @@ class App extends Component {
     this.state = {
       value: ''
     };
+
+    this.altclicked = false;
+    this.currText = '';
   }
 
   handleClick() {
+    if(!this.altclicked) {
+      var list = document.getElementById('curr-conv');
+      if(list){
+        list.parentNode.removeChild(list);
+        let newElem = document.createElement('div');
+        newElem.classList.add('answer');
+        newElem.innerHTML = this.currText;
+        document.getElementById('conversation').appendChild(newElem);
+      }
+    }
+    this.altclicked = false;
     const val = this.state.value;
     this.setState({ value: '' });
     this.addQuestionToConversation(val);
+    var currentConv = document.createElement('div');
+    currentConv.id = 'curr-conv';
+    document.getElementById('conversation').appendChild(currentConv);
     axios.get('http://localhost:5005/conversations/default/respond?q=' + val)
-      .then(response => this.addAnswerToConversation(response.data))
+      .then(response => {
+        this.addAnswerToConversation(response.data.responses);
+        this.addAlternativesToConversation(response.data.alternatives);
+      })
   }
 
   addAnswerToConversation(answers) {
-    console.log(answers);
-    answers.forEach((answer, index) => {
-      setTimeout( () => {
+    answers.forEach((answer) => {
         let newElem = document.createElement('div');
         newElem.classList.add('answer');
         newElem.innerHTML = answer.text.trim();
-        document.getElementById('conversation').appendChild(newElem);
-      }, 500);
+        document.getElementById('curr-conv').appendChild(newElem);
+        this.currText = answer.text.trim();
     })
   }
 
-  sentDelayedAnswer(){
-    
+  removeIntentsFromChat(text){
+    var list = document.getElementById('curr-conv');
+    list.parentNode.removeChild(list);
+    let newElem = document.createElement('div');
+    newElem.classList.add('answer');
+    newElem.innerHTML = text;
+    document.getElementById('conversation').appendChild(newElem);
+  }
+
+  addAlternativesToConversation(alternatives) {
+    let newElem = document.createElement('div');
+    newElem.classList.add('answer');
+    newElem.innerHTML = 'Or did you mean? :';
+    document.getElementById('curr-conv').appendChild(newElem);
+    alternatives.forEach((alternative) => {
+      const intent = alternative['intent']['name'];
+      const text = alternative['responses'][0].text;
+      let newElem = document.createElement('div');
+      newElem.classList.add('answer');
+      newElem.innerHTML = text.trim();
+      newElem.addEventListener('click', () => this.changeCurrentIntent(intent, text))
+      document.getElementById('curr-conv').appendChild(newElem);
+    })
+  }
+
+  changeCurrentIntent(intent, text) {
+    this.altclicked = true;
+    this.removeIntentsFromChat(text);
+    axios.get('http://localhost:5005/conversations/default/tracker/reset_intent?intent=account_activation' + intent)
+      .then(response => {
+        console.log(response);
+      })
   }
 
   addQuestionToConversation(question) {
