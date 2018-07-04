@@ -35,3 +35,15 @@ services:
       - ./rasa-nlu/config.yml:/app/config.yml
       - ./rasa-nlu/data:/app/data
       - ./rasa-nlu/projects:/app/projects
+  chat-ui:
+    container_name: chat-ui
+    build:
+      context: ./chat-ui
+      dockerfile: Dockerfile
+    volumes:
+      - './chat-ui/src/app'
+      - './chat-ui/src/app/node_modules'
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=development
