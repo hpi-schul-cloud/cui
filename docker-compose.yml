@@ -41,8 +41,8 @@ services:
       context: ./chat-ui
       dockerfile: Dockerfile
     volumes:
-      - './chat-ui/src/app'
-      - './chat-ui/src/app/node_modules'
+      - './chat-ui:/usr/src/app'
+      - './chat-ui/node_modules:/usr/src/app/node_modules'
     ports:
       - '3000:3000'
     environment:
