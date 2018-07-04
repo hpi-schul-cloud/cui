@@ -1,6 +1,7 @@
 version: "3"
 
 services:
+
   rasa-core:
     build:
       context: ./rasa-core
@@ -24,6 +25,7 @@ services:
       - ./rasa-nlu/data:/app/nlu
     depends_on:
       - rasa-nlu
+  
   rasa-nlu:
     build:
       context: ./rasa-nlu
@@ -35,8 +37,19 @@ services:
       - ./rasa-nlu/config.yml:/app/config.yml
       - ./rasa-nlu/data:/app/data
       - ./rasa-nlu/projects:/app/projects
+    
+  rasa-nlu-training:
+    build:
+      context: ./rasa-nlu
+      dockerfile: Dockerfile
+    command: ["cron", "-f"]
+    volumes:
+      - ./rasa-nlu/config.yml:/app/config.yml
+      - ./rasa-nlu/data:/app/data
+      - ./rasa-nlu/projects:/app/projects
+      - ./rasa-nlu/train-nlu.sh:/etc/cron.daily/train-nlu
+
   chat-ui:
-    container_name: chat-ui
     build:
       context: ./chat-ui
       dockerfile: Dockerfile
