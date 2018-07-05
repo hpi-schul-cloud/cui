@@ -37,6 +37,6 @@ docker-compose run rasa-nlu python -m rasa_nlu.train \
 
 Service | Port | URL
 ---|---|---
-Rasa UI | 5001 | http://localhost:5001
+Chat UI | 3000 | http://localhost:3000
 Rasa NLU | 5000 | http://localhost:5000/parse?q=hello&project=opensap_faq
 Rasa Core | 5005 | http://localhost:5005/conversations/default/respond?q=hello
