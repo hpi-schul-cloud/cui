@@ -53,10 +53,13 @@ services:
     build:
       context: ./chat-ui
       dockerfile: Dockerfile
-    volumes:
-      - './chat-ui:/usr/src/app'
-      - './chat-ui/node_modules:/usr/src/app/node_modules'
-    ports:
-      - '3000:3000'
     environment:
       - NODE_ENV=development
+    ports:
+      - '3000:3000'
+    volumes:
+      - './chat-ui:/usr/src/app'
+      - '/usr/src/app/node_modules'
+    depends_on:
+      - rasa-core
+  
