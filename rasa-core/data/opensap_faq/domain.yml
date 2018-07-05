@@ -1,78 +1,43 @@
 slots:
-  course_title:
+  requested_slot:
+    type: unfeaturized
+  new_email:
     type: text
+  new_email_confirmed:
+    type: bool
   email:
     type: text
 
 entities:
-  - course_title
   - email
 
 intents:
   - conversation_greet
   - conversation_goodbye
   - conversation_thank_you
+  - conversation_confirm
+  - conversation_cancel
   - account_settings_notifications
   - account_deletion
   - account_activation
   - account_sap_id
-  - account_email_change
-  - certificate
-  - certificate_deadline_extension
-  - certificate_difference
-  - certificate_availability
-  - channel_difference
-  - course_details
-  - course_peer_assessment
-  - course_structure
-  - course_starting_time
-  - course_effort
-  - course_unenrollment
-  - course_enrollment_after_start
-  - course_self_paced
-  - course_browsing
-  - course_deadline_extension
-  - course_enrollment
-  - course_repetition
-  - course_download_material
-  - forum_contribution
-  - platform_target_group
-  - platform_pricing
-  - platform_beta
-  - platform_technical_prerequisites
-  - platform_etherpad
-  - platform_mobile
-  - platform_how_to_start
-  - platform_navigation_hidden
-  - platform_video_problem
+  - account_change_email
+  - account_provide_email
 
 actions:
   - utter_conversation_greet
   - utter_conversation_goodbye
   - utter_conversation_offer_help
   - utter_conversation_youre_welcome
+  - utter_conversation_canceled
   - utter_account_deletion
+  - utter_ask_new_email
+  - utter_ask_new_email_confirmed
+  - utter_account_changed_email
   - utter_account_notification_settings
   - utter_account_registration_problem
   - utter_account_sap_id
-  - utter_certificate_info
-  - utter_channel_difference
-  - utter_course_browsing
-  - utter_course_deadline_extension
-  - utter_course_effort
-  - utter_course_enrollment_after_start
-  - utter_course_self_paced
-  - utter_course_starting_time
-  - utter_course_structure
-  - utter_course_peer_assessment
-  - utter_course_unenrollment
-  - utter_forum_contribution
-  - utter_platform_beta
-  - utter_platform_etherpad
-  - utter_platform_mobile
-  - utter_platform_pricing
-  - utter_platform_target_group
-  - utter_platform_technical_prerequisites
+  - opensap_faq.account.ActionEmailForm
 
 templates:
   utter_conversation_greet:
@@ -93,8 +58,24 @@ templates:
     - text: "You're welcome."
     - text: "It's always nice to be of help."
 
+  utter_conversation_canceled:
+    - text: "Okay, I will not do that."
+    - text: "Alright, I won't."
+
   utter_account_deletion:
     - text: "Open your profile by clicking the Profile icon at the upper right corner of the menu bar and select profile. Then click Delete account to delete your account on openSAP irrevocably."
+
+  utter_ask_new_email:
+    - text: "What is the email address you want it to change to?"
+
+  utter_ask_new_email_confirmed:
+    - text: "Should I change your email to {email}?"
+    - text: "I will change your email to {email}. Is that okay?"
+
+  utter_account_changed_email:
+    - text: "Okay, I changed your email address to {email}."
+    - text: "You can now login with {email}."
+    - text: "We will contact you at {email} from now on."
 
   utter_account_notification_settings:
     - text: "To maintain your notification settings, navigate to your profile by clicking the profile icon at the right upper corner of the menu bar and select Settings. Here you can decide if you want to receive notifications from openSAP and wether you want to receive them via e-mail or in-app."
@@ -105,56 +86,3 @@ templates:
   utter_account_sap_id:
     - text: "No. Without an SAP User ID, you can still use all the functions offered by openSAP. In general, openSAP courses are free and open for all registered users worldwide. Nevertheless, there will be special courses that are specific to the SAP ecosystem, or just for SAP employees. For these specific courses, we need to verify that the users are part of the SAP world by asking for their SAP User ID. For more information, please read the Ecosystem information."
 
-  utter_certificate_info:
-    - text: "Upon a successful completion of an openSAP course, you can download a record of achievement from openSAP. Successful participation means that you have earned at least 50% of the sum of the maximum possible points for the weekly assignments and the final exam. The final exam is weighted at 50%. The record of achievement will be issued in the name you used to register at openSAP. Once issued, you can access your record of achievement by clicking the profile icon at the upper right corner of the menu bar and selecting Documents. (Please note, in openSAP thought leaders courses, there is no final exam. The final result is based on the weekly assignment We will be glad to issue a confirmation of participation in a course to those who have completed at least 50% of the course material. Where there are exceptions for specific courses, you will be notified at the start of the course. Further information can be found in the Record of Achievement Guidelines."
-
-  utter_channel_difference:
-    - text: "openSAP Enterprise MOOCs focus on key SAP innovations such as SAP HANA, SAP HANA Cloud Platform, SAP’s UX strategy and SAP Fiori. The openSAP thought leaders series focuses on digital innovation and transformation independent of SAP-specific topics. While openSAP Enterprise courses are sponsored and delivered by SAP internal teams, openSAP thought leader courses are delivered by non-SAP industry leaders in business and academia in addition to thought leaders from SAP."
-
-  utter_course_browsing:
-    - text: "You are welcome to participate in just those areas of the course that cover your own interests and requirements. There is no obligation to complete the weekly assignments and earn a record of achievement. However, we do welcome every active contribution to the discussion forum."
-
-  utter_course_deadline_extension:
-    - text: "Unfortunately, we cannot extend the deadlines for completing the weekly assignment or final exam. If you're unable to complete the weekly assignment within the course week, you will need to earn more points in the following weeks to reach the total number of points necessary for a record of achievement. For more information please read the Record of Achievement Guidelines."
-
-  utter_course_effort:
-    - text: "The amount of work involved depends on your previous knowledge and is estimated at 4–5 hours per week, on average. This involves working with the videos and the course material provided, checking your understanding of the curriculum with a self-test, as well as completing the weekly assignment and actively participating in the discussion forum."
-
-  utter_course_enrollment_after_start:
-    - text: "As a rule, course registration should take place before a course has begun – or at least in the first 2 weeks of the course. Starting a course late means it becomes increasingly difficult to earn the number of points necessary for a record of achievement. If you register for a course after it has finished, it is no longer possible to earn a record of achievement. However, you can still sign up for a course in self-paced mode at any time and access all the relevant learning materials to earn a confirmation of participation."
-
-  utter_course_self_paced:
-    - text: "At the end of a course, the materials remain available in the self-paced area. The only difference is that you can no longer contribute to the discussion forum, participate in the weekly assignments and final exam, or earn a record of achievement. You can still earn a confirmation of participation."
-
-  utter_course_starting_time:
-    - text: "The online content will be released at 9:00 UTC but as a learner, you do not need to be online at that time. However we do recommend that you access the content early in the week as you will need to submit a weekly assignment before the deadline. All openSAP courses are delivered in the format of Massive Open Online Courses (MOOCs). This course format provides learners with a flexible learning environment and learners can access the content at any time of the week, on any day that suits the learner. You can check your time zone against UTC (Reykjavik) on www.timeanddate.com or http://www.thetimenow.com."
-
-  utter_course_structure:
-    - text: "Most openSAP courses consist of video units, self-tests, discussion forum, weekly assignments and a final exam. Content is released on a weekly basis and you can access the content at any time, from anywhere and on any device. The content is usually released at 09:00 UTC but this doesn't mean you need to log on at that time. openSAP works independent of where in the world you are located! Video Units: You can access the material at any time throughout the week that suits you, and you can download the material for offline viewing. Self-Tests: After each video unit, you will have the opportunity to test your knowledge. The results of the self-test are not recorded and you can attempt the questions as often as you wish. Discussion Forum: If you would like to discuss topics about the course or ask questions, you can visit the course discussion forum where you will meet peers and the subject matter experts. You can sort posts on the discussion forum based on Most Recent Activity, Latest Questions, and Best Voted Answers First or search for keywords. Weekly Assignments: If you would like to earn a record of achievement for a course, you are required to submit your weekly assignment before each assignment deadline. These deadlines will be highlighted in our weekly e-mail. Final Exam: Most openSAP courses end with a final exam. The final exam is based on the content delivered throughout the entire course and is worth 50% of the overall score to earn a record of achievement. You can find out more details in the Record of Achievement Guidelines. The thought leaders courses generally do not have a final exam. Learning Progress: To earn a confirmation of participation, you will need to watch the videos and complete the self-tests. To ensure your learning progress is complete, please access each section of the horizontal navigational bar. System Access: System access is offered in some Enterprise MOOC courses as an optional extra. However, whilst it enriches your learning experience, system access is not essential for you to successfully complete an openSAP course."
-
-  utter_course_peer_assessment:
-    - text: "Only some courses offer this feature. Peer assessment is a process where learners grade the assignments of their peers and give feedback. openSAP uses peer-grading for assignments that need human evaluation. Find out how it works here."
-
-  utter_course_unenrollment:
-    - text: "After logging in, navigate to the respective course details page. There, you will find an Un-enroll button. Please note: If you un-enroll from a course, you will still remain a member of openSAP and will receive news about upcoming courses."
-
-  utter_forum_contribution:
-    - text: "While a course is running, you can visit the course forum to ask questions and discuss the course content with your peers and the course instructors. Please consult the discussion forum rules beforehand. These contain important guidelines and tips for posting threads."
-
-  utter_platform_beta:
-    - text: "We are continually improving our platform with new functions to enhance your learning experience at openSAP. If a function is flagged as beta: The function is new and might not yet be optimized for all browsers. We are working on improving the new function. We kindly ask for your patience during the beta phase. We depend on your feedback to further improve new functions, so please create a Helpdesk ticket to inform us about errors. In the ticket, please provide details including the browser and browser version you are using. As a workaround, please continue by trying another browser (such as Google Chrome or Firefox, if the functions do not work with Internet Explorer, for example)."
-
-  utter_platform_etherpad:
-    - text: "Etherpad is a Web-based, collaborative editor that allows Collab Space members to edit a text document simultaneously and see each author’s edits in real time. With Etherpad, you can display each author's text in a separate color. It also allows you to import images and to chat with other authors while working on the document. You can use Etherpad to share notes or collaborate on a document. You can export the text as a PDF or share the Etherpad as a link with read or write permissions."
-
-  utter_platform_mobile:
-    - text: "Yes, you can continue learning on any mobile device using a browser. openSAP adjusts to every screen size. In addition, you can download our free mobile app available for the iPad and all Android devices. With these apps you can download weekly learning content, including videos, to study offline."
-
-  utter_platform_pricing:
-    - text: "Registration, learning content, and the final exam are free of charge. However, openSAP courses that focus on software development may require that you access fee-based system environments."
-
-  utter_platform_target_group:
-    - text: "There are no admission requirements. Anyone can register, irrespective of education level, grade average, age, nationality, or company affiliation. Our customized, interactive online courses are particularly suited for: Professionals who wish to improve and deepen their practical IT know-how. Those who want to acquire the latest IT knowledge to advance their careers.College students and all others who are personally interested in IT topics. We also invite high school students to take part in our courses. Please always review the course requirements and the target audience of each individual course."
-
-  utter_platform_technical_prerequisites:
-    - text: "We strongly recommend that you always use the latest browser versions for Google Chrome, Firefox, Safari, and especially Internet Explorer. Internet Explorer prior to version 10 is not supported. Our safety features (such as realtime recording) for the weekly assignments and final exams can’t be performed if you are using an old browser version. In addition, we advise you to always keep “JavaScript” enabled in order to allow auto-submission and snapshots for quizzes. We recommend that you take a screenshot during your quiz submission to avoid issues in the unlikely event of a failed submission."

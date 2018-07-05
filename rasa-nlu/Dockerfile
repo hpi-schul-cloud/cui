@@ -10,6 +10,7 @@ RUN apt-get update -qq && apt-get install -y --no-install-recommends \
     libffi6 \
     libffi-dev \
     curl \
+	cron \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 

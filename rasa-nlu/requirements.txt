@@ -6,6 +6,7 @@ sklearn-crfsuite==0.3.6
 gevent==1.2.2
 klein==17.10.0
 hyperlink==17.3.1
+duckling==1.8.0
 boto3==1.5.20
 typing==3.6.2
 future==0.16.0
@@ -21,5 +22,6 @@ msgpack-python==0.5.4
 packaging==17.1
 pyyaml==3.12
 coloredlogs==9.0
+duckling==1.8.0
 
-rasa_nlu>=0.12.0,<0.13.0
+rasa_nlu~=0.12.0
