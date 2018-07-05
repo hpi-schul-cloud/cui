@@ -83,7 +83,7 @@ class App extends Component {
   changeCurrentIntent(intent, text) {
     this.altclicked = true;
     this.removeIntentsFromChat(text);
-    axios.get('http://localhost:5005/conversations/default/tracker/reset_intent?intent=account_activation' + intent)
+    axios.get('http://localhost:5005/conversations/default/tracker/reset_intent?intent=' + intent)
       .then(response => console.log(response))
   }
 
