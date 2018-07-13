@@ -9,6 +9,7 @@ import os
 import tempfile
 import zipfile
 import copy
+import json
 from functools import wraps
 
 from builtins import str
@@ -173,29 +174,19 @@ def _get_alternatives(
     
     user_utterance = tracker.events.pop()
     intent_ranking = user_utterance.parse_data["intent_ranking"]
+    with open(os.environ["RASA_CORE_QUESTIONS_PATH"]) as file:
+        intent_to_question = json.load(file)
 
-    processor = agent._create_processor()
-    domain = agent.domain
     alternatives = []
     max_num_of_alternatives = 3
     for intent in intent_ranking[1:]:
-        tracker_alternative = tracker.travel_back_in_time(tracker.events[-1].timestamp)
-        event = UserUttered(
-            text=user_utterance.text,
-            intent=intent,
-            entities=user_utterance.entities,
-            timestamp=user_utterance.timestamp)
-        tracker_alternative.update(event)
-        action = processor._get_next_action(tracker_alternative)
-        if isinstance(action, UtterAction):
-            message = copy.deepcopy(domain.random_template_for(action.name()))
-            alternatives.append({
-                "intent": intent,
-                "responses": [ message ]
-            })
-            max_num_of_alternatives -= 1
-            if max_num_of_alternatives == 0:
-                break
+        alternatives.append({
+            "intent": intent,
+            "question": intent_to_question[intent["name"]]
+        })
+        max_num_of_alternatives -= 1
+        if max_num_of_alternatives == 0:
+            break
 
     return alternatives
 
