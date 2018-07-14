@@ -1,71 +1,92 @@
-.App {
+.chat-ui {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-  margin-top: 5%;
-  margin-bottom: 20%;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 .form-group {
-  width: 50%;
-  margin-left: 25%;
+  display: flex;
+  flex-direction: 'row';
+  margin-top: 8px;
 }
 
-.Question-Box {
-  margin-top: 4%;
+.btn-send {
+  padding: 0px;
+  width: 64px;
 }
 
 #conversation {
-  margin-top: 5%;
-  border-radius: 25px;
-  border: 2px solid gray;
-  padding: 20px; 
-  width: 50%;
-  height: 100%;
-  margin-left: 25%;
+  margin-top: 16px;
+  border: 1px solid rgb(54, 54, 54);
+  padding: 8px 16px;
+  width: 100%;
+  height: 60vh;
+  overflow-y: auto;
 }
 
-.answer {
+.message-box {
+  position: relative;
   text-align: left;
-  width: 45%;
-  background-color: #d3d3d3;
-  border-radius: 25px;
-  border: 2px solid #d3d3d3; 
-  padding: 10px; 
+  width: 60%;
+  border-radius: 4px;
+  padding: 8px; 
   margin-bottom: 5px;
+}
+
+.answer::before, .alternative::before {
+  z-index: 1;
+  display: inline-block;
+  position: absolute;
+  left: -10px;
+  top: 0px;
+  width: 0;
+  height: 0;
+  border-top: 16px solid #000000;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  content: ' ';
+}
+
+.answer {  
+  background-color: #d4652d;
+  color: white;
+}
+
+.answer::before {  
+  border-top-color: #d4652d;
+}
+
+.alternative {
+  background-color: #f6f6f6;
+}
+
+.alternative::before {  
+  border-top-color: #f6f6f6;
+}
+
+.alternative:hover {
+  background-color: #ebebeb;
+  cursor: pointer;
+}
+
+.alternative:hover::before {  
+  border-top-color: #ebebeb;
 }
 
 .question {
-  text-align: left;
-  margin-left: 55%;
-  width: 45%;
-  background-color: #0072C6;
-  border-radius: 25px;
-  border: 2px solid #0072C6; 
-  padding: 10px; 
-  margin-bottom: 5px;
+  margin-left: 40%;
+  background-color: #363636;
   color: white;
+}
+
+.question::after {  
+  z-index: 1;
+  display: inline-block;
+  position: absolute;
+  right: -10px;
+  top: 0px;
+  width: 0;
+  height: 0;
+  border-top: 16px solid #363636;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  content: ' '
 }

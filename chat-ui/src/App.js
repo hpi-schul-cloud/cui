@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Button, FormGroup, FormControl, HelpBlock } from 'react-bootstrap';
+import { Button, FormGroup, FormControl } from 'react-bootstrap';
 import axios from 'axios'
 
 class App extends Component {
@@ -23,10 +23,10 @@ class App extends Component {
   handleClick() {
     if(!this.altclicked) {
       var list = document.getElementById('curr-conv');
-      if(list){
+      if (list) {
         list.parentNode.removeChild(list);
         let newElem = document.createElement('div');
-        newElem.classList.add('answer');
+        newElem.classList.add('message-box', 'answer');
         newElem.innerHTML = this.currText;
         document.getElementById('conversation').appendChild(newElem);
       }
@@ -35,61 +35,75 @@ class App extends Component {
     const val = this.state.value;
     this.setState({ value: '' });
     this.addQuestionToConversation(val);
-    var currentConv = document.createElement('div');
-    currentConv.id = 'curr-conv';
-    document.getElementById('conversation').appendChild(currentConv);
     axios.get('http://localhost:5005/conversations/default/respond?q=' + val)
       .then(response => {
         this.addAnswerToConversation(response.data.responses);
-        this.addAlternativesToConversation(response.data.alternatives);
+        if (response.data.confidence < 0.3) {
+          this.addAlternativesToConversation(response.data.alternatives);
+        }
+        const convElem = document.getElementById("conversation")
+        convElem.scrollTo(0, convElem.scrollHeight);
       })
   }
 
   addAnswerToConversation(answers) {
     answers.forEach((answer) => {
         let newElem = document.createElement('div');
-        newElem.classList.add('answer');
+        newElem.classList.add('message-box', 'answer');
         newElem.innerHTML = answer.text.trim();
-        document.getElementById('curr-conv').appendChild(newElem);
+        document.getElementById('conversation').appendChild(newElem);
         this.currText = answer.text.trim();
     })
   }
 
-  removeIntentsFromChat(text){
-    var list = document.getElementById('curr-conv');
-    list.parentNode.removeChild(list);
-    let newElem = document.createElement('div');
-    newElem.classList.add('answer');
-    newElem.innerHTML = text;
-    document.getElementById('conversation').appendChild(newElem);
+  removeIntentsFromChat() {
+    let alternativeElems = document.getElementsByClassName('alternative');
+    while (alternativeElems[0]) {
+      alternativeElems[0].parentNode.removeChild(alternativeElems[0]);
+    }
+  }
+
+  removeLastAnswersFromChat() {
+    let convElem = document.getElementById('conversation');
+    while (convElem.childNodes[convElem.childNodes.length - 1]) {
+      const elem = convElem.childNodes[convElem.children.length - 1];
+      if (elem.nodeType === Node.ELEMENT_NODE && elem.className.includes('answer')) {
+        convElem.removeChild(elem);
+      } else {
+        break;
+      }
+    }
   }
 
   addAlternativesToConversation(alternatives) {
     let newElem = document.createElement('div');
-    newElem.classList.add('answer');
-    newElem.innerHTML = 'Or did you mean? :';
-    document.getElementById('curr-conv').appendChild(newElem);
+    newElem.classList.add('message-box', 'alternative');
+    newElem.innerHTML = 'Or did you mean one of the following?';
+    document.getElementById('conversation').appendChild(newElem);
     alternatives.forEach((alternative) => {
       const intent = alternative['intent']['name'];
-      const text = alternative['responses'][0].text;
+      const text = alternative['question'];
       let newElem = document.createElement('div');
-      newElem.classList.add('answer');
+      newElem.classList.add('message-box', 'alternative');
       newElem.innerHTML = text.trim();
       newElem.addEventListener('click', () => this.changeCurrentIntent(intent, text))
-      document.getElementById('curr-conv').appendChild(newElem);
+      document.getElementById('conversation').appendChild(newElem);
     })
   }
 
-  changeCurrentIntent(intent, text) {
+  changeCurrentIntent(intent) {
     this.altclicked = true;
-    this.removeIntentsFromChat(text);
     axios.get('http://localhost:5005/conversations/default/tracker/reset_intent?intent=' + intent)
-      .then(response => console.log(response))
+      .then(response => {
+        this.removeIntentsFromChat();
+        this.removeLastAnswersFromChat();
+        this.addAnswerToConversation(response.data.responses);
+      })
   }
 
   addQuestionToConversation(question) {
     let newElem = document.createElement('div');
-    newElem.classList.add('question');
+    newElem.classList.add('message-box', 'question');
     newElem.innerHTML = question.trim();
     document.getElementById('conversation').appendChild(newElem);
   }
@@ -100,16 +114,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to a Conversational UI Experiment</h1>
-        </header>
-        <div id="conversation">
-
-        </div>
-        <form className="App-intro">
+      <div className="chat-ui">
+        <div id="conversation"></div>
+        <form>
           <FormGroup
+            className="form-group"
             controlId="formBasicText"
             onKeyPress={event => {
               if (event.key === "Enter") {
@@ -118,17 +127,16 @@ class App extends Component {
               }
             }}
           >
-            {/* <HelpBlock>Enter any question you have!</HelpBlock> */}
             <FormControl
               type="text"
               value={this.state.value}
-              placeholder="Enter Question"
+              placeholder="Write message"
               className="Question-Box"
               onChange={this.handleChange}
               autoComplete="off"
             />
+            <Button onClick={this.handleClick} bsStyle="primary" className="btn-send"><img src="/assets/send.png" /></Button>
           </FormGroup>
-          <Button onClick={this.handleClick} bsStyle="primary">Submit</Button>
         </form>
       </div>
     );
