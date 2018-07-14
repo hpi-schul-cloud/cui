@@ -13,7 +13,8 @@ class App extends Component {
     this.handleChange = this.handleChange.bind(this);
 
     this.state = {
-      value: ''
+      value: '',
+      waitingForResponse: false,
     };
 
     this.altclicked = false;
@@ -33,7 +34,10 @@ class App extends Component {
     }
     this.altclicked = false;
     const val = this.state.value;
-    this.setState({ value: '' });
+    this.setState({
+      value: '',
+      waitingForResponse: true,
+    });
     this.addQuestionToConversation(val);
     axios.get('http://localhost:5005/conversations/default/respond?q=' + val)
       .then(response => {
@@ -44,6 +48,7 @@ class App extends Component {
         const convElem = document.getElementById("conversation")
         convElem.scrollTo(0, convElem.scrollHeight);
       })
+      .finally(() => this.setState({ waitingForResponse: false }));
   }
 
   addAnswerToConversation(answers) {
@@ -134,6 +139,7 @@ class App extends Component {
               className="Question-Box"
               onChange={this.handleChange}
               autoComplete="off"
+              disabled={this.state.waitingForResponse}
             />
             <Button onClick={this.handleClick} bsStyle="primary" className="btn-send"><img src="/assets/send.png" /></Button>
           </FormGroup>
