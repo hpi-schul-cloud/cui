@@ -180,13 +180,14 @@ def _get_alternatives(
     alternatives = []
     max_num_of_alternatives = 3
     for intent in intent_ranking[1:]:
-        alternatives.append({
-            "intent": intent,
-            "question": intent_to_question[intent["name"]]
-        })
-        max_num_of_alternatives -= 1
+        if intent["name"] in intent_to_question:
+            alternatives.append({
+                "intent": intent,
+                "question": intent_to_question[intent["name"]]
+            })
+            max_num_of_alternatives -= 1
         if max_num_of_alternatives == 0:
-            break
+                break
 
     return alternatives
 
