@@ -42,7 +42,7 @@ class App extends Component {
     axios.get('http://localhost:5005/conversations/default/respond?q=' + val)
       .then(response => {
         this.addAnswerToConversation(response.data.responses);
-        if (response.data.confidence < 0.3) {
+        if (response.data.confidence < 0.2) {
           this.addAlternativesToConversation(response.data.alternatives);
         }
         const convElem = document.getElementById("conversation")
@@ -85,8 +85,8 @@ class App extends Component {
 
   addAlternativesToConversation(alternatives) {
     let newElem = document.createElement('div');
-    newElem.classList.add('message-box', 'alternative');
-    newElem.innerHTML = 'Or did you mean one of the following?';
+    newElem.classList.add('message-box', 'alternative', 'alternative-intro');
+    newElem.innerHTML = 'Not the answer you were looking for? Maybe one of the following can help:';
     document.getElementById('conversation').appendChild(newElem);
     alternatives.forEach((alternative) => {
       const intent = alternative['intent']['name'];

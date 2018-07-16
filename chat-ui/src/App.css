@@ -55,20 +55,24 @@
 }
 
 .alternative {
-  background-color: #f6f6f6;
+  background-color: #dbdbdb;
 }
 
 .alternative::before {  
-  border-top-color: #f6f6f6;
+  border-top-color: transparent;
 }
 
-.alternative:hover {
-  background-color: #ebebeb;
+.alternative:hover:not(.alternative-intro) {
+  background-color: #c9c9c9;
   cursor: pointer;
 }
 
-.alternative:hover::before {  
-  border-top-color: #ebebeb;
+.alternative-intro {
+  background-color: #dbdbdb;
+}
+
+.alternative-intro::before {  
+  border-top-color: #dbdbdb;
 }
 
 .question {
