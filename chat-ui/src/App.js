@@ -48,7 +48,10 @@ class App extends Component {
         const convElem = document.getElementById("conversation")
         convElem.scrollTo(0, convElem.scrollHeight);
       })
-      .finally(() => this.setState({ waitingForResponse: false }));
+      .finally(() => {
+        this.setState({ waitingForResponse: false });
+        document.getElementsByClassName('Question-Box')[0].focus();
+      });
   }
 
   addAnswerToConversation(answers) {
@@ -107,6 +110,7 @@ class App extends Component {
   }
 
   addQuestionToConversation(question) {
+    this.removeIntentsFromChat();
     let newElem = document.createElement('div');
     newElem.classList.add('message-box', 'question');
     newElem.innerHTML = question.trim();
