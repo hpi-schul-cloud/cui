@@ -1,8 +1,10 @@
 ## intent:course_details
 - Where are the course details?
+- Where can i find details for a course
 
 ## intent:course_peer_assesment
 - What is a peer assessment and how does it work?
+- i dont know what a peer assessment is
 
 ## intent:course_structure
 - How is an openSAP course structured?
@@ -18,6 +20,7 @@
 
 ## intent:course_starting_time
 - What does starting from [9:00 UTC](time) mean?
+- when does a course start
 
 ## intent:course_effort
 - How much time do I need to invest per week?
@@ -36,6 +39,7 @@
 
 ## intent:course_enrollment_after_start
 - Can I still register for a course at openSAP after the course has already started?
+- the course has already started. can i still enroll?
 
 ## intent:course_self_paced
 - What does self-paced mode mean?
@@ -54,6 +58,7 @@
 
 ## intent:course_browsing
 - I just want to get familiar with some parts of the course material, but not earn a record of achievement. Is this allowed?
+- can i just try out some courses?
 
 ## intent:course_deadline_extension
 - I missed the deadline of the weekly assignment/final exam.

@@ -1,5 +1,7 @@
 ## intent:platform_target_group
 - Who can and who should register for openSAP?
+- who is opensap for
+- who can use opensap
 
 ## intent:platform_pricing
 - Does learning with openSAP cost any money?
@@ -7,21 +9,25 @@
 
 ## intent:platform_beta
 - What does it mean if something is flagged as beta on openSAP?
+- why does is say beta
 
 ## intent:platform_technical_prerequisites
 - What are the technical prerequisites for the weekly assignments and final exam?
+- are there any technical prerequisities?
 
 ## intent:platform_etherpad
 - What is Etherpad?
+- what the hell is etherpad
 
 ## intent:platform_mobile
 - Can I use openSAP on a mobile device?
+- do you support mobile devices
 
 ## intent:platform_how_to_start
 - I'm new on openSAP, I would like to know from where I should start?
 - Please suggest me some courses which will help me in future opportunities.
 - I am new to sap environment. Please help me out in beginning from the base.
-- Hi i want to learn sap from cero (zero), i have expirience in other ERPs not as a programer more of a consultant or decision maker.
+- i want to learn sap from zero, i have expirience in other ERPs not as a programer more of a consultant or decision maker.
 - I am a graduate student and want to learn SAP from basics. From where I should  start?
 - I would like to apply for a course but I don't know which SAP course I should take.
 

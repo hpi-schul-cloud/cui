@@ -24,7 +24,7 @@
 ## intent:certificate_availability
 - When do I receive my Record of Achievement?
 - The download link for Record of Achievement is not available. 
-- Unfortunately I'm not able to download the Record of Achievement of [SAP Business ByDesign Project-Based Services](course_title). I completed all weekly assignments and the final exam as well.
+- Unfortunately I'm not able to download the Record of Achievement of SAP Business ByDesign Project-Based Services. I completed all weekly assignments and the final exam as well.
 - When will the certificates be released? 
 - When will the Record of Achievemnt be available.
 - The course finished today and I have not received my documents. Please advise. 
@@ -35,7 +35,6 @@
 - Is there any reason why I can't download My Certificates for this course?
 - I cannot download my certificate.
 - I did pass the final exam but my Record of Achievement document is not available.
-- Hello. When will it be available? Thanks.
 - Why Record of Achievement / Participation certificate not available?
 - When I can down load my certificate.is it today or tomorrow?
 - I have one question related to the record of achievement certificate, it is not activated yet.. When will it be ready ?
@@ -44,9 +43,9 @@
 - when are the results of the Final Exam available
 - I wanted to know when the final completions certification will be issued,
 - I am unable to download the certificate. When this will be available for download?
-- Hola, it's not possible to download the certificate!?
-- Hi I have achieved 51% overall, and have not received my certificate.
-- Hi , I got 75% score in Assignments but i didn't receive Record of Achievement Certificate.
+- it's not possible to download the certificate!?
+- I have achieved 51% overall, and have not received my certificate.
+- I got 75% score in Assignments but i didn't receive Record of Achievement Certificate.
 - Where can i find my record of achievement? The certificate links given below are disabled.
 - I just finished the Course, my score is over 50 %, but im not apple to get the certificate. How can I´get the certificate ?
 - When i get certificate from this course? I get 100% from self-tests and 59% overall points from Assignments (65% from final exam)
