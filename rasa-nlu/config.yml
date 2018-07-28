@@ -5,8 +5,10 @@ pipeline:
 - name: "tokenizer_spacy"
 - name: "intent_entity_featurizer_regex"
 - name: "intent_featurizer_spacy"
+- name: "ner_duckling_http"
+  url: "http://duckling:8000"
+  dimensions: 
+    - "EMAIL"
 - name: "ner_crf"
 - name: "ner_synonyms"
-- name: "ner_duckling"
-  dimensions: ['email']
 - name: "intent_classifier_sklearn"

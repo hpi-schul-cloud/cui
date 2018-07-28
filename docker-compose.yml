@@ -31,13 +31,15 @@ services:
     build:
       context: ./rasa-nlu
       dockerfile: Dockerfile
-    command: ["python", "-m", "rasa_nlu.server", "--path", "./projects", "-c", "config.yml"]
+    command: ["python", "-m", "rasa_nlu.server", "--path", "./projects", "-c", "./config.yml"]
     ports:
       - "5000:5000"
     volumes:
       - ./rasa-nlu/config.yml:/app/config.yml
       - ./rasa-nlu/data:/app/data
       - ./rasa-nlu/projects:/app/projects
+    depends_on:
+      - duckling
     
   rasa-nlu-training:
     build:
@@ -49,6 +51,11 @@ services:
       - ./rasa-nlu/data:/app/data
       - ./rasa-nlu/projects:/app/projects
       - ./rasa-nlu/train-nlu.sh:/etc/cron.daily/train-nlu
+
+  duckling:
+    image: rasa/duckling:latest
+    ports:
+      - "8000:8000" 
 
   chat-ui:
     build:
@@ -63,4 +70,3 @@ services:
       - '/usr/src/app/node_modules'
     depends_on:
       - rasa-core
-  
