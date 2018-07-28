@@ -1,5 +1,7 @@
 # A Conversational UI Experiment
 
+_What is this experiment about?_
+
 ## Table of contents
 - [Introduction](#introduction)
 - [Getting Started](#getting-started)
@@ -10,6 +12,8 @@
 
 
 ## Introduction
+
+_Short intro to Rasa and our Architecture_
 
 ### Rasa Core
 
@@ -34,11 +38,13 @@ docker-compose up --build
 
 ## Docker Services
 
-Service | Port | URL
----|---|---
-Chat UI | 3000 | http://localhost:3000
-Rasa NLU | 5000 | http://localhost:5000/parse?q=hello&project=opensap_faq
-Rasa Core | 5005 | http://localhost:5005/conversations/default/respond?q=hello
+Service | Description | Port | URL
+---|---|---|---
+Chat UI | | 3000 | http://localhost:3000
+Rasa Core | | 5005 | http://localhost:5005/conversations/default/respond?q=hello
+Rasa NLU | | 5000 | http://localhost:5000/parse?q=hello&project=opensap_faq
+Rasa NLU Training | | | 
+Duckling | | 8000 |
 
 
 ## Training Models
@@ -67,5 +73,9 @@ docker-compose run rasa-nlu python -m rasa_nlu.train \
 
 ## Actions
 
+_How do Action work? How are they implemented?_
+
 
 ## Future Work
+
+_What else is there to do?_
