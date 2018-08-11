@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import { Button, FormGroup, FormControl } from 'react-bootstrap';
 import axios from 'axios'
@@ -145,7 +145,7 @@ class App extends Component {
               autoComplete="off"
               disabled={this.state.waitingForResponse}
             />
-            <Button onClick={this.handleClick} bsStyle="primary" className="btn-send"><img src="/assets/send.png" /></Button>
+            <Button onClick={this.handleClick} bsStyle="primary" className="btn-send"><img src="/assets/send.png" alt="send" /></Button>
           </FormGroup>
         </form>
       </div>
