@@ -13,6 +13,8 @@ _What is this experiment about?_
 
 ## Introduction
 
+_[Theresa]_
+
 _Short intro to Rasa and our Architecture_
 
 ### Rasa Core
@@ -23,6 +25,8 @@ _Short intro to Rasa and our Architecture_
 
 
 ## Getting Started
+
+_[Felix]_
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
@@ -38,6 +42,8 @@ docker-compose up --build
 
 ## Docker Services
 
+_[Felix]_
+
 Service | Description | Port | URL
 ---|---|---|---
 Chat UI | | 3000 | http://localhost:3000
@@ -48,6 +54,8 @@ Duckling | | 8000 |
 
 
 ## Training Models
+
+_[Theresa]_
 
 To train the respective service run one of the following commands from the root directory.
 
@@ -73,9 +81,13 @@ docker-compose run rasa-nlu python -m rasa_nlu.train \
 
 ## Actions
 
+_[Felix]_
+
 _How do Action work? How are they implemented?_
 
 
 ## Future Work
+
+_[Theresa]_
 
 _What else is there to do?_
