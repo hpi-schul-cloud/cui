@@ -26,6 +26,12 @@
 - bye bye
 - see you later
 
+## intent:conversation_meow
+- are you a cat
+- are you a human
+- meow
+- miau
+
 ## intent:conversation_thank_you
 - thank you
 - thanks
