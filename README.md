@@ -28,16 +28,37 @@ _Short intro to Rasa and our Architecture_
 
 _[Felix]_
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. You will train a model for both the dialogue engine and the NLU and send your first message to the bot.
 
 ### Prerequisities
+
+* Git
+* Docker with Docker Compose
 
 
 ### Installation
 
-```
-docker-compose up --build
-```
+1. Clone the repository.
+    ```
+    git clone git@github.com:schul-cloud/cui.git
+    ```
+1. Build the images by going to the root directory and execute the following command.
+    ```
+    docker-compose build
+    ```
+    This may take a while...
+1. Train the models, so the chatbot knows how to behave.
+    ```
+    docker-compose run rasa-core python -m rasa_core.train -d data/opensap_faq/domain.yml -s data/opensap_faq/stories.md -o model/opensap_faq --epochs 200
+    ```
+    ```
+    docker-compose run rasa-nlu python -m rasa_nlu.train -c config.yml -d data/opensap_faq -o projects --project opensap_faq
+    ```
+1. Start the containers.
+    ```
+    docker-compose up
+    ```
+1. Open [`http://localhost:3000`](http://localhost:3000) to access the chat interface. The first request to the bot may take a few moments, since the NLU has to be initialized.
 
 
 ## Docker Services
