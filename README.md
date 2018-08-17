@@ -98,10 +98,10 @@ _[Felix]_
 Service | Description | Port | URL
 ---|---|---|---
 Chat UI | | 3000 | http://localhost:3000
-Rasa Core | | 5005 | http://localhost:5005/conversations/default/respond?q=hello
-Rasa NLU | | 5000 | http://localhost:5000/parse?q=hello&project=opensap_faq
-Rasa NLU Training | | | 
-Duckling | | 8000 |
+Rasa Core | Rasa Core instance for a predefined project. | 5005 | http://localhost:5005/conversations/default/respond?q=hello
+Rasa NLU | Rasa NLU instance, which can be used for mutliple projects. | 5000 | http://localhost:5000/parse?q=hello&project=opensap_faq
+Rasa NLU Training | Runs a cron job, which starts the NLU training daily at midnight. | | 
+Duckling | Entitiy extraction service for predefined entities. For more information see the [Rasa](https://rasa.com/docs/nlu/pipeline/#ner-duckling-http) and [duckling documentation](https://duckling.wit.ai/). | 8000 |
 
 
 ## Training Models
