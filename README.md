@@ -22,7 +22,7 @@ During our university masters seminar we build a chat bot prototype to enhance t
 The Rasa NLU is responsible for the Natural Language Understanding of the chatbot. It receives an input (e.g. a sentence) from the user through the UI and predicts an intent of that sentence. The intent defines how the chatbot will react to a certain input. 
 
 ### Rasa Core
-Rasa Core takes the output of the NLU (a structured input e.g. an intent) and decides on an action to perform on it. Actions can be several things: an API Call, an response in form of an utterance or just an input validation (read more [Actions](#actions)). These actions are send back to the frontend as the bots response. 
+Rasa Core takes the output of the NLU (a structured input e.g. an intent) and decides on an action to perform on it. Actions can be several things: an API Call, a response in form of an utterance or just an input validation (read more [Actions](#actions)). These actions are send back to the frontend as the bots response. 
 
 
 ### Chat UI
@@ -98,7 +98,7 @@ Service | Description | Port | URL
 ---|---|---|---
 Chat UI | Demo to show the interface on the openSAP landing page. | 3000 | http://localhost:3000
 Rasa Core | Rasa Core instance for a predefined project. | 5005 | http://localhost:5005/conversations/default/respond?q=hello
-Rasa NLU | Rasa NLU instance, which can be used for mutliple projects. | 5000 | http://localhost:5000/parse?q=hello&project=opensap_faq
+Rasa NLU | Rasa NLU instance, which can be used for multiple  projects. | 5000 | http://localhost:5000/parse?q=hello&project=opensap_faq
 Rasa NLU Training | Runs a cron job, which starts the NLU training daily at midnight. | | 
 Duckling | Entitiy extraction service for predefined entities. For more information see the [Rasa](https://rasa.com/docs/nlu/pipeline/#ner-duckling-http) and [duckling documentation](https://duckling.wit.ai/). | 8000 |
 
@@ -148,5 +148,5 @@ As already mentioned before this is just a prototype and there are some things t
 2. Authorization for Actions
 
 ### Session Management & Authorization
-Session Management and Authorization for Actions come hand in hand. Session Management is an important feature for every online service especially chat bots and therfore every session should be time-boxed. At the end of each session the user needs to authorize once again. This is on the one hand an important aspect for the actions which the bot wants to perform. For example in order to change the email-address of the user, the bots needs to have the permission to access the users settings. On the other hand it is a necessary security feature to limit the bots access to certain commands and prevent unwanted actions.  
+Session Management and Authorization for Actions come hand in hand. Session Management is an important feature for every online service especially chat bots and therefore every session should be time-boxed. At the end of each session the user needs to authorize once again. This is on the one hand an important aspect for the actions which the bot wants to perform. For example, in order to change the email-address of the user, the bots needs to have the permission to access the users settings. On the other hand, it is a necessary security feature to limit the bots access to certain commands and prevent unwanted actions.  
 
