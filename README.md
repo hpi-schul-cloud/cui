@@ -13,20 +13,21 @@ _What is this experiment about?_
 
 ## Introduction
 
-_[Theresa]_
-
-_Short intro to Rasa and our Architecture_
-
-### Rasa Core
+Rasa is an open source platform for building chat bots. It consists of two major parts: the Rasa Core and the Rasa NLU. On top of that we additionally build our own Chat UI frontend in ReactJS. 
 
 ### Rasa NLU
+The Rasa NLU is responsible for the Natural Language Understanding of the chatbot. It receives an input (e.g. a sentence) from the user through the UI and predicts an intent of that sentence. The intent defines how the chatbot will react to a certain input. 
+
+### Rasa Core
+Rasa Core takes the output of the NLU (a structured input e.g. an intent) and decides on an action to perform on it. Actions can be several things: an API Call, an response in form of an utterance or just an input validation. These actions are send back to the frontend as the bots response. 
+
 
 ### Chat UI
-
+The chat UI is a simple reactJS frontend. It consits of a simple input mask where the user can enter question or actions to the bot and communicate with it. 
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. You will train a model for both the dialogue engine and the NLU and send your first message to the bot.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. You will train a model for both the dialogue engine and the NLU and send your first message to the bot. 
 
 ### Prerequisities
 
