@@ -1,6 +1,6 @@
 # A Conversational UI Prototype
 
-During our university masters seminar we build a chat bot prototype to enhance the user experience on the MOOC platform [Open SAP](https://open.sap.com/). In the following we will give a short overview over our experiment including how to get started with it. 
+During our university masters seminar we build a chat bot prototype to enhance the user experience on the MOOC platform [Open SAP](https://open.sap.com/). In the following we will give a short overview over our experiment including how to train models and use the conversational UI prototype. 
 
 
 ## Table of contents
@@ -142,5 +142,11 @@ actions:
 
 
 ## Future Work
+As already mentioned before this is just a prototype and there are some things that can be implemented in the future to introduce it as a beta feature. Two things we want to point out a bit more detailed:
 
+1. Session Management
+2. Authorization for Actions
+
+### Session Management & Authorization
+Session Management and Authorization for Actions come hand in hand. Session Management is an important feature for every online service especially chat bots and therfore every session should be time-boxed. At the end of each session the user needs to authorize once again. This is on the one hand an important aspect for the actions which the bot wants to perform. For example in order to change the email-address of the user, the bots needs to have the permission to access the users settings. On the other hand it is a necessary security feature to limit the bots access to certain commands and prevent unwanted actions.  
 
