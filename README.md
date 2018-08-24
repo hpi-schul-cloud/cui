@@ -26,13 +26,10 @@ _Short intro to Rasa and our Architecture_
 
 ## Getting Started
 
-_[Felix]_
-
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. You will train a model for both the dialogue engine and the NLU and send your first message to the bot.
 
 ### Prerequisities
 
-* Git
 * Docker with Docker Compose
 
 
@@ -93,11 +90,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Docker Services
 
-_[Felix]_
-
 Service | Description | Port | URL
 ---|---|---|---
-Chat UI | | 3000 | http://localhost:3000
+Chat UI | Demo to show the interface on the openSAP landing page. | 3000 | http://localhost:3000
 Rasa Core | Rasa Core instance for a predefined project. | 5005 | http://localhost:5005/conversations/default/respond?q=hello
 Rasa NLU | Rasa NLU instance, which can be used for mutliple projects. | 5000 | http://localhost:5000/parse?q=hello&project=opensap_faq
 Rasa NLU Training | Runs a cron job, which starts the NLU training daily at midnight. | | 
@@ -132,9 +127,16 @@ docker-compose run rasa-nlu python -m rasa_nlu.train \
 
 ## Actions
 
-_[Felix]_
+Actions are the things the bot can do. As described in the [Getting Started](#getting-started) section one action type are simple utterances, that can be defined in the domain of your project. Furthermore variables can be used in the templates to [fill them with slot entries](https://rasa.com/docs/core/slotfilling/). But you can also define your own custom actions with some Python code to call an API or do whatever you can think of.
 
-_How do Action work? How are they implemented?_
+Rasa provides a basic [`Action`](https://github.com/RasaHQ/rasa_core/blob/master/rasa_core/actions/action.py) class to inherit from and a more specific [`FormAction`](https://github.com/RasaHQ/rasa_core/blob/master/rasa_core/actions/forms.py). The latter one is a simplification for use cases, where you need a specific set of data values from the user to perform an action. You can find a small example in [`rasa-core/actions/opensap_faq/account.py`](rasa-core/actions/opensap_faq/account.py). The class `ActionEmailForm` gets an email address from the user and prompts him to confirm it. Only if these two steps are done, the `submit` function is called.
+
+To use your custom actions in your stories they have to be added to your projects domain.
+
+```yml
+actions:
+    - opensap_faq.account.ActionEmailForm
+```
 
 
 ## Future Work
