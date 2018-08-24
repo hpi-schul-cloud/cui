@@ -1,6 +1,7 @@
-# A Conversational UI Experiment
+# A Conversational UI Prototype
 
-_What is this experiment about?_
+During our university masters seminar we build a chat bot prototype to enhance the user experience on the MOOC platform [Open SAP](https://open.sap.com/). In the following we will give a short overview over our experiment including how to get started with it. 
+
 
 ## Table of contents
 - [Introduction](#introduction)
@@ -21,7 +22,7 @@ _What is this experiment about?_
 The Rasa NLU is responsible for the Natural Language Understanding of the chatbot. It receives an input (e.g. a sentence) from the user through the UI and predicts an intent of that sentence. The intent defines how the chatbot will react to a certain input. 
 
 ### Rasa Core
-Rasa Core takes the output of the NLU (a structured input e.g. an intent) and decides on an action to perform on it. Actions can be several things: an API Call, an response in form of an utterance or just an input validation. These actions are send back to the frontend as the bots response. 
+Rasa Core takes the output of the NLU (a structured input e.g. an intent) and decides on an action to perform on it. Actions can be several things: an API Call, an response in form of an utterance or just an input validation (read more [Actions](#actions)). These actions are send back to the frontend as the bots response. 
 
 
 ### Chat UI
@@ -142,6 +143,4 @@ actions:
 
 ## Future Work
 
-_[Theresa]_
 
-_What else is there to do?_
