@@ -9,6 +9,7 @@ During our university masters seminar we build a chat bot prototype to enhance t
 - [Docker Services](#docker-services)
 - [Training Models](#training-models)
 - [Actions](#actions)
+- [User Feedback](#user-feedback)
 - [Future Work](#future-work)
 
 
@@ -139,6 +140,24 @@ To use your custom actions in your stories they have to be added to your project
 actions:
     - opensap_faq.account.ActionEmailForm
 ```
+
+## User Feedback
+
+What if the answer of the bot was not what the user was expecting or did not help with the users problem?
+
+If the NLU was not able to clearly classify the intent, which means the confidence is below a specific threshold, the user is presented a selection of alternatives. To do this we extended the Core server with a mapping from intent to a question. For example the intent `sound_of_cat` might be mapped to the question _Did you want to know what a cat sounds like?_.
+
+To offer this to the user, you need to define these questions for each intent in a `intent_questions.json` format in your projects data folder, e.g., [`rasa-core/data/opensap_faq/intent_questions.json`](rasa-core/data/opensap_faq/intent_questions.json).
+
+```json
+{
+    "sound_of_cat": "Did you want to know what a cat sounds like?"
+}
+```
+
+When the user chooses one of the alternatives, the endpoint `http://localhost:5005/conversations/<sender_id>/tracker/reset_intent?intent=<alt_intent>` is called with the respective intent name. This resets the tracker for the current conversation to the last user input and executes the actions for the new intent.
+
+To improve the NLU the input of the user is saved as an example for the alternative intent in `rasa_nlu/data/<project_name>/user_input`. These markdown files are used in the next training for the model of the given project.
 
 
 ## Future Work
