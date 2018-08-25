@@ -145,9 +145,9 @@ actions:
 
 What if the answer of the bot was not what the user was expecting or did not help with the users problem?
 
-If the NLU was not able to clearly classify the intent, which means the confidence is below a specific threshold, the user is presented a selection of alternatives. To do this we extended the Core server with a mapping from intent to a question. For example the intent `sound_of_cat` might be mapped to the question _Did you want to know what a cat sounds like?_.
+If the NLU was not able to clearly classify the intent, which means the confidence is below a specific threshold, the user is presented a selection of alternatives. To do this we extended the Core server with a mapping from an intent to a question. For example the intent `sound_of_cat` might be mapped to the question _Did you want to know what a cat sounds like?_.
 
-To offer this to the user, you need to define these questions for each intent in a `intent_questions.json` format in your projects data folder, e.g., [`rasa-core/data/opensap_faq/intent_questions.json`](rasa-core/data/opensap_faq/intent_questions.json).
+To offer this to the user, you need to define these questions for each intent in a `intent_questions.json` file in your projects data folder, e.g., [`rasa-core/data/opensap_faq/intent_questions.json`](rasa-core/data/opensap_faq/intent_questions.json).
 
 ```json
 {
