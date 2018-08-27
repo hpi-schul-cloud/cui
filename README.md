@@ -17,7 +17,7 @@ During our university masters seminar we build a chat bot prototype to enhance t
 
 [Rasa](https://rasa.com/) is an open source platform for building chat bots. It consists of two major parts: the Rasa Core and the Rasa NLU. On top of that we additionally build our own Chat UI frontend in ReactJS. 
 
-![CUI Architecture](https://github.com/schul-cloud/cui/blob/feature/documentation/cui_Architecture.png)
+![CUI Architecture](https://raw.githubusercontent.com/schul-cloud/cui/master/cui_Architecture.png)
 
 ### Rasa NLU
 The Rasa NLU is responsible for the Natural Language Understanding of the chatbot. It receives an input (e.g. a sentence) from the user through the UI and predicts an intent of that sentence. The intent defines how the chatbot will react to a certain input. 
