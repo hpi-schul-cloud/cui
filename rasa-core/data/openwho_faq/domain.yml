@@ -1,0 +1,92 @@
+intents:
+  - conversation_greet
+  - conversation_goodbye
+  - conversation_thank_you
+  - conversation_confirm
+  - conversation_cancel
+  - payment_question
+  - timelimit_question
+  - confirmation_of_participation_question
+  - confirmation_of_participation_download_question
+  - account_creation_question
+  - confirmation_email_problem
+  - course_enrollment_question
+  - mobile_device_question
+  - password_reset_question
+  - technical_difficulties_question
+  - who_credentials_usage_question
+
+actions:
+  - utter_conversation_greet
+  - utter_conversation_goodbye
+  - utter_conversation_offer_help
+  - utter_conversation_youre_welcome
+  - utter_conversation_canceled
+  - utter_payment_question
+  - utter_timelimit_question
+  - utter_confirmation_of_participation_question
+  - utter_confirmation_of_participation_download_question
+  - utter_account_creation_question
+  - utter_confirmation_email_problem
+  - utter_course_enrollment_question
+  - utter_mobile_device_question
+  - utter_password_reset_question
+  - utter_technical_difficulties_question
+  - utter_who_credentials_usage_question
+
+templates:
+utter_conversation_greet:
+    - text: "Hello."
+    - text: "Hi!"
+    - text: "Hey!"
+
+  utter_conversation_goodbye:
+    - text: "Good bye."
+    - text: "Have a nice day."
+    - text: "Bye!"
+
+  utter_conversation_offer_help:
+    - text: "How can I help you?"
+    - text: "What can I do for you?"
+
+  utter_conversation_youre_welcome:
+    - text: "You're welcome."
+    - text: "It's always nice to be of help."
+
+  utter_conversation_canceled:
+    - text: "Okay, I will not do that."
+    - text: "Alright, I won't."
+    
+  utter_payment_question:
+    - text: "No, all OpenWHO courses are free and open to anyone wishing to register."
+  
+  utter_timelimit_question:
+    - text: "No, OpenWHO courses are self-paced. You can take as much time as you need to complete a course."
+  
+  utter_confirmation_of_participation_question:
+    - text: "Some OpenWHO courses offer confirmation of participation, but some don't. We will soon add a confirmation of participation for more existing courses, and you will be able to download it without having to take the course again. Stay tuned."
+
+  utter_confirmation_of_participation_download_question:
+    - text: "Once you have successfully completed a course, you can download the confirmation of participation in progress section, located on the top course navigation. Link to download the confirmation of participation is at the bottom of the progress page."
+
+  utter_account_creation_question:
+    - text: "Anyone can create a profile on OpenWHO. "Log in" button is located on the top navigation bar, on the far right. Click on it and choose "Create new account." It's going to open a new page where you will need to fill out your name, last name, email address and the password. Once it's done, click on "Register for OpenWHO." You will receive a link in your email to confirm your account."
+
+  utter_confirmation_email_problem:
+    - text: "If you have not received a confirmation email, please check your spam folder and move the email to your primary mailbox. This is of particular concern to Gmail and Yahoo users. If you have checked all your folders, but the confirmation email in not there, please contact us through the help desk and request the confirmation email to be resent."
+
+  utter_course_enrollment_question:
+    - text: "Once you have created a profile and are logged in, choose the course you want to take. To learn more about the course, click on "Show course details." To enroll, click on "Enroll me for this course." Once enrolled, you can start the course immediately or come back later."
+
+  utter_mobile_device_question:
+    - text: "All OpenWHO content is compatible with mobile. OpenWHO apps are available for IOS and Android devices."
+
+  utter_password_reset_question:
+    - text: "Don't worry. Go to the "Log in" page. Click on the link "Forgot your password?". A new page will open asking for your email address. Type it in. Click on "Request password reset.". Your new password has been sent to your email."
+
+  utter_technical_difficulties_question:
+    - text: "In case of technical difficulties, please send us a message through the help desk explaining the problem. We will get back to you as soon as possible."
+
+  utter_who_credentials_usage_question:
+    - text: "Yes, you can use your WHO credentials to access OpenWHO courses. However, if you have issues logging in using your WIMS account, please create an account with your personal email address."
+    
