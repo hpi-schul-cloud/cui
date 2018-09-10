@@ -50,11 +50,21 @@ These instructions will get you a copy of the project up and running on your loc
     ```
     This may take a while...
 1. Train the models, so the chatbot knows how to behave.
+
+    For OpenSAP: 
     ```sh
     docker-compose run rasa-core python -m rasa_core.train -d data/opensap_faq/domain.yml -s data/opensap_faq/stories.md -o model/opensap_faq --epochs 200
     ```
     ```sh
     docker-compose run rasa-nlu python -m rasa_nlu.train -c config.yml -d data/opensap_faq -o projects --project opensap_faq
+    ```
+
+    For OpenWHO:
+    ```sh
+    docker-compose run rasa-core python -m rasa_core.train -d data/openwho_faq/domain.yml -s data/openwho_faq/stories.md -o model/openwho_faq --epochs 200
+    ```
+    ```sh
+    docker-compose run rasa-nlu python -m rasa_nlu.train -c config.yml -d data/openwho_faq -o projects --project openwho_faq
     ```
 1. Start the containers.
     ```sh

@@ -1,0 +1,13 @@
+{
+    "payment_question": "Do you want to know if OpenWHO costs you money?",
+    "timelimit_question": "Do you want to know if the courses have timelimits?",
+    "confirmation_of_participation_question": "Do you want to know if we offer a confirmation of participation for our courses?",
+    "confirmation_of_participation_download_question": "Do you want to know where you can download your confirmation of participation?",
+    "account_creation_question": "Do you want to know where you can create an account?",
+    "confirmation_email_problem": "Do you have difficulties receiving the confirmation email?",
+    "course_enrollment_question": "Do you want to know how you can enroll in our courses?",
+    "mobile_device_question": "Do you want to know about our Apps and mobile content?",
+    "password_reset_question": "Do you need help resetting or retrieving your password?",
+    "technical_difficulties_question": "Do you have technical difficulties?",
+    "who_credentials_usage_question": "Do you want to know if you can use your WHO credentials to log in?"
+}
