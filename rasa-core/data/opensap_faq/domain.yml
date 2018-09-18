@@ -17,6 +17,7 @@ intents:
   - conversation_thank_you
   - conversation_confirm
   - conversation_cancel
+  - conversation_meow
   - account_settings_notifications
   - account_deletion
   - account_activation
@@ -58,6 +59,7 @@ actions:
   - utter_conversation_offer_help
   - utter_conversation_youre_welcome
   - utter_conversation_canceled
+  - utter_conversation_meow
   - utter_account_deletion
   - utter_ask_new_email
   - utter_ask_new_email_confirmed
@@ -108,6 +110,12 @@ templates:
   utter_conversation_canceled:
     - text: "Okay, I will not do that."
     - text: "Alright, I won't."
+
+  utter_conversation_meow:
+    - text: "Meow"
+    - text: "Miau"
+    - text: "Cat"
+    - text: "Roar"
 
   utter_account_deletion:
     - text: "Open your profile by clicking the Profile icon at the upper right corner of the menu bar and select profile. Then click Delete account to delete your account on openSAP irrevocably."
