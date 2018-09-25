@@ -173,7 +173,7 @@ To improve the NLU the input of the user is saved as an example for the alternat
 
 ## Color Schemes
 In order to apply a fitting color scheme for either OpenSAP or OpenWHO, a variable in the "App.js" file has to be changed. 
-You can find the file in the directory [`chat-ui/src/App.css`](chat-ui/src/App.css). Then change the variable "colorScheme", in the "getColorScheme"-function, to either "orangeGrey" (for OpenSAP) or "greenGrey" (for OpenWHO). 
+You can find the file in the directory [`chat-ui/src/App.js`](chat-ui/src/App.js). Then change the variable "colorScheme", in the "getColorScheme"-function, to either "orangeGrey" (for OpenSAP) or "greenGrey" (for OpenWHO). 
 
 
 ## Future Work
