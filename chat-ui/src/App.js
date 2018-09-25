@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Button, FormGroup, FormControl } from 'react-bootstrap';
 import axios from 'axios'
 
 class App extends Component {
@@ -21,13 +20,19 @@ class App extends Component {
     this.currText = '';
   }
 
+  getColorScheme() {
+    //colorSchemes can be changed here and include "greenGrey" and "orangeGrey"
+    var colorScheme = "greenGrey";
+    return colorScheme.toString();
+  }
+
   handleClick() {
     if(!this.altclicked) {
       var list = document.getElementById('curr-conv');
       if (list) {
         list.parentNode.removeChild(list);
         let newElem = document.createElement('div');
-        newElem.classList.add('message-box', 'answer');
+        newElem.classList.add('message-box', 'answer', this.getColorScheme());
         newElem.innerHTML = this.currText;
         document.getElementById('conversation').appendChild(newElem);
       }
@@ -50,14 +55,14 @@ class App extends Component {
       })
       .finally(() => {
         this.setState({ waitingForResponse: false });
-        document.getElementsByClassName('Question-Box')[0].focus();
+        document.getElementsByClassName('Question-Box ' + this.getColorScheme())[0].focus();
       });
   }
 
   addAnswerToConversation(answers) {
     answers.forEach((answer) => {
         let newElem = document.createElement('div');
-        newElem.classList.add('message-box', 'answer');
+        newElem.classList.add('message-box', 'answer', this.getColorScheme());
         newElem.innerHTML = answer.text.trim();
         document.getElementById('conversation').appendChild(newElem);
         this.currText = answer.text.trim();
@@ -112,7 +117,7 @@ class App extends Component {
   addQuestionToConversation(question) {
     this.removeIntentsFromChat();
     let newElem = document.createElement('div');
-    newElem.classList.add('message-box', 'question');
+    newElem.classList.add('message-box', 'question', this.getColorScheme());
     newElem.innerHTML = question.trim();
     document.getElementById('conversation').appendChild(newElem);
   }
@@ -126,7 +131,7 @@ class App extends Component {
       <div className="chat-ui">
         <div id="conversation"></div>
         <form>
-          <FormGroup
+          <form
             className="form-group"
             controlId="formBasicText"
             onKeyPress={event => {
@@ -136,17 +141,17 @@ class App extends Component {
               }
             }}
           >
-            <FormControl
+            <input
               type="text"
               value={this.state.value}
               placeholder="Write message"
-              className="Question-Box"
+              className={"Question-Box " + this.getColorScheme()}
               onChange={this.handleChange}
               autoComplete="off"
               disabled={this.state.waitingForResponse}
             />
-            <Button onClick={this.handleClick} bsStyle="primary" className="btn-send"><img src="/assets/send.png" /></Button>
-          </FormGroup>
+            <button type="button" onClick={this.handleClick} className={'btn-send ' + this.getColorScheme()}> <img src="/assets/send.png"/> </button>
+          </form>
         </form>
       </div>
     );
