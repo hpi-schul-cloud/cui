@@ -134,12 +134,12 @@
 }
 
 .Question-Box:focus.greenGrey {
-  border-color: rgb(119, 180, 35);
+  border: 1px solid rgb(119, 180, 35);
   box-shadow:  0 0 5px rgb(119, 180, 35);
 }
 
 .Question-Box:focus.orangeGrey {
-  border-color: #d4652d;
+  border: 1px solid #d4652d;
   box-shadow:  0 0 5px #d4652d;
 }
 
