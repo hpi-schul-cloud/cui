@@ -10,6 +10,7 @@ During our university masters seminar we build a chat bot prototype to enhance t
 - [Training Models](#training-models)
 - [Actions](#actions)
 - [User Feedback](#user-feedback)
+- [Color Schemes](#color-schemes)
 - [Future Work](#future-work)
 
 
@@ -168,6 +169,11 @@ To offer this to the user, you need to define these questions for each intent in
 When the user chooses one of the alternatives, the endpoint `http://localhost:5005/conversations/<sender_id>/tracker/reset_intent?intent=<alt_intent>` is called with the respective intent name. This resets the tracker for the current conversation to the last user input and executes the actions for the new intent.
 
 To improve the NLU the input of the user is saved as an example for the alternative intent in `rasa_nlu/data/<project_name>/user_input`. These markdown files are used in the next training for the model of the given project.
+
+
+## Color Schemes
+In order to apply a fitting color scheme for either OpenSAP or OpenWHO, a variable in the "App.js" file has to be changed. 
+You can find the file in the directory [`chat-ui/src/App.js`](chat-ui/src/App.js). Then change the variable "colorScheme", in the "getColorScheme"-function, to either "orangeGrey" (for OpenSAP) or "greenGrey" (for OpenWHO). 
 
 
 ## Future Work
