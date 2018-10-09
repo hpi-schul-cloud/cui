@@ -129,7 +129,9 @@ class App extends Component {
   render() {
     return (
       <div className="chat-ui">
-        <div id="conversation"></div>
+        <div id="conversation">
+          <div className={'message-box '+ 'answer '+ this.getColorScheme()}>Hello, I am your Helpdesk-Assistant. Please describe your problem.</div>
+        </div>
         <form>
           <form
             className="form-group"
