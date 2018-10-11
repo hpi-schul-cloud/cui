@@ -20,10 +20,19 @@ class App extends Component {
     this.currText = '';
   }
 
+  //colorSchemes can be changed here and include "greenGrey" and "orangeGrey"
   getColorScheme() {
-    //colorSchemes can be changed here and include "greenGrey" and "orangeGrey"
     var colorScheme = "greenGrey";
     return colorScheme.toString();
+  }
+
+  /*Keywords of the greeting-message can be changed here.
+    First: Create a string with the keywords, following the format of "openwhoKeywords".
+    Second: Change the string assigned to "keywordsToUse" to your keywords.*/
+  getKeywords() {
+    var openwhoKeywords = "-login,-registration,-confirmation email,-enrollment/enroll,-certificate,-video/audio,-subtitles,-modules";
+    var keywordsToUse = openwhoKeywords.split(",").join("\n");
+    return "\n"+keywordsToUse.toString();
   }
 
   handleClick() {
@@ -130,7 +139,7 @@ class App extends Component {
     return (
       <div className="chat-ui">
         <div id="conversation">
-          <div className={'message-box '+ 'answer '+ this.getColorScheme()}>Hello, I am your Helpdesk-Assistant. Please describe your problem.</div>
+          <div className={'message-box '+ 'answer '+ this.getColorScheme()}>Hello, I am your Helpdesk-Assistant. Please describe your problem or choose from these keywords:{this.getKeywords()}</div>
         </div>
         <form>
           <form
