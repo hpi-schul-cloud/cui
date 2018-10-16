@@ -47,11 +47,11 @@ These instructions will get you a copy of the project up and running on your loc
     ```
 1. Adjust the project-names in  docker-compose.yml (line 10-14).
    ```sh
-    # command: python -m rasa_core.server --debug -d model/openhpi_faq_eng
+    # command: python -m rasa_core.server --debug -d model/*PROJECT-NAME*
     environment:
-      - RASA_CORE_MODEL_PATH=./model/openhpi_faq_eng
-      - RASA_CORE_QUESTIONS_PATH=./data/openhpi_faq_eng/intent_questions.json
-      - RASA_NLU_PROJECT_NAME=openhpi_faq_eng
+      - RASA_CORE_MODEL_PATH=./model/*PROJECT-NAME*
+      - RASA_CORE_QUESTIONS_PATH=./data/*PROJECT-NAME*/intent_questions.json
+      - RASA_NLU_PROJECT_NAME=*PROJECT-NAME*
     ```
 1. Build the images by going to the root directory and execute the following command.
     ```sh
