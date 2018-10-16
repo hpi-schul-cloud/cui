@@ -7,11 +7,11 @@ services:
       context: ./rasa-core
       dockerfile: Dockerfile
     command: ["python", "run_server.py"]
-    # command: python -m rasa_core.server --debug -d model/openwho_faq
+    # command: python -m rasa_core.server --debug -d model/openhpi_faq_eng
     environment:
-      - RASA_CORE_MODEL_PATH=./model/openwho_faq
-      - RASA_CORE_QUESTIONS_PATH=./data/openwho_faq/intent_questions.json
-      - RASA_NLU_PROJECT_NAME=openwho_faq
+      - RASA_CORE_MODEL_PATH=./model/openhpi_faq_eng
+      - RASA_CORE_QUESTIONS_PATH=./data/openhpi_faq_eng/intent_questions.json
+      - RASA_NLU_PROJECT_NAME=openhpi_faq_eng
       - RASA_NLU_MODEL_NAME=
       - RASA_NLU_SERVER_ADDRESS=http://rasa-nlu:5000
       - RASA_NLU_SERVER_TOKEN=

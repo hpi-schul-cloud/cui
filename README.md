@@ -45,6 +45,8 @@ These instructions will get you a copy of the project up and running on your loc
     ```sh
     git clone git@github.com:schul-cloud/cui.git
     ```
+1. Adjust the docker-compose.yml.
+    In the root directory open the docker-compose.yml. Adjust the project-names in line 10, 12, 13 and 14 to fit the project you want to use. 
 1. Build the images by going to the root directory and execute the following command.
     ```sh
     docker-compose build
@@ -66,6 +68,14 @@ These instructions will get you a copy of the project up and running on your loc
     ```
     ```sh
     docker-compose run rasa-nlu python -m rasa_nlu.train -c config.yml -d data/openwho_faq -o projects --project openwho_faq
+    ```
+
+    For OpenHPI (English):
+    ```sh
+    docker-compose run rasa-core python -m rasa_core.train -d data/openhpi_faq_eng/domain.yml -s data/openhpi_faq_eng/stories.md -o model/openhpi_faq_eng --epochs 200
+    ```
+    ```sh
+    docker-compose run rasa-nlu python -m rasa_nlu.train -c config.yml -d data/openhpi_faq_eng -o projects --project openhpi_faq_eng
     ```
 1. Start the containers.
     ```sh
