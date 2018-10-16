@@ -46,7 +46,8 @@ These instructions will get you a copy of the project up and running on your loc
     git clone git@github.com:schul-cloud/cui.git
     ```
 1. Adjust the docker-compose.yml.
-    In the root directory open the docker-compose.yml. Adjust the project-names in line 10, 12, 13 and 14 to fit the project you want to use. 
+    In the root directory open the docker-compose.yml. 
+    Adjust the project-names in line 10, 12, 13 and 14 to fit the project you want to use. 
 1. Build the images by going to the root directory and execute the following command.
     ```sh
     docker-compose build
