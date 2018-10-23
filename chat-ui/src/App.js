@@ -147,7 +147,7 @@ class App extends Component {
     return (
       <div className="chat-ui">
         <div id="conversation">
-           <div className={'message-box '+ 'answer '+ this.getColorScheme()}>Hello, I am your Helpdesk-Assistant. Please describe your problem or choose from these keywords:{this.getKeywords()}</div>
+           <div className={'message-box '+ 'answer '+ this.getColorScheme()}>Hello, I am your Helpdesk-Assistant. The topics I can help you with include, but are not limited to:{this.getKeywords()} \n Please describe your problem, or ask me something.</div>
         </div>
         <form>
           <form
