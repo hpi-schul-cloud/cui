@@ -20,19 +20,25 @@ class App extends Component {
     this.currText = '';
   }
 
-  //colorSchemes can be changed here and include "greenGrey" and "orangeGrey"
+  /*
+  colorSchemes can be changed here to: 
+    "greenGrey"       (= openWHO)
+    "orangeGrey"      (= openSAP)
+    "lightOrangeGrey" (= openHPI)
+  */
   getColorScheme() {
     var colorScheme = "greenGrey";
     return colorScheme.toString();
   }
 
-  /*Keywords of the greeting-message can be changed here.
-    First: Create a string with the keywords, following the format of "openwhoKeywords".
-    Second: Change the string assigned to "keywordsToUse" to your keywords.*/
-  getKeywords() {
-    var openwhoKeywords = "-login,-registration,-confirmation email,-enrollment/enroll,-certificate,-video/audio,-subtitles,-modules";
-    var keywordsToUse = openwhoKeywords.split(",").join("\n");
-    return "\n"+keywordsToUse.toString();
+  /*
+  The greeting message can be changed here & you can create new greeting messages here
+  */
+  getGreetingMessage() {
+    var openwhoGreetingMessage = "Hello, I am your Helpdesk-Assistant. The topics I can help you with include, but are not limited to:\n-login\n-registration\n-confirmation email\n-enrollment/enroll\n-certificate\n-video/audio\n-subtitles\n-modules\nPlease describe your problem, or ask me something.";
+    var openhpiEngGreetingMessage = "Hello, I am your Helpdesk-Assistant. The topics I can help you with include, but are not limited to:\n-login\n-registration\n-courses\n-tests/homeworks\n-certificate\nPlease describe your problem, or ask me something."
+  
+    return openhpiEngGreetingMessage;
   }
 
   handleClick() {
@@ -139,7 +145,7 @@ class App extends Component {
     return (
       <div className="chat-ui">
         <div id="conversation">
-          <div className={'message-box '+ 'answer '+ this.getColorScheme()}>Hello, I am your Helpdesk-Assistant. Please describe your problem or choose from these keywords:{this.getKeywords()}</div>
+           <div className={'message-box '+ 'answer '+ this.getColorScheme()}>{this.getGreetingMessage()}</div>
         </div>
         <form>
           <form
