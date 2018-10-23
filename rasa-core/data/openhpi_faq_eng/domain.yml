@@ -144,7 +144,7 @@ templates:
     - text: "The sum of all points is displayed on the record of achievement. Furthermore, we show the percentage of the maximum number of points. Decimal places are floored. Therefore, if a participant has received 49.9 % of the maximum points he is not eligible for a record of achievement."
 
   utter_peer_assessment_question:
-    - text: "A peer assessment is a special type of assignment which is used in some courses, in particular for some topics, for which automatic grading is not possible or for which it makes sense to reflect about one's peers' work as part of the learning process. The submission phase can either be done individually or in a team (team peer assessment). You find more information about peer assessment here: https://open.hpi.de/pages/p_a"
+    - text: "A peer assessment is a special type of assignment which is used in some courses, in particular for some topics, for which automatic grading is not possible or for which it makes sense to reflect about one's peers' work as part of the learning process. The submission phase can either be done individually or in a team (team peer assessment). You find more information about peer assessment here: https://open.hpi.de/pages/p_a?locale=en"
 
   utter_forum_usage_question:
     - text: "While a course is running, you can visit the course forum to ask questions and discuss the course content with your peers and the course instructors. Please consult the discussion forum rules beforehand. These contain important guidelines and tips for posting threads."
