@@ -179,7 +179,7 @@ You can find the file in the directory [`chat-ui/src/App.js`](chat-ui/src/App.js
 ## Greeting Message
 In order to present the user with a short introduction of what the chatbot can do and initiate the conversation, a greeting message is rendered as soon as the chatbot is openend. 
 
-The greeting message includes a list of the most common topics the chatbot can help with. You can find the lists & create your own list in the "getKeywords"-function in the directory [`chat-ui/src/App.js`](chat-ui/src/App.js).
+You can find the greeting message & create your own  in the "getGreetingMessage"-function in the directory [`chat-ui/src/App.js`](chat-ui/src/App.js).
 The greeting message itself is created in the same directory in the "render"-function.
 
 
