@@ -17,9 +17,10 @@
 
 ## intent:conversation_goodbye
 - cu
-- good by
+- good bye
 - cya
 - gute nacht
+- tschüss
 - tschüß
 - bye
 - goodbye
