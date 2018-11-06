@@ -24,6 +24,7 @@
   border-radius: 4px;
   padding: 8px; 
   margin-bottom: 5px;
+  white-space: pre-wrap;
 }
 
 .answer.greenGrey::before, .alternative::before {
