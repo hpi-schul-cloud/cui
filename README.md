@@ -180,9 +180,14 @@ To improve the NLU the input of the user is saved as an example for the alternat
 
 
 ## Color Schemes
-In order to apply a fitting color scheme for either OpenSAP or OpenWHO, a variable in the "App.js" file has to be changed. 
+In order to apply the fitting color scheme for OpenSAP, OpenHPI or OpenWHO a variable in the "App.js" file has to be changed. 
 
-You can find the file in the directory [`chat-ui/src/App.js`](chat-ui/src/App.js). Then change the variable "colorScheme", in the "getColorScheme"-function, to either "orangeGrey" (for OpenSAP) or "greenGrey" (for OpenWHO). 
+You can find the file in the directory [`chat-ui/src/App.js`](chat-ui/src/App.js). 
+
+Locate the "getColorScheme()"-function and change the value of "colorScheme" to:
+- "orangeGrey" for OpenSAP
+- "lightOrangeGrey" for OpenHPI
+- "greenGrey" for OpenWHO
 
 ## Greeting Message
 In order to present the user with a short introduction of what the chatbot can do and initiate the conversation, a greeting message is rendered as soon as the chatbot is openend. 
