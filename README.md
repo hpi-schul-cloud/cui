@@ -5,6 +5,7 @@ During our university masters seminar we build a chat bot prototype to enhance t
 
 ## Table of contents
 - [Introduction](#introduction)
+- [Architecture](#architecture) 
 - [Getting Started](#getting-started)
 - [Docker Services](#docker-services)
 - [Training Models](#training-models)
@@ -12,9 +13,16 @@ During our university masters seminar we build a chat bot prototype to enhance t
 - [User Feedback](#user-feedback)
 - [Color Schemes](#color-schemes)
 - [Future Work](#future-work)
+- [Conclusion & Reflection](#conclusion-&-reflection)
 
 
 ## Introduction
+
+Chatbots are text-based and automated dialogue systems, that allow to communicate with a computer-based system in natural language. They are divided into three categories. Support chatbots are specialized to answer questions from a specific domain. Skills chatbots have a predefined set of rules, e.g. to control the lights in your home. And assistant chatbots are a combination of support and skills chatbots. Alexa or Siri are two of the most popular ones.
+
+Recent years have shown a rise in chatbots on the internet. Reason for this are not only the advancements in machine learning, but also how relatively easy it has become to build a chatbot with services like Dialogflow, Wit.ai or Microsoft’s Bot Framework. Often previous knowledge in machine learning is not required. Machine learning also allows for more complex chatbots. Although it is possible to build a chatbot with only a set of rules manifested in if-else-statements, at a certain point it is not feasible to maintain. Machine learning solves this by training a model from a set of example utterances and dialogues which evolves over time.
+
+## Architecture
 
 [Rasa](https://rasa.com/) is an open source platform for building chat bots. It consists of two major parts: the Rasa Core and the Rasa NLU. On top of that we additionally build our own Chat UI frontend in ReactJS. 
 
@@ -173,7 +181,14 @@ To improve the NLU the input of the user is saved as an example for the alternat
 
 ## Color Schemes
 In order to apply a fitting color scheme for either OpenSAP or OpenWHO, a variable in the "App.js" file has to be changed. 
+
 You can find the file in the directory [`chat-ui/src/App.js`](chat-ui/src/App.js). Then change the variable "colorScheme", in the "getColorScheme"-function, to either "orangeGrey" (for OpenSAP) or "greenGrey" (for OpenWHO). 
+
+## Greeting Message
+In order to present the user with a short introduction of what the chatbot can do and initiate the conversation, a greeting message is rendered as soon as the chatbot is openend. 
+
+You can find the greeting message & create your own  in the "getGreetingMessage"-function in the directory [`chat-ui/src/App.js`](chat-ui/src/App.js).
+The greeting message itself is created in the same directory in the "render"-function.
 
 
 ## Future Work
@@ -185,3 +200,11 @@ As already mentioned before this is just a prototype and there are some things t
 ### Session Management & Authorization
 Session Management and Authorization for Actions come hand in hand. Session Management is an important feature for every online service especially chat bots and therefore every session should be time-boxed. At the end of each session the user needs to authorize once again. This is on the one hand an important aspect for the actions which the bot wants to perform. For example, in order to change the email-address of the user, the bots needs to have the permission to access the users settings. On the other hand, it is a necessary security feature to limit the bots access to certain commands and prevent unwanted actions.  
 
+
+## Conclusion & Reflection
+
+This chatbot was aimed as a proof of concept project in which we tried to build a prototype support bot on the basis of openSAP data. The extracted forum datasets and frequently asked questions were largely unstructured and widely spread into several intent sets with just a few examples each.
+
+In hindsight one of the biggest and most pressing challenges is therefore the creation of a good set of training data, which produces a model with reliable results. We faced the issue of low confidence levels in the natural language processing unit from early on. Partly due to sparse feedback in a survey to gather more examples, we were only able to increase those slightly. So further surveys and crowdsourcing with well defined intents are needed to create such training data. In addition naming conventions for intents and actions should be developed to be able maintain the only growing number of use cases.
+
+Overall we were able to build a usable prototype with the given data and newly created ones. This prototype seems to be a good foundation for further development of a production ready support chatbot. 
