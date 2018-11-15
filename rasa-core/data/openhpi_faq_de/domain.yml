@@ -96,7 +96,7 @@ templates:
     - text: "Alles klar, ich mache es nicht."
   
   utter_about_moocs_question:
-    - text: "Ein paar grundlegende Informationen zum Thema MOOC haben wir <a href=https://open.hpi.de/pages/mooc>hier</a> zusammen getragen."
+    - text: "Ein paar grundlegende Informationen zum Thema MOOC haben wir <a href=\"https://open.hpi.de/pages/mooc\">hier</a> zusammen getragen."
 
   utter_registration_restrictions_question:
     - text: "Es gibt keinerlei formale Zugangsbeschränkung. Jeder kann sich anmelden, unabhängig von Bildungsabschluss, Notendurchschnitt, Alter, Nationalität oder Unternehmenszugehörigkeit. Sie benötigen zur Registrierung lediglich eine gültige E-Mail-Adresse."
@@ -123,7 +123,7 @@ templates:
     - text: "Als Lernmaterialien dienen meist kürzere Videos, in denen der Dozent das jeweilige Thema bespricht. Ergänzend können Lesematerialien in die Kursseite direkt integriert sein oder als PDF-Dokumente zum Download angeboten werden. Es können ggf. auch weitere Medien als Lernressourcen eingebunden werden."
 
   utter_searching_course_materials_question:
-    - text: "Von der Kursliste oder von Ihrem Dashboard aus gelangen Sie in die einzelnen Kurse. Dort finden Sie die Materialien unter dem Reiter 'Lernmaterial'. \nEine detaillierte Anleitung finde sie <a href=https://open.hpi.de/pages/faq#wo-finde-ich-die-kursmaterialien>hier</a>."
+    - text: "Von der Kursliste oder von Ihrem Dashboard aus gelangen Sie in die einzelnen Kurse. Dort finden Sie die Materialien unter dem Reiter 'Lernmaterial'. \nEine detaillierte Anleitung finde sie <a href=\"https://open.hpi.de/pages/faq#wo-finde-ich-die-kursmaterialien\">hier</a>."
 
   utter_searching_archive_mode_question:
     - text: "Unterhalb der aktuellen und zukünftigen openHPI Kurse auf der Kursseite finden Sie alle bisherigen Kurse, die auf openHPI stattgefunden haben und bereits abgeschlossen sind. Diese Kurse stehen im Archivmodus zur Verfügung, d.h. man kann sich weiterhin zu diesen Kursen anmelden und das Lernmaterial bearbeiten, es ist jedoch nicht mehr möglich, an den bewerteten Hausaufgaben und der Abschlussprüfung teilzunehmen und ein Zeugnis zu erlangen."
@@ -132,7 +132,7 @@ templates:
     - text: "Nach dem Ende eines Kurses bleiben die Kursinhalte weiterhin im Archivmodus verfügbar. Neue Teilnehmer können sich jederzeit zum Selbststudium anmelden. Bewertete Aufgaben mit Abgabefristen können jedoch nicht mehr bearbeitet und somit kann auch ein Kurszeugnis nicht mehr erworben werden. Das Forum wird nach Kursende geschlossen und steht nur noch im Lesemodus zur Verfügung."
     
   utter_homework_test_difference_question:
-    - text: "Selbsttests sind kurze Multiple-Choice Quizzes, die direkt auf ein Video oder einen Text folgen. Zweck der Selbsttests ist es, das Verständnis des gerade erworbenen Wissens selbst zu überprüfen. Diese zählen nicht für das Zertifikat und können beliebig oft wiederholt werden. \nHausaufgaben müssen hingegen bis zu einer bestimmten (meist wöchentlichen) Abgabefrist bearbeitet werden und sind Voraussetzung für den Erwerb eines Kurszeugnisses.\nFür weitere Informationen, schauen Sie bitte <a href=https://open.hpi.de/pages/faq#was-sind-selbsttests-und-hausaufgaben-und-worin-unterscheiden-sich-diese>hier</a>"
+    - text: "Selbsttests sind kurze Multiple-Choice Quizzes, die direkt auf ein Video oder einen Text folgen. Zweck der Selbsttests ist es, das Verständnis des gerade erworbenen Wissens selbst zu überprüfen. Diese zählen nicht für das Zertifikat und können beliebig oft wiederholt werden. \nHausaufgaben müssen hingegen bis zu einer bestimmten (meist wöchentlichen) Abgabefrist bearbeitet werden und sind Voraussetzung für den Erwerb eines Kurszeugnisses.\nFür weitere Informationen, schauen Sie bitte <a href=\"https://open.hpi.de/pages/faq#was-sind-selbsttests-und-hausaufgaben-und-worin-unterscheiden-sich-diese\">hier</a>"
 
   utter_multiple_choice_grading_question:
     - text: "Bei Multiple-Choice-Aufgaben gibt es genau eine richtige Antwort. Wird diese richtig ausgewählt, erhält der Teilnehmer die angegebene Punktzahl für die Aufgabe. Wird die falsche Antwort angeklickt, erhält der Teilnehmer 0 Punkte für diese Aufgabe. Bei Multiple-Answer-Aufgaben werden die erreichten Punkte bei teilweise richtigen Lösungen, auf folgende Weise berechnet: Die maximale Punkteanzahl wird durch die Anzahl der richtigen Alternativen dividiert. Dieser Wert wird als Basis verwendet. Für jede richtige Alternative, die korrekt ausgewählt wurde, wird der Basiswert vergeben, für jede falsche Alternative wird der Basiswert abgezogen. Ist das Gesamtergebnis negativ, werden 0 Punkte vergeben."
@@ -144,7 +144,7 @@ templates:
     - text: "Die Summe aller erreichten Punkte eines Teilnehmers wird auf dem Zeugnis ausgewiesen und als Prozentsatz aller möglichen Punkte (Höchstpunktezahl) angegeben. Falls das Ergebnis Dezimalstellen aufweist, wird abgerundet. Hat ein Teilnehmer beispielsweise 49,9% der Gesamtpunktezahl erreicht, reicht das leider nicht aus, um ein Zeugnis zu erhalten."
 
   utter_peer_assessment_question:
-    - text: "Ein Peer-Assessment ist eine Aufgabenform, bei der Teilnehmer sich gegenseitig bewerten. Ein Peer-Assessment kommt dann zum Einsatz, wenn eine automatische Auswertung für eine bestimmte Fragestellung schwierig wäre oder wenn es den Lernprozess aktiv unterstützt, über die Lösungsvorschläge anderer Kursteilnehmer zu reflektieren und diese zu bewerten. Die Bearbeitung der Aufgabe kann entweder alleine oder in Teamarbeit (Team Peer Assessment) geschehen. Mehr Informationen erhalten Sie <a href=https://open.hpi.de/pages/p_a?locale=de>hier</a>"
+    - text: "Ein Peer-Assessment ist eine Aufgabenform, bei der Teilnehmer sich gegenseitig bewerten. Ein Peer-Assessment kommt dann zum Einsatz, wenn eine automatische Auswertung für eine bestimmte Fragestellung schwierig wäre oder wenn es den Lernprozess aktiv unterstützt, über die Lösungsvorschläge anderer Kursteilnehmer zu reflektieren und diese zu bewerten. Die Bearbeitung der Aufgabe kann entweder alleine oder in Teamarbeit (Team Peer Assessment) geschehen. Mehr Informationen erhalten Sie <a href=\"https://open.hpi.de/pages/p_a?locale=de\">hier</a>"
 
   utter_forum_usage_question:
     - text: "Das Forum ist ein wichtiger Bestandteil des Lernerlebnisses auf openHPI. Eine aktive Beteiligung trägt zu Ihrem Lernerfolg entscheidend bei, da Sie in diesem Bereich über die Themen des Kurses reflektieren, offen gebliebene Fragen stellen (und beantworten) oder mit anderen Teilnehmern und den Kursleitern diskutieren können. Informationen über die konkrete Funktionsweise des Forums finden Sie auf der Seite mit den Forenregeln."
@@ -180,7 +180,7 @@ templates:
     - text: "Sie können die Materialien gerne für eigene Schulungen einsetzen. Die Lerninhalte auf openHPI stehen unter einer CC BY-NC-SA-Lizenz. Diese Lizenz erlaubt es, die Materialien zu verbreiten, zu remixen, zu verbessern und darauf aufzubauen, allerdings nur nicht-kommerziell und unter Nennung von openHPI als Urheber des Originals."
 
   utter_personal_data_question:
-    - text: "Das Hasso-Plattner-Institut unterliegt dem Bundesdatenschutzgesetz, da die Server, auf denen Nutzerdaten gespeichert sind, in Deutschland stehen. Es erfolgt keine Weitergabe von personenbezogenen Daten an Dritte. Zur Verbesserung der Plattform und zur Auswertung für wissenschaftliche Zwecke werden ausschließlich pseudonymisierte Daten verwendet. Weitere Informationen zum Datenschutz auf openHPI finden Sie <a href=https://open.hpi.de/pages/data-protection>hier</a>."
+    - text: "Das Hasso-Plattner-Institut unterliegt dem Bundesdatenschutzgesetz, da die Server, auf denen Nutzerdaten gespeichert sind, in Deutschland stehen. Es erfolgt keine Weitergabe von personenbezogenen Daten an Dritte. Zur Verbesserung der Plattform und zur Auswertung für wissenschaftliche Zwecke werden ausschließlich pseudonymisierte Daten verwendet. Weitere Informationen zum Datenschutz auf openHPI finden Sie <a href=\"https://open.hpi.de/pages/data-protection\">hier</a>."
 
   utter_contact_question:
     - text: "Sollten Sie auf unseren openHPI-Seiten und unter den 'Häufig gestellten Fragen' keine Antworten auf Ihre Frage gefunden haben, so bitten wir Sie, uns über den orangefarbenen Helpdesk Knopf auf der rechten Bildschirmseite zu kontaktieren. Sollte es um inhaltliche Fragen zum Kurs gehen, so bitten wir Sie, zunächst im Kursforum nachzuschauen, ob schon andere Lernende ein ähnliches Problem hatten bzw. selbst dort Fragen zu posten."
