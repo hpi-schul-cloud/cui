@@ -18,6 +18,7 @@
 - please give me a confirmation of participation
 - I need a certificate
 - I want a confirmation
+- Does OpenWHO offer certificates? 
 
 ## intent:account_creation_question
 - how do I create a profile? 
@@ -48,6 +49,10 @@
 - can I use openwho on IOS?
 - is there an openwho app? 
 - how to use openwho on my mobile
+- Does OpenWHO offer a mobile App? 
+- Do you have a mobile App? 
+- Do you offer an App? 
+- Can I use OpenWHO on my phone? 
 
 ## intent:confirmation_of_participation_download_question
 - how can I download a confirmation of participation?
@@ -75,3 +80,65 @@
 - can I use my who account for openwho? 
 - do I need a new account for openwho or can I use my who account? 
 - can I use my who credentials
+
+## intent:whats_openwho_question
+- What is OpenWHO?
+- Please explain openwho.
+- What exactly is openwho? 
+- What is this website? 
+- What can I do here? 
+- What is the purpose of OpenWHO? 
+
+## intent:why_openwho_question
+- Why OpenWHO? 
+- Why was OpenWHO created? 
+
+## intent:openwho_access_question
+- Who can access OpenWHO courses?
+- Are there access restrictions for OpenWHO courses?
+- Who is allowed to join OpenWHO? 
+- Can anyone use OpenWHO? 
+- Can everybody join OpenWHO? 
+- Can anybody use OpenWHO? 
+- Can everybody use OpenWHO? 
+- Can anyone join OpenWHO? 
+
+## intent:course_type_question
+- What type of courses does OpenWHO offer?
+- What are the different course types? 
+- What does OpenWHO offer? 
+- Are there different course levels? 
+- Are all courses the same? 
+- What are the right courses for me? 
+- What are course differences? 
+
+## intent:course_structure_question
+- How are courses structured?
+- What materials are used in a course?
+- What does a course contain? 
+- How does a course work? 
+- What can I expect from a course? 
+
+## intent:past_outbreak_question
+- What has OpenWHO done during the past outbreaks? 
+- Which outbreaks did OpenWHO support? 
+- Did OpenWHO help with past outbreaks? 
+
+## intent:ongoing_outbreak_question
+- How does OpenWHO support ongoing outbreaks?
+- What does OpenWHO do for current outbrekas?
+- How does OpenWHO help with outbreaks? 
+
+## intent:keynumbers_question
+- What are the key numbers?
+- Please give me the key numbers.
+- Do you have key numbers for OpenWHO? 
+- How many users does OpenWHO have? 
+- Where do the OpenWHO users come from? 
+
+## intent:offered_languages_question
+- What languages does OpenWHO offer? 
+- In what languages can I use OpenWHO? 
+- What languages are used? 
+- What languages do you offer? 
+- In what languages are the courses translated? 

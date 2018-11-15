@@ -9,5 +9,14 @@
     "mobile_device_question": "Do you want to know about our Apps and mobile content?",
     "password_reset_question": "Do you need help resetting or retrieving your password?",
     "technical_difficulties_question": "Do you have technical difficulties?",
-    "who_credentials_usage_question": "Do you want to know if you can use your WHO credentials to log in?"
+    "who_credentials_usage_question": "Do you want to know if you can use your WHO credentials to log in?",
+    "whats_openwho_question": "Do you want to know what OpenWHO is?",
+    "why_openwho_question": "Do you want to know why you should use OpenWHO?",
+    "openwho_access_question": "Do you want to know if there are any access restrictions?",
+    "course_type_question": "Do you want to know more about the different course types?",
+    "course_structure_question": "Do you want to know more about the course structure?",
+    "past_outbreak_question": "Do you want to know which past outbreaks were supported by OpenWHO?",
+    "ongoing_outbreak_question": "Do you want to know how ongoing outbreaks are supported by OpenWHO?",
+    "keynumbers_question": "Do you want to know the key numbers?",
+    "offered_languages_question": "Do you want to know which languages are offered on OpenWHO?"
 }
