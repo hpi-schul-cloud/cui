@@ -337,6 +337,7 @@
 - Dürfen die Videos und Folien weiterverwendet werden? 
 - Kann ich die Folien für meinen Unterricht benutzen? 
 - Kann ich die Videos weiterbenutzen? 
+- Kann ich die Lerninhalte weiterverwenden? 
 
 ## intent:personal_data_question
 - Was geschieht mit meinen personenbezogenen Daten?
