@@ -96,7 +96,7 @@ templates:
     - text: "Alright, I won't."
   
   utter_about_moocs_question:
-    - text: "We have prepared a basic introduction into MOOCs for you: https://open.hpi.de/pages/mooc?locale=en"
+    - text: "We have prepared a basic introduction into MOOCs for you <a href=\"https://open.hpi.de/pages/mooc?locale=en\">here</a>."
 
   utter_registration_restrictions_question:
     - text: "There are no access restrictions. Anyone can register independent of education level, grade average, age, nationality or company affiliation."
@@ -123,7 +123,7 @@ templates:
     - text: "As learning materials we usually provide short videos explaining the particular topic. Supplementary literature information can be integrated on the specific course pages or offered as PDF-downloads. If necessary, other learning materials can be offered as well. Besides, the learning experience can be enhanced by active participation in discussion fora, either posting your questions or answer and support other course participants."
 
   utter_searching_course_materials_question:
-    - text: "From the course list or your dashboard you reach the individual courses. There you will find the materials in the tab 'Course Content'. \nLook here for a more detailed description: https://open.hpi.de/pages/faq?locale=en#where-can-i-find-the-course-materials"
+    - text: "From the course list or your dashboard you reach the individual courses. There you will find the materials in the tab 'Course Content'. \nFor a more detailed description look <a href=\"https://open.hpi.de/pages/faq?locale=en#where-can-i-find-the-course-materials\">here</a>."
 
   utter_searching_archive_mode_question:
     - text: "After a course has ended you can still access the learnings (videos, self-tests, etc.), but you cannot take the exam and get a certificate anymore. This is called the self-paced or archive mode. You can find all courses that are available in the self-paced mode below the current and upcoming courses on the course website."
@@ -132,7 +132,7 @@ templates:
     - text: "After the end of a course, the course contents remain available on the platform. You can follow the course in the self-paced mode which is explained above. The discussion forum is closed after the course ends and remains in read-only mode."
     
   utter_homework_test_difference_question:
-    - text: "Self tests are short multiple-choice quizzes which are directly linked to a video or a text. The purpose of a self test is to self-control the understanding of the just required knowledge. The self-tests can be repeated as often as desired and they do not count for the record of achievement. \nHomework, in contrary, has to be finished by a certain fixed (usually weekly) deadline and is precondition for receiving a record of achievement. For further information, please look here: https://open.hpi.de/pages/faq?locale=en#please-explain-self-tests-and-homework-what-is-the-difference-between-these-two"
+    - text: "Self tests are short multiple-choice quizzes which are directly linked to a video or a text. The purpose of a self test is to self-control the understanding of the just required knowledge. The self-tests can be repeated as often as desired and they do not count for the record of achievement. \nHomework, in contrary, has to be finished by a certain fixed (usually weekly) deadline and is precondition for receiving a record of achievement. For further information, please look <a href=\"https://open.hpi.de/pages/faq?locale=en#please-explain-self-tests-and-homework-what-is-the-difference-between-these-two\">here</a>."
 
   utter_multiple_choice_grading_question:
     - text: "Exercises and examinations consist of multiple-choice tasks (with exactly one correct answer) and multiple-answer tasks (with one or more correct solutions). For multiple-choice questions you can receive either full points if you answered correctly or none if you did not. For multiple-answer questions the case is a little more complicated. The number of achievable points is divided by the number of correct answers. The result of this division forms the base value. For each correct answer this base value is added to the sum of points that you’ll receive for this question. For each incorrect answer, the base value is subtracted from your result. If the total result is negative, you’ll receive 0 points."
@@ -144,7 +144,7 @@ templates:
     - text: "The sum of all points is displayed on the record of achievement. Furthermore, we show the percentage of the maximum number of points. Decimal places are floored. Therefore, if a participant has received 49.9 % of the maximum points he is not eligible for a record of achievement."
 
   utter_peer_assessment_question:
-    - text: "A peer assessment is a special type of assignment which is used in some courses, in particular for some topics, for which automatic grading is not possible or for which it makes sense to reflect about one's peers' work as part of the learning process. The submission phase can either be done individually or in a team (team peer assessment). You find more information about peer assessment here: https://open.hpi.de/pages/p_a?locale=en"
+    - text: "A peer assessment is a special type of assignment which is used in some courses, in particular for some topics, for which automatic grading is not possible or for which it makes sense to reflect about one's peers' work as part of the learning process. The submission phase can either be done individually or in a team (team peer assessment). You can find more information about peer assessments <a href=\"https://open.hpi.de/pages/p_a?locale=en\">here</a>."
 
   utter_forum_usage_question:
     - text: "While a course is running, you can visit the course forum to ask questions and discuss the course content with your peers and the course instructors. Please consult the discussion forum rules beforehand. These contain important guidelines and tips for posting threads."
@@ -180,7 +180,7 @@ templates:
     - text: "You may use the provided learning material for educational purposes. The openHPI courses are licensed under the CC BY-NC-SA licence. That means you are free to copy and redistribute the material for non-commercial purposes and by naming the author."
 
   utter_personal_data_question:
-    - text: "Hasso Plattner Institute is subject to the Federal Data Protection Act, as the servers with the user data are situated in Germany. Hasso Plattner Institute does not transfer any personal data to third parties. For platform improvement and research reasons only, expressly pseudonymized data is used. Further information on data protection and privacy on openHPI can be found here: https://open.hpi.de/pages/data-protection?locale=en"
+    - text: "Hasso Plattner Institute is subject to the Federal Data Protection Act, as the servers with the user data are situated in Germany. Hasso Plattner Institute does not transfer any personal data to third parties. For platform improvement and research reasons only, expressly pseudonymized data is used. Further information on data protection and privacy on openHPI can be found <a href=\"https://open.hpi.de/pages/data-protection?locale=en\">here</a>."
 
   utter_contact_question:
     - text: "If you didn't find any answers to your questions on our website and in the FAQs please contact us via the orange Helpdesk button on the right side of your screen. If you have any questions regarding the course content, please visit the course forum and have a look if other learners have encountered a similar problem or ask your question there."
