@@ -1,5 +1,7 @@
 # A Conversational UI Prototype
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/schul-cloud/cui.svg)](https://greenkeeper.io/)
+
 During our university masters seminar we build a chat bot prototype to enhance the user experience on the MOOC platform [Open SAP](https://open.sap.com/). In the following we will give a short overview over our experiment including how to train models and use the conversational UI prototype. 
 
 
