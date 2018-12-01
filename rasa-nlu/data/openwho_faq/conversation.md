@@ -50,6 +50,9 @@
 - do it
 - okay
 - ok
+- alright
+- perfect
+- of course
 
 ## intent:conversation_cancel
 - no
