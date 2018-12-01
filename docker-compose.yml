@@ -31,7 +31,7 @@ services:
     build:
       context: ./rasa-nlu
       dockerfile: Dockerfile
-    command: ["python", "-m", "rasa_nlu.server", "--path", "./projects", "-c", "./config.yml"]
+    command: ["python", "-m", "rasa_nlu.server", "--path", "./projects", "-c", "./config.yml", "--endpoints", "./endpoints.yml"]
     ports:
       - "5000:5000"
     volumes:

@@ -76,10 +76,10 @@ templates:
     - text: "Alright, I won't."
     
   utter_payment_question:
-    - text: "No, all OpenWHO courses are free and open to anyone wishing to register."
+    - text: "All OpenWHO courses are free and open to anyone wishing to register."
   
   utter_timelimit_question:
-    - text: "No, OpenWHO courses are self-paced. You can take as much time as you need to complete a course."
+    - text: "OpenWHO courses are self-paced. You can take as much time as you need to complete a course."
   
   utter_confirmation_of_participation_question:
     - text: "OpenWHO offers certificates of completion for certain courses. This information is available on the course specific landing page."
@@ -106,7 +106,7 @@ templates:
     - text: "In case of technical difficulties, please send us a message through the help desk explaining the problem. We will get back to you as soon as possible."
 
   utter_who_credentials_usage_question:
-    - text: "Yes, you can use your WHO credentials to access OpenWHO courses. However, if you have issues logging in using your WIMS account, please create an account with your personal email address."
+    - text: "You can use your WHO credentials to access OpenWHO courses. However, if you have issues logging in using your WIMS account, please create an account with your personal email address."
 
   utter_whats_openwho_question:
     - text: "OpenWHO is WHO’s new interactive, web-based, knowledge-transfer platform offering online courses to improve the response to health emergencies.\nOpenWHO enables the Organization and its key partners to transfer life-saving knowledge to large numbers of frontline responders around the world."
