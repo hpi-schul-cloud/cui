@@ -1,1 +1,2 @@
-rasa_core==0.9.5
+rasa_core==0.10.0
+ruamel.yaml==0.15.66

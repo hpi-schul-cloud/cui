@@ -5,6 +5,7 @@ from gevent.pywsgi import WSGIServer
 from server import create_app
 from rasa_core import utils
 from rasa_core.interpreter import RasaNLUHttpInterpreter
+from rasa_core.utils import EndpointConfig
 
 utils.configure_colored_logging("DEBUG")
 
@@ -12,11 +13,12 @@ user_input_dir = "/app/nlu/" + os.environ["RASA_NLU_PROJECT_NAME"] + "/user_inpu
 if not os.path.exists(user_input_dir):
     os.makedirs(user_input_dir)
 
+endpoint = EndpointConfig(env["RASA_NLU_SERVER_ADDRESS"], token=env["RASA_NLU_SERVER_TOKEN"])
+
 nlu_interpreter = RasaNLUHttpInterpreter(
-    model_name = env["RASA_NLU_MODEL_NAME"],
-    token = env["RASA_NLU_SERVER_TOKEN"],
-    server = env["RASA_NLU_SERVER_ADDRESS"],
-    project_name = env["RASA_NLU_PROJECT_NAME"])
+    env["RASA_NLU_MODEL_NAME"],
+    endpoint,
+    env["RASA_NLU_PROJECT_NAME"])
 
 app = create_app(
     model_directory = env["RASA_CORE_MODEL_PATH"],

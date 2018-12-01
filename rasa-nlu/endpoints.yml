@@ -1,3 +1,3 @@
 model:
-  url: http://rasa-nlu:5000/data
+  url: http://rasa-nlu:5000/
   # the url defines from where the rasa_nlu.server retrieves the training data
