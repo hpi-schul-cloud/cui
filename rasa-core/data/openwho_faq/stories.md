@@ -54,3 +54,40 @@
 ## who credentials usage question answer
 * who_credentials_usage_question
     - utter_who_credentials_usage_question
+
+## whats openwho question answer
+* whats_openwho_question
+    -utter_whats_openwho_question
+    
+## why openwho question answer
+* why_openwho_question
+    -utter_why_openwho_question
+    
+## openwho access question answer
+* openwho_access_question
+    -utter_openwho_access_question
+    
+## course type question answer
+* course_type_question
+    -utter_course_type_question
+    
+## course structure question answer
+* course_structure_question
+    -utter_course_structure_question
+    
+## past outbreak question answer
+* past_outbreak_question
+    -utter_past_outbreak_question
+    
+## ongoing outbreak question answer
+* ongoing_outbreak_question
+    -utter_ongoing_outbreak_question
+    
+## keynumbers question answer
+* keynumbers_question
+    -utter_keynumbers_question
+    
+## offered languages question answer
+* offered_languages_question
+    -utter_offered_languages_question
+    
