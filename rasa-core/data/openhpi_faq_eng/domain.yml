@@ -1,0 +1,186 @@
+intents:
+  - conversation_greet
+  - conversation_goodbye
+  - conversation_thank_you
+  - conversation_confirm
+  - conversation_cancel
+  - about_moocs_question
+  - registration_restrictions_question
+  - costs_question
+  - languages_question
+  - technical_requirements_question
+  - course_format_question
+  - course_organization_question
+  - time_needed_question
+  - learning_materials_question
+  - searching_course_materials_question
+  - searching_archive_mode_question
+  - after_course_ends_question
+  - homework_test_difference_question
+  - multiple_choice_grading_question
+  - final_result_calculation_question
+  - point_rounding_question
+  - peer_assessment_question
+  - forum_usage_question
+  - record_of_achievement_question
+  - qualified_certificate_booktime_question
+  - proctoring_criteria_question
+  - course_discontinue_question
+  - course_registration_time_question
+  - registration_activation_problem_question
+  - reset_password_question
+  - extend_deadlines_question
+  - relaxed_learning_question
+  - material_usage_question
+  - personal_data_question
+  - contact_question
+
+actions:
+  - utter_conversation_greet
+  - utter_conversation_goodbye
+  - utter_conversation_offer_help
+  - utter_conversation_youre_welcome
+  - utter_conversation_canceled
+  - utter_about_moocs_question
+  - utter_registration_restrictions_question
+  - utter_costs_question
+  - utter_languages_question
+  - utter_technical_requirements_question
+  - utter_course_format_question
+  - utter_course_organization_question
+  - utter_time_needed_question
+  - utter_learning_materials_question
+  - utter_searching_course_materials_question
+  - utter_searching_archive_mode_question
+  - utter_after_course_ends_question
+  - utter_homework_test_difference_question
+  - utter_multiple_choice_grading_question
+  - utter_final_result_calculation_question
+  - utter_point_rounding_question
+  - utter_peer_assessment_question
+  - utter_forum_usage_question
+  - utter_record_of_achievement_question
+  - utter_qualified_certificate_booktime_question
+  - utter_proctoring_criteria_question
+  - utter_course_discontinue_question
+  - utter_course_registration_time_question
+  - utter_registration_activation_problem_question
+  - utter_reset_password_question
+  - utter_extend_deadlines_question
+  - utter_relaxed_learning_question
+  - utter_material_usage_question
+  - utter_personal_data_question
+  - utter_contact_question
+
+templates:
+  utter_conversation_greet:
+    - text: "Hello."
+    - text: "Hi!"
+    - text: "Hey!"
+
+  utter_conversation_goodbye:
+    - text: "Good bye."
+    - text: "Have a nice day."
+    - text: "Bye!"
+
+  utter_conversation_offer_help:
+    - text: "How can I help you?"
+    - text: "What can I do for you?"
+
+  utter_conversation_youre_welcome:
+    - text: "You're welcome."
+    - text: "It's always nice to be of help."
+
+  utter_conversation_canceled:
+    - text: "Okay, I will not do that."
+    - text: "Alright, I won't."
+  
+  utter_about_moocs_question:
+    - text: "We have prepared a basic introduction into MOOCs for you: https://open.hpi.de/pages/mooc?locale=en"
+
+  utter_registration_restrictions_question:
+    - text: "There are no access restrictions. Anyone can register independent of education level, grade average, age, nationality or company affiliation."
+
+  utter_costs_question:
+    - text: "The courses are offered entirely for free."
+
+  utter_languages_question:
+    - text: "Courses are either offered in German or in English. You will find the appropriate information on the course detail page."
+
+  utter_technical_requirements_question:
+    - text: "Course participation is fully web-based. We recommend to keep your web browser updated to the latest version. In some courses additional software is needed, course participants are then informed about it.\nThe openHPI mobile apps for Android and iOS can be downloaded for free in the Google Play Store or in the iTunes App Store."
+
+  utter_course_format_question:
+    - text: "There are three different course formats on openHPI: \nRegular courses last for seven weeks including the week of the final exam. \nHands-on courses last four weeks and focus on direct application of acquired competences (e.g. programming languages). \nWorkshops last two weeks emphasizing a very specific topic. Workshop participants can acquire no record of achievement, but a graded confirmation of participation."
+
+  utter_course_organization_question:
+    - text: "Typically for MOOCs, courses on our openHPI learning platform come with a fix start and end date and follow a weekly interval. The whole learning material for a learning week -videos, accompanying literature, self tests and homework - are published on Saturdays prior a course week on openHPI. Course participants can access these learning materials and self tests at any time which is suitable for them, and as often as needed during this week and even after the course has finished. They do not need to sit at a fixed time in front of their screens. \nHowever, for all those collecting points for a record of achievement, they need to finish the graded weekly home work and exams. For these there are certain deadlines that need to be followed during an active course. Course participants are informed in good time about those deadline via course announcements."
+
+  utter_time_needed_question:
+    - text: "The amount of work involved depends on one's prior knowledge and is estimated at 3-6 hours per week. This involves working with the videos and the course material provided, checking one's understanding of the curriculum with a self-test, completing the homework and actively participating in the discussion forums."
+
+  utter_learning_materials_question:
+    - text: "As learning materials we usually provide short videos explaining the particular topic. Supplementary literature information can be integrated on the specific course pages or offered as PDF-downloads. If necessary, other learning materials can be offered as well. Besides, the learning experience can be enhanced by active participation in discussion fora, either posting your questions or answer and support other course participants."
+
+  utter_searching_course_materials_question:
+    - text: "From the course list or your dashboard you reach the individual courses. There you will find the materials in the tab 'Course Content'. \nLook here for a more detailed description: https://open.hpi.de/pages/faq?locale=en#where-can-i-find-the-course-materials"
+
+  utter_searching_archive_mode_question:
+    - text: "After a course has ended you can still access the learnings (videos, self-tests, etc.), but you cannot take the exam and get a certificate anymore. This is called the self-paced or archive mode. You can find all courses that are available in the self-paced mode below the current and upcoming courses on the course website."
+
+  utter_after_course_ends_question:
+    - text: "After the end of a course, the course contents remain available on the platform. You can follow the course in the self-paced mode which is explained above. The discussion forum is closed after the course ends and remains in read-only mode."
+    
+  utter_homework_test_difference_question:
+    - text: "Self tests are short multiple-choice quizzes which are directly linked to a video or a text. The purpose of a self test is to self-control the understanding of the just required knowledge. The self-tests can be repeated as often as desired and they do not count for the record of achievement. \nHomework, in contrary, has to be finished by a certain fixed (usually weekly) deadline and is precondition for receiving a record of achievement. For further information, please look here: https://open.hpi.de/pages/faq?locale=en#please-explain-self-tests-and-homework-what-is-the-difference-between-these-two"
+
+  utter_multiple_choice_grading_question:
+    - text: "Exercises and examinations consist of multiple-choice tasks (with exactly one correct answer) and multiple-answer tasks (with one or more correct solutions). For multiple-choice questions you can receive either full points if you answered correctly or none if you did not. For multiple-answer questions the case is a little more complicated. The number of achievable points is divided by the number of correct answers. The result of this division forms the base value. For each correct answer this base value is added to the sum of points that you’ll receive for this question. For each incorrect answer, the base value is subtracted from your result. If the total result is negative, you’ll receive 0 points."
+
+  utter_final_result_calculation_question:
+    - text: "A graded record of achievement is received by those who have earned more than 50% of the maximum number of points for the sum of all homework and the final exam. In the workshops and in the hands-on courses this may be handled differently because you often have only one graded exercise in these courses."
+
+  utter_point_rounding_question:
+    - text: "The sum of all points is displayed on the record of achievement. Furthermore, we show the percentage of the maximum number of points. Decimal places are floored. Therefore, if a participant has received 49.9 % of the maximum points he is not eligible for a record of achievement."
+
+  utter_peer_assessment_question:
+    - text: "A peer assessment is a special type of assignment which is used in some courses, in particular for some topics, for which automatic grading is not possible or for which it makes sense to reflect about one's peers' work as part of the learning process. The submission phase can either be done individually or in a team (team peer assessment). You find more information about peer assessment here: https://open.hpi.de/pages/p_a?locale=en"
+
+  utter_forum_usage_question:
+    - text: "While a course is running, you can visit the course forum to ask questions and discuss the course content with your peers and the course instructors. Please consult the discussion forum rules beforehand. These contain important guidelines and tips for posting threads."
+
+  utter_record_of_achievement_question:
+    - text: "After successful completion of an openHPI course you can receive a graded record of achievement from the Hasso Plattner Institute. Successful participation means that you earn at least 50% of the sum of maximum possible points for homework and final exam. The final exam counts 50%. The record of achievement will be issued in the name you used to register at openHPI. \nIf you have worked through at least 50% of the course material, you receive a confirmation of participation. \nFurthermore, you can book a qualified certificate contains the participant’s photo and a supplement with detailed course information. The participant agrees to be proctored via webcam during the graded exercises and exams. With the help of this online proctoring technology, we determine that the registered user is taking the assignments and the final exam in person."   
+
+  utter_qualified_certificate_booktime_question:
+    - text: "Registration to the qualified certificate must occur after the first graded exercise - at the latest. Normally, this is within the second week of the course. After the deadline for the second graded exercise has passed, registration for a monitored exam is no longer possible."
+
+  utter_proctoring_criteria_question:
+    - text: "Make sure that only the registered participant is in front of the camera. \nMake sure that only one person is in front of the camera. \nMake sure that the camera is not covered or turned off. \nMake sure that you stay in front of the camera while you're working on the weekly assignment or final exam. \nMake sure that there is no light source behind you. Your face will appear too dark to be recognized by the camera otherwise. \nRemove any accessories that cover parts of your face (such as a hat or sunglasses). Reading glasses are allowed. \nDo not present any photos or pictures to the camera. \nClose all other tabs except for the weekly assignment or final exam. \nClose all other applications that might interfere with your webcam."
+
+  utter_course_discontinue_question:
+    - text: "Discontinuation of a course is possible at any time. You can unsubscribe from a course by using on the course detail page the button 'Un-enroll'. But this is not essential."
+
+  utter_course_registration_time_question:
+    - text: "As a rule, course registration should take place before a course has begun - or at least in the first week of the course. Starting a course late means it becomes increasingly difficult to earn the number of points necessary for a graded record of achievement. You can, however, sign up for a course at any time and receive access to all material. After a course is over it is no longer possible to obtain a record of achievement as the deadlines have already passed."
+
+  utter_registration_activation_problem_question:
+    - text: "To finish your registration on openHPI, you will receive an e-mail in which you will be prompted to confirm that you are the owner of the email address. \nIf you don't receive a confirmation email, please check your spam folder. You can request a new confirmation email logging in with your access data previously selected. \nIf your account is already confirmed but you can not log in, please make sure you have JavaScript enabled and accept cookies from our site. If it still does not work, please use the 'Reset Password' function in the log in form. \nPlease contact us per email at: openhpi-register@hpi.unipotsdam.de. We will be glad to assist you."
+
+  utter_reset_password_question:
+    - text: "In the login form you will find on the bottom the password entry field as a small link: 'Forgot your password?'. This will take you to another form where you must enter the email address that you used for your registration at openHPI. \nAfter submitting the form, you will receive an email address. This email contains a link that takes you to the actual password reset. \nAfter clicking the link you have to enter your new password and confirm it. Now you can log in."
+
+  utter_extend_deadlines_question:
+    - text: "Unfortunately, we can't extend the deadlines for homework completion. If you're not able to turn in the homework within the course week, you will need to earn more points in the following weeks to reach the total number of points necessary for a successful course outcome. In many courses we offer bonus exercises with which you can compensate missing points."
+
+  utter_relaxed_learning_question:
+    - text: "You can participate in the areas of the course based on your own interests and possibilities. There is no obligation to complete the homework and earn a record of achievement. But, we do welcome every active contribution to the discussion forums."
+
+  utter_material_usage_question:
+    - text: "You may use the provided learning material for educational purposes. The openHPI courses are licensed under the CC BY-NC-SA licence. That means you are free to copy and redistribute the material for non-commercial purposes and by naming the author."
+
+  utter_personal_data_question:
+    - text: "Hasso Plattner Institute is subject to the Federal Data Protection Act, as the servers with the user data are situated in Germany. Hasso Plattner Institute does not transfer any personal data to third parties. For platform improvement and research reasons only, expressly pseudonymized data is used. Further information on data protection and privacy on openHPI can be found here: https://open.hpi.de/pages/data-protection?locale=en"
+
+  utter_contact_question:
+    - text: "If you didn't find any answers to your questions on our website and in the FAQs please contact us via the orange Helpdesk button on the right side of your screen. If you have any questions regarding the course content, please visit the course forum and have a look if other learners have encountered a similar problem or ask your question there."

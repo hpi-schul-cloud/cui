@@ -53,6 +53,14 @@ These instructions will get you a copy of the project up and running on your loc
     ```sh
     git clone git@github.com:schul-cloud/cui.git
     ```
+1. Adjust the project-names in  docker-compose.yml (line 10-14).
+   ```sh
+    # command: python -m rasa_core.server --debug -d model/*PROJECT-NAME*
+    environment:
+      - RASA_CORE_MODEL_PATH=./model/*PROJECT-NAME*
+      - RASA_CORE_QUESTIONS_PATH=./data/*PROJECT-NAME*/intent_questions.json
+      - RASA_NLU_PROJECT_NAME=*PROJECT-NAME*
+    ```
 1. Build the images by going to the root directory and execute the following command.
     ```sh
     docker-compose build
@@ -74,6 +82,22 @@ These instructions will get you a copy of the project up and running on your loc
     ```
     ```sh
     docker-compose run rasa-nlu python -m rasa_nlu.train -c config.yml -d data/openwho_faq -o projects --project openwho_faq
+    ```
+
+    For OpenHPI (English):
+    ```sh
+    docker-compose run rasa-core python -m rasa_core.train -d data/openhpi_faq_eng/domain.yml -s data/openhpi_faq_eng/stories.md -o model/openhpi_faq_eng --epochs 200
+    ```
+    ```sh
+    docker-compose run rasa-nlu python -m rasa_nlu.train -c config.yml -d data/openhpi_faq_eng -o projects --project openhpi_faq_eng
+    ```
+
+    For OpenHPI (German):
+    ```sh
+    docker-compose run rasa-core python -m rasa_core.train -d data/openhpi_faq_de/domain.yml -s data/openhpi_faq_de/stories.md -o model/openhpi_faq_de --epochs 200
+    ```
+    ```sh
+    docker-compose run rasa-nlu python -m rasa_nlu.train -c config.yml -d data/openhpi_faq_de -o projects --project openhpi_faq_de
     ```
 1. Start the containers.
     ```sh
