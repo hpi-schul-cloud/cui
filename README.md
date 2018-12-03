@@ -99,6 +99,7 @@ These instructions will get you a copy of the project up and running on your loc
     ```sh
     docker-compose run rasa-nlu python -m rasa_nlu.train -c config.yml -d data/openhpi_faq_de -o projects --project openhpi_faq_de
     ```
+
 1. Start the containers.
     ```sh
     docker-compose up
