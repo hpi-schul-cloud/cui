@@ -15,10 +15,14 @@
 ## intent:registration_restrictions_question
 - Wer kann sich für openHPI registrieren? 
 - Wer darf openHPI benutzen?
-- wer darf openHPI nutzen? 
-- Was brauche ich um mich hier zu registrieren? 
+- wer darf openHPI nutzen?
+- Was brauche ich um mich hier zu registrieren?
 - Darf sich jeder registrieren?
-- Gibt es Einschränkungen für die Registrierung?  
+- Gibt es Einschränkungen für die Registrierung?
+- Ich möchte wissen wer sich registrieren darf.
+- Für wen ist OpenHPI gedacht? 
+- Darf ich OpenHPI nutzen? 
+- Darf jeder OpenHPI benutzen? 
 
 ## intent:costs_question
 - Kostet die Teilnahme an Kursen Geld?
@@ -28,6 +32,9 @@
 - Welche Zahlungsmöglichkeiten gibt es? 
 - Wie kann ich bezahlen? 
 - Ich habe kein Geld. 
+- Kann ich OpenHPI umsonst nutzen? 
+- Ich möchte nichts bezahlen. 
+- Welche Kurse sind umsonst? 
 
 ## intent:languages_question
 - In welchen Sprachen werden die Kurse angeboten?
@@ -36,6 +43,9 @@
 - Gibt es die Kurse auf Englisch?
 - Welche Sprachen sind verfügbar?
 - Welche Sprachen gibt es hier? 
+- Muss ich Englisch sprechen können? 
+- Muss ich Deutsch sprechen können? 
+- Ich bin mir nicht sicher welche Sprachen angeboten werden. 
 
 ## intent:technical_requirements_question
 - Welche technischen Vorraussetzungen gibt es?
@@ -55,6 +65,9 @@
 - Was ist der Unterschied zwischen den Kursarten?
 - Gibt es unterschiedliche Kurse? 
 - Was sind die Unterschiede zwischen den Kursen? 
+- Wie unterscheiden sich die Kurstypen? 
+- Ich möchte mehr über die verschiedenen Kurse wissen. 
+- Welche Unterschiede gibt es zwischen den Kursarten?
 
 ## intent:course_organization_question
 - Wie ist ein Kurs organisiert?
@@ -154,7 +167,6 @@
 - Wie werden Punkte bei Multiple Choice vergeben? 
 - Wie funktionieren die Punkte bei Multiple Choice Tests? 
 
-
 ## intent:final_result_calculation_question
 - Wodraus setzt sich die Endnote zusammen?
 - Wie wird die Endnote berechnet? 
@@ -171,6 +183,10 @@
 - Gibt es halbe Punkte?
 - Werden Punkte auf- oder abgerundet? 
 - Gibt es nur ganze Punkte? 
+- Bekomme ich auch halbe Punkte in den Tests? 
+- Werden Teilpunkte gerundet? 
+- Gibt es nur ganze Punkte? 
+- Was wir mit halben Punkten in Hausaufgaben gemacht? 
 
 ## intent:peer_assessment_question
 - Was ist ein Peer Assessment?
@@ -181,6 +197,7 @@
 - Was genau ist ein Peer Assessment?
 - Wie läuft ein Peer Assessment ab? 
 - Ich verstehe das Peer Assessment nicht. 
+- Was passiert während eines Peer Assessments? 
 
 ## intent:forum_usage_question
 - Wie kann ich am Forum teilnehmen?
