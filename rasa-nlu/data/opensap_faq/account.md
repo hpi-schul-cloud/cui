@@ -35,6 +35,9 @@
 - is my sap user id confidential?
 - what do i need my sap user id for?
 - whats my sap user id?
+- I want to know my sap user id. 
+- Can you tell me my sap user id? 
+- Is my sap user id safe? 
 
 ## intent:account_change_email
 - how can i change my email address?
@@ -62,3 +65,5 @@
 - can you change it to [p.schmidt@sap.com](email)?
 - please change it to [max.mustermann@gmail.com](email)
 - make it [sadfsd+asdfds-asd@sadfm.sd.at](email)
+- it should be [sadfsd+asdfds-asd@sadfm.sd.at](email)
+- change it to [max.mustermann@gmail.com](email)

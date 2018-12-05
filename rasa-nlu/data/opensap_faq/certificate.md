@@ -20,6 +20,12 @@
 - How is award of achievement different from certification?
 - What is the difference between openSAP and SAP Learning Hub?
 - What is the difference between openSAP and SAP Education?
+- what is the difference from this to the learning hub? 
+- is this the same as the SAP Learning Hub? 
+- Is this the same as SAP Education? 
+- What is the difference from this to the SAP learning hub? 
+- How does OpenSAP differ from SAP Education and Learning Hub? 
+- How do the OpenSAP certificates differ from the SAP Education and learning hub certificates?
 
 ## intent:certificate_availability
 - When do I receive my Record of Achievement?
