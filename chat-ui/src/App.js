@@ -37,8 +37,8 @@ class App extends Component {
   getGreetingMessage() {
     var openwhoGreetingMessage = "Hello, I am your Helpdesk-Assistant. The topics I can help you with include, but are not limited to:\n-login\n-registration\n-confirmation email\n-enrollment/enroll\n-certificate\n-video/audio\n-subtitles\n-modules\nPlease describe your problem, or ask me something.";
     var openhpiEngGreetingMessage = "Hello, I am your Helpdesk-Assistant. The topics I can help you with include, but are not limited to:\n-login\n-registration\n-courses\n-tests/homeworks\n-certificate\nPlease describe your problem, or ask me something."
-  
-    return openhpiEngGreetingMessage;
+    var openhpiDeGreetingMessage = "Hallo, Ich bin dein Helpdesk-Assistent. Frag mich einfach etwas oder beschreib dein Problem. "
+    return openhpiDeGreetingMessage;
   }
 
   handleClick() {
