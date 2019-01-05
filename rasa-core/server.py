@@ -23,7 +23,7 @@ from rasa_core.agent import Agent
 from rasa_core.actions.action import UtterAction
 from rasa_core.channels.channel import UserMessage
 from rasa_core.events import UserUttered
-from rasa_core.channels.direct import CollectingOutputChannel
+from rasa_core.channels.channel import CollectingOutputChannel
 from rasa_core.interpreter import NaturalLanguageInterpreter
 from rasa_core.tracker_store import TrackerStore
 from rasa_core.trackers import DialogueStateTracker

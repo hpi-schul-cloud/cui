@@ -1,5 +1,5 @@
 from rasa_core.actions.forms import FormAction, EntityFormField, BooleanFormField
-from rasa_core.events import SlotSet
+from rasa_core_sdk.events import SlotSet
 
 class ActionEmailForm(FormAction):
 
