@@ -1,0 +1,36 @@
+language: de
+pipeline:
+  - name: SpacyNLP
+  - name: SpacyTokenizer
+  - name: RegexFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: char_wb
+    max_featurizes: 10000
+    max_ngram: 15
+    min_ngram: 2
+  - name: CRFEntityExtractor
+  - name: EntitySynonymMapper
+  - name: EmbeddingIntentClassifier
+    intent_tokenization_flag: true
+    intent_split_symbol: "+"
+  - name: DucklingHTTPExtractor
+    dimensions:
+      - time
+      - duration
+    locale: de_DE
+    timezone: Europe/Berlin
+    url: http://localhost:8001
+  - name: SpacyEntityExtractor
+    dimensions: ["PERSON", "LOC", "ORG", "PRODUCT"]
+policies:
+  - name: KerasPolicy
+    batch_size: 50
+    epochs: 200
+    max_training_samples: 300
+  - name: FallbackPolicy
+    fallback_action_name: action_default_fallback
+  - name: MemoizationPolicy
+    max_history: 5
+  - name: FormPolicy
+  - name: MappingPolicy
+

@@ -1,900 +1,968 @@
 <!DOCTYPE html>
-<!-- saved from url=(0021)https://open.sap.com/ -->
-<html lang="de" class=" desktop landscape js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+<!-- saved from url=(0034)https://schul-cloud.org/dashboard/ -->
+<html lang="de" class="gr__schul-cloud_org"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Übersicht - HPI Schul-Cloud - Deine digitale Lernumgebung</title>
+    <!--
+		01001000 01010000 01001001  01010011 01100011 01101000 01110101 01101100 00101101 01000011 01101100 01101111 01110101 01100100
+		 __  __  ____    ______      _____           __               ___            _____   ___                       __
+		/\ \/\ \/\  _`\ /\__  _\    /\  __`\        /\ \             /\_ \          /\  __`\/\_ \                     /\ \
+		\ \ \_\ \ \ \_\ \/_/\ \/    \ \,\_\_\    ___\ \ \___   __  __\//\ \         \ \ \/\_\//\ \     ___   __  __   \_\ \
+		 \ \  _  \ \ ,__/  \ \ \     \/_\___ \  /'___\ \  _ `\/\ \/\ \ \ \ \   ______\ \ \/_/_\ \ \   / __`\/\ \/\ \  /'_` \
+		  \ \ \ \ \ \ \/    \_\ \__    /\ \_\ \/\ \__/\ \ \ \ \ \ \_\ \ \_\ \_/\_____\\ \ \_\ \\_\ \_/\ \_\ \ \ \_\ \/\ \_\ \
+		   \ \_\ \_\ \_\    /\_____\   \ `\____\ \____\\ \_\ \_\ \____/ /\____\/_____/ \ \____//\____\ \____/\ \____/\ \___,_\
+		    \/_/\/_/\/_/    \/_____/    \/_____/\/____/ \/_/\/_/\/___/  \/____/         \/___/ \/____/\/___/  \/___/  \/__,_ /
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <script>
-    //<![CDATA[
-    window.gon = {};
-    gon.in_app = false;
-    //]]>
-  </script>
-  <meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible">
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport">
-  <link href="https://player.vimeo.com/" rel="preconnect">
-  <link href="https://player.vimeo.com/" rel="dns-prefetch">
-  <meta content="JdISH2e8gy37bHb_k6C_nB6B6Ur9NDob_e3QnLH4wTM" name="google-site-verification">
-  <meta name="csrf-param" content="authenticity_token">
-  <meta name="csrf-token" content="F6UQs3iq0NcQ/QbArvlcIg6RvjBSJEhl5D3bw3gnYHdgMEsy36KZZGG30ofyh+qITrL6M64JQIf/EAxgxLu8TQ==">
-  <title>openSAP-MOOCs für Unternehmen: überall, jederzeit und auf allen Geräten lernen! | openSAP</title>
-  <link href="https://open.sap.com/img/favicon/opensap_favicon.ico"
-    rel="shortcut icon" type="image/x-icon">
-  <link href="https://open.sap.com/web_manifest.json" rel="manifest">
-  <meta content="openSAP" name="apple-mobile-web-app-title">
-  <meta name="apple-itunes-app" content="app-id=1146510526">
-  <link rel="stylesheet" media="all" href="/assets/bootstrap-4c7301ad703cefa5545487ee100bfbd2d30b3576daa6a0a948210b33c3ca649e.css">
+		Mit Node, React und Feathers verknüpfst du eher die Sprache Javascript als Englisch? Du suchst ein junges Team, lockere Atmosphäre und flache Hierarchien? Dann schau dir unsere Stellen an: https://schul-cloud.org/community#jobs
+	-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#b10438">
+        <meta name="apple-mobile-web-app-title" content="HPI Schul-Cloud">
+        <meta name="theme-color" content="#b10438">
+        <meta name="application-name" content="HPI Schul-Cloud">
+        <meta name="X-Recruiting" content="Das Entwickler-Team der HPI Schul-Cloud sucht nach Verstärkung! Schaut doch mal nach unseren Stellen: https://schul-cloud.org/community#jobs">
+        <link rel="mask-icon" href="https://schul-cloud.org/images/logo/safari-pinned-tab.svg" color="#b10438">
+        <link rel="apple-touch-icon" href="https://schul-cloud.org/images/logo/app-icon-512.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="https://schul-cloud.org/images/logo/app-icon-120.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="https://schul-cloud.org/images/logo/app-icon-152.png">
+        <link rel="apple-touch-icon" sizes="167x167" href="https://schul-cloud.org/images/logo/app-icon-167.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://schul-cloud.org/images/logo/app-icon-180.png">
+        <link rel="icon" type="image/png" sizes="48x48" href="https://schul-cloud.org/images/logo/favicon-48.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://schul-cloud.org/images/logo/favicon-32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://schul-cloud.org/images/logo/favicon-16.png">
+        <link rel="manifest" href="https://schul-cloud.org/images/manifest.json">
+
+        <link rel="preload" href="https://schul-cloud.org/fonts/ptsans/ptsans-regular.woff" as="font" type="font/woff" crossorigin="">
+        <link rel="preload" href="https://schul-cloud.org/fonts/ptsans/ptsans-bold.woff" as="font" type="font/woff" crossorigin="">
+        <link rel="preload" href="https://schul-cloud.org/fonts/ptsans/ptsans-italic.woff" as="font" type="font/woff" crossorigin="">
+        <link rel="preload" href="https://schul-cloud.org/vendor-optimized/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0" as="font" type="font/woff" crossorigin="">
+          <link rel="stylesheet" media="all" href="/assets/bootstrap-4c7301ad703cefa5545487ee100bfbd2d30b3576daa6a0a948210b33c3ca649e.css">
   <link rel="stylesheet" media="all" href="/assets/application_opensap-3f79a209d6cf4e1b92ad20d2491a7b1b4792767750c5a573d3ae537ea567e43f.css">
-  <script src="/assets/application-55da619ea34b63a376aec8130f5b8dcd170b3cd4f42e864e0340117c90fb5a09.js"></script>
-  <script src="/assets/xikolo-locale-de-74e8ba76d7f67c6143dd8fbafe11a62455a6bf999782d5d57df08fc1e62341c1.js"></script>
-  <script>
-    //<![CDATA[
-    jQuery.timeago.settings.lang = "de";
-    //]]>
-  </script>
-  <script>
-    I18n.defaultLocale = "en";
-    I18n.locale = "de";
-    I18n.brand = "opensap";
-  </script>
-  <style type="text/css">
-    .inside-channel--enterprise {
-      --primary-color: #fbab00;
-    }
+        <link rel="stylesheet" href="./Übersicht - HPI Schul-Cloud - Deine digitale Lernumgebung_files/ptsans.css">
+        <link rel="stylesheet" href="./Übersicht - HPI Schul-Cloud - Deine digitale Lernumgebung_files/base.css">
+        <link rel="stylesheet" href="./Übersicht - HPI Schul-Cloud - Deine digitale Lernumgebung_files/loggedin.css">
+        <link rel="stylesheet" href="./Übersicht - HPI Schul-Cloud - Deine digitale Lernumgebung_files/feedback-button.css">
+        <link rel="stylesheet" href="./Übersicht - HPI Schul-Cloud - Deine digitale Lernumgebung_files/introjs.min.css">
+        <noscript><style>
+            .section-title,
+            #main-content,
+            footer
+            {
+                opacity: 1;
+            }
+        </style></noscript>
+        <link rel="stylesheet" href="./Übersicht - HPI Schul-Cloud - Deine digitale Lernumgebung_files/dashboard.css">
 
-    .inside-channel--thought-leaders {
-      --primary-color: #008fd3;
-    }
-  </style>
-  <meta content="{&quot;brand&quot;:&quot;opensap&quot;,&quot;site_name&quot;:&quot;openSAP&quot;,&quot;ui_primary_color&quot;:&quot;#F0AB00&quot;,&quot;default_course_list_mode&quot;:&quot;columns&quot;,&quot;on_demand&quot;:true,&quot;imagecrop_url&quot;:null,&quot;auto_translate_courses&quot;:null,&quot;auto_translate_languages&quot;:null}"
-    name="site-config">
-  <meta content="[]" name="enabled-features">
-  <meta content="{}" name="user-features">
-</head>
+        <script type="text/javascript" async="" defer="" src="./Übersicht - HPI Schul-Cloud - Deine digitale Lernumgebung_files/piwik.js"></script><script>!function(){if('PerformanceLongTaskTiming' in window){var g=window.__tti={e:[]};g.o=new PerformanceObserver(function(l){g.e=g.e.concat(l.getEntries())});g.o.observe({entryTypes:['longtask']})}}();</script>
+<script src="./Übersicht - HPI Schul-Cloud - Deine digitale Lernumgebung_files/metrix.js" type="text/javascript" defer=""></script>
 
-<body class="opensap home-controller index-action loaded" data-images-url="" data-offset="150" data-sitename="openSAP" data-spy="scroll"
-  data-target=".scrollspy-target">
-  <nav class="navbar navbar-inverse hidden-print osap " role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <div class="navbar-brand" style="position: relative">
-          <a href="https://open.sap.com/">
-            <img alt="Home" id="welcome01" src="/assets/logo_opensap-76d237a16e93caa8ccf4fc2113cf4abb4efd512fa74d140f966799446d0e4495.png">
-          </a>
-        </div>
-        <div class="dropdown pull-right">
-          <ul class="dropdown-menu" role="menu">
-            <li class="flag flag-de"></li>
-            <li class="flag flag-uk"></li>
-          </ul>
-        </div>
-      </div>
-      <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav navbar-left">
-          <li>
-            <a href="https://open.sap.com/pages/about">Über openSAP</a>
-          </li>
-          <li class="dropdown dropdown-arrow">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="https://open.sap.com/#">Kursbereiche
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="channel-selector inside-channel--enterprise">
-                <a href="https://open.sap.com/channels/enterprise">Enterprise MOOCs</a>
-              </li>
-              <li class="channel-selector inside-channel--thought-leaders">
-                <a href="https://open.sap.com/channels/thought-leaders">Thought Leaders</a>
-              </li>
-            </ul>
-          </li>
-          <li id="navcourses">
-            <a id="button--course-navigation" href="https://open.sap.com/courses">Kurse</a>
-            <div class="dropdown-menu dropdown-megamenu">
-              <div class="col-md-4 category">
-                <div class="category-title">Aktuelle Kurse</div>
-                <ul class="courses">
-                  <li>
-                    <a href="https://open.sap.com/courses/hsgra1">Analyzing Connected Data with SAP HANA Graph</a>
-                  </li>
-                  <li>
-                    <a href="https://open.sap.com/courses/ssw1-tl">Smart Service Welt – Data and Platform-Based Business Models</a>
-                  </li>
-                  <li>
-                    <a href="https://open.sap.com/courses/java1">Object-Oriented Programming in Java</a>
-                  </li>
-                  <li>
-                    <a href="https://open.sap.com/courses/cp6">Analytics with SAP Cloud Platform</a>
-                  </li>
-                  <li>
-                    <a href="https://open.sap.com/courses/dleo1">SAP Leonardo Design-Led Engagements Demystified</a>
-                  </li>
-                </ul>
-                <a class="invisible-to-md" href="https://open.sap.com/courses">Alle Kurse anzeigen&nbsp;
-                  <i class="fa fa-angle-right"></i>
-                </a>
-              </div>
-              <div class="col-md-4 category">
-                <div class="category-title">Zukünftige Kurse</div>
-                <ul class="courses">
-                  <li>
-                    <a href="https://open.sap.com/courses/s4h12">Intelligent ERP with SAP S/4HANA Cloud</a>
-                  </li>
-                  <li>
-                    <a href="https://open.sap.com/courses/calli1">Calliope mini erfolgreich in der Schule einsetzen</a>
-                  </li>
-                  <li>
-                    <a href="https://open.sap.com/courses/ct1">Informatik für Einsteiger</a>
-                  </li>
-                  <li>
-                    <a href="https://open.sap.com/courses/sps4">Building Mobile Applications with SAP Screen Personas</a>
-                  </li>
-                  <li>
-                    <a href="https://open.sap.com/courses/bvis1-3">Be Visual! Sketching Basics for IT Business (Edition Q3/2018)</a>
-                  </li>
-                </ul>
-                <a class="invisible-to-md" href="https://open.sap.com/courses">Alle Kurse anzeigen&nbsp;
-                  <i class="fa fa-angle-right"></i>
-                </a>
-              </div>
-              <div class="col-md-4 category">
-                <div class="category-title">Kurse im Selbststudium</div>
-                <ul class="courses">
-                  <li>
-                    <a href="https://open.sap.com/courses/srm1-1">Procurement Transformation with SAP Ariba and SAP S/4HANA (Repeat)</a>
-                  </li>
-                  <li>
-                    <a href="https://open.sap.com/courses/hyb2">SAP Retail Omnichannel Commerce</a>
-                  </li>
-                  <li>
-                    <a href="https://open.sap.com/courses/dr1-3">Basics of Design Research (Edition Q2/2018)</a>
-                  </li>
-                  <li>
-                    <a href="https://open.sap.com/courses/hsdt1">Introduction to SAP HANA Dynamic Tiering</a>
-                  </li>
-                  <li>
-                    <a href="https://open.sap.com/courses/byd5">SAP Business ByDesign Project-Based Services</a>
-                  </li>
-                </ul>
-                <a class="invisible-to-md" href="https://open.sap.com/courses">Alle Kurse anzeigen&nbsp;
-                  <i class="fa fa-angle-right"></i>
-                </a>
-              </div>
-            </div>
-          </li>
-          <li>
-            <a href="https://open.sap.com/news">Ankündigungen</a>
-          </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li class="language-chooser dropdown dropdown-arrow visible-md visible-lg visible-sm">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="https://open.sap.com/#">
-              <span class="xikolo-icon icon-language ml5"></span>
-              <span class="ml5">Deutsch</span>
-              <span class="caret"></span>
-            </a>
-            <ul aria-labelledby="languageChooser" class="dropdown-menu" role="menu">
-              <li>
-                <a href="https://open.sap.com/?locale=en">English</a>
-              </li>
-              <li class="active">
-                <a href="https://open.sap.com/?locale=de">Deutsch</a>
-              </li>
-              <li>
-                <a href="https://open.sap.com/?locale=fr">Français</a>
-              </li>
-              <li>
-                <a href="https://open.sap.com/?locale=cn">中文</a>
-              </li>
-            </ul>
-          </li>
-          <li class="visible-xs">
-            <div>
-              <span class="vmiddle white"></span>
-              <ul class="list-inline inline-block vmiddle">
-                <li>
-                  <a href="https://open.sap.com/?locale=en">English</a>
-                </li>
-                <li class="active">
-                  <a href="https://open.sap.com/?locale=de">Deutsch</a>
-                </li>
-                <li>
-                  <a href="https://open.sap.com/?locale=fr">Français</a>
-                </li>
-                <li>
-                  <a href="https://open.sap.com/?locale=cn">中文</a>
-                </li>
-                <li>
-                  <a href="https://open.sap.com/?locale=bg">Български</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="dropdown dropdown-arrow invisible-to-md">
-            <a class="dropdown-toggle js-login" data-toggle="dropdown" href="https://open.sap.com/#" id="js-login-toggle">Anmelden
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu login-dropdown pb10">
-              <div class="row" id="login-form">
-                <div class="col-md-6">
-                  <h4>Mit Passwort anmelden</h4>
-                  <div class="identity">
-                    <form class="simple_form login" action="https://open.sap.com/sessions" accept-charset="UTF-8" method="post">
-                      <input name="utf8" type="hidden" value="✓">
-                      <input type="hidden" name="authenticity_token" value="F6UQs3iq0NcQ/QbArvlcIg6RvjBSJEhl5D3bw3gnYHdgMEsy36KZZGG30ofyh+qITrL6M64JQIf/EAxgxLu8TQ==">
-                      <div class="login">
-                        <div class="login_error"></div>
-                        <div class="form-group email required login_email">
-                          <label class="email required" for="login_email">
-                            <abbr title="required">*</abbr> E-Mail</label>
-                          <div>
-                            <div>
-                              <input class="string email required form-control form-control" required="required" aria-required="true"
-                                placeholder="E-Mail" type="email" name="login[email]" id="login_email">
-                            </div>
-                          </div>
-                        </div>
-                        <div style="margin-bottom:0px" class="form-group password required login_password">
-                          <label class="password required" for="login_password">
-                            <abbr title="required">*</abbr> Passwort</label>
-                          <div>
-                            <div>
-                              <input class="password required form-control" required="required" aria-required="true" placeholder="Passwort"
-                                type="password" name="login[password]" id="login_password">
-                            </div>
-                          </div>
-                        </div>
-                        <a class="small" href="https://open.sap.com/account/reset/new">Passwort vergessen?</a>
-                        <div class="buttons has-spinner">
-                          <input type="submit" name="commit" value="Anmelden" class="btn btn-primary btn js-submit btn btn-primary full-width has-spinner"
-                            id="login" data-inactive-text="Laden ...">
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                  <hr class="divider">
-                  <h4>Neu hier?</h4>
-                  <a class="js-register btn  btn-default full-width" href="https://open.sap.com/account/new">Neues Benutzerkonto anlegen</a>
-                </div>
-                <div class="col-md-6">
-                  <h4>Oder anmelden mit:</h4>
-                  <ul class="omniauth">
+        <script src="./Übersicht - HPI Schul-Cloud - Deine digitale Lernumgebung_files/all.js" type="text/javascript" defer=""></script>
+        <script type="text/javascript" src="./Übersicht - HPI Schul-Cloud - Deine digitale Lernumgebung_files/firebase-app.js" defer=""></script>
+        <script type="text/javascript" src="./Übersicht - HPI Schul-Cloud - Deine digitale Lernumgebung_files/firebase-messaging.js" defer=""></script>
+        <script src="./Übersicht - HPI Schul-Cloud - Deine digitale Lernumgebung_files/loggedin.js" type="text/javascript" defer=""></script>
+        <script type="text/javascript" src="./Übersicht - HPI Schul-Cloud - Deine digitale Lernumgebung_files/MathJax.js" defer=""></script>
+        <script type="text/javascript" src="./Übersicht - HPI Schul-Cloud - Deine digitale Lernumgebung_files/intro.min.js" defer=""></script>
+        <script type="text/javascript" src="./Übersicht - HPI Schul-Cloud - Deine digitale Lernumgebung_files/feathers.js" defer=""></script>
+        <script type="text/javascript" src="./Übersicht - HPI Schul-Cloud - Deine digitale Lernumgebung_files/dashboard.js" defer=""></script>
+        <script src="/assets/application-55da619ea34b63a376aec8130f5b8dcd170b3cd4f42e864e0340117c90fb5a09.js"></script>
+          <script src="/assets/xikolo-locale-de-74e8ba76d7f67c6143dd8fbafe11a62455a6bf999782d5d57df08fc1e62341c1.js"></script>
+
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+<body class="loaded" data-gr-c-s-loaded="true"><div id="MathJax_Message" style="display: none;"></div>
+            <div class="navtooltips"></div>
+        <aside class="nav-sidebar hide-inline">
+            <nav>
+                <ul class="sidebar-list">
                     <li>
-                      <a class="sap" href="https://open.sap.com/auth/sap">
-                        <span>Single Sign On</span>
-                      </a>
+                        <a class="sc-branding" href="https://schul-cloud.org/">
+                            <div class="cloud-logo"></div>
+                            <div class="sc-title"><span>Schul-Cloud</span></div>
+                        </a>
                     </li>
+                        <li data-step="11" data-intro="Hiermit gelangst du stets zu deinem persönlichen Dashboard zurück, auf welchem du auch direkt nach dem Login landest.">
+                            <a class="active" href="https://schul-cloud.org/dashboard/" title="Übersicht">
+                                <i class="fa fa-th-large" aria-hidden="true"></i>
+                                <span class="link-name">Übersicht</span>
+                            </a>
+
+
+                        </li>
+                        <li data-step="13" data-intro="Hier gelangst du zu deinen Kursen, die du einsehen, verwalten und neu anlegen kannst.">
+                            <a class="" href="https://schul-cloud.org/courses/" title="Kurse">
+                                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                                <span class="link-name">Kurse</span>
+                            </a>
+
+
+                        </li>
+                        <li data-step="15" data-intro="Hier gelangst du zur Aufgabenübersicht. Unter diesem Menüpunkt findest du die von dir gestellten Aufgaben, deine persönlichen Aufgaben sowie das Aufgabenarchiv. Du kannst außerdem die Status der einzelnen Aufgaben einsehen und deinen Schülern Feedback geben.">
+                            <a class="" href="https://schul-cloud.org/homework/" title="Aufgaben">
+                                <i class="fa fa-tasks" aria-hidden="true"></i>
+                                <span class="link-name">Aufgaben</span>
+                            </a>
+
+
+                        </li>
+                        <li data-step="16" data-intro="Hier gelangst du zum Dateibereich, in dem du Dateien hochladen und verwalten kannst. Deine Dateien werden hierbei in folgende Kategorien unterteilt: deine persönlichen Dateien, Kursdateien und mit dir geteilte Dateien.">
+                            <a class="" href="https://schul-cloud.org/files/" title="Meine Dateien">
+                                <i class="fa fa-folder-open" aria-hidden="true"></i>
+                                <span class="link-name">Meine Dateien</span>
+                            </a>
+
+
+                        </li>
+                        <li data-step="12" data-intro="Hier kannst du noch einmal auf deine Neuigkeiten zugreifen und auch ältere Neuigkeiten einsehen.">
+                            <a class="" href="https://schul-cloud.org/news/" title="Neuigkeiten">
+                                <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                                <span class="link-name">Neuigkeiten</span>
+                            </a>
+
+
+                        </li>
+                        <li data-step="14" data-intro="Hier hast du Einsicht in deinen persönlichen Kalender. In diesem sind bisher deine Unterrichtsstunden verfügbar, sowie Termine, die zusätzlich anfallen, wie z.B. AGs oder Fachkonferenzen.">
+                            <a class="" href="https://schul-cloud.org/calendar/" title="Termine">
+                                <i class="fa fa-table" aria-hidden="true"></i>
+                                <span class="link-name">Termine</span>
+                            </a>
+
+
+                        </li>
+                        <li data-step="17" data-intro="Hier gelangst du zur Materialsuche, bei der du in der Datenbank der Schul-Cloud nach Materialien für deine Unterrichtsstunde suchen kannst.">
+                            <a class="" href="https://schul-cloud.org/content/" title="Lern-Store">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                                <span class="link-name">Lern-Store</span>
+                            </a>
+
+
+                        </li>
+                        <li data-step="17">
+                                <a href="javascript:openHelpdeskLayer();">
+                                <i class="fa fa-weixin" aria-hidden="true"></i>
+                                <span class="link-name">Chatte mit uns</span>
+                            </a>
+
+
+                        </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="content-wrapper">
+            <a class="mobile-nav-toggle">
+                <i class="fa fa-bars"></i>
+            </a>
+            <div class="content-min-height">
+                <section class="demo" id="offlineAlert" style="display:none;">
+                    <div class="alert alert-warning" role="alert">
+                        <p>Du bist offline. <span class="hidden-md-down">Um dir trotzdem etwas anzuzeigen siehst du eventuell veraltete Inhalte.</span></p>
+                    </div>
+                </section>
+
+                <div class="notification alert alert-dismissible hidden" role="alert">
+                    <button type="button" class="close" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <div class="notification-content"></div>
+                </div>                <nav class="topbar navbar hide-inline">
+
+
+                    <ul class="nav navbar-nav float-xs-none dropdowns" data-step="1" data-intro="Hier findest du übergreifende Informationen.">
+                        <li class="nav-item fullscreen-action" data-step="2" data-intro="Hiermit blendest du die Menüs aus.">
+                            <div class="dropdown minimal-button">
+                                <a class="btn btn-secondary btn-thin dropdown-toggle btn-fullscreen" title="Fullscreen" data-toggle="dropdown">
+                                    <i class="fa fa-expand"></i>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-item qr-code-action" data-step="3" data-intro="Ganz einfach QR-Codes erstellen!">
+                            <div class="dropdown minimal-button">
+                                <a class="btn btn-secondary btn-thin dropdown-toggle btn-create-qr" title="QR-Code" data-toggle="dropdown">
+                                    <i class="fa fa-qrcode"></i>
+                                </a>
+                                <div class="dropdown-menu print">
+                                    <div class="content qr-show"></div>
+                                    <div class="btn btn-secondary btn-print mb-1 ml-1 mt-0" data-toggle="tooltip" title="" data-original-title="QR-Code drucken">
+                                        <i class="fa fa-print"></i> Drucken
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        
+                        <li class="nav-item help-drodown" data-step="5" data-intro="Dies ist der Hilfebereich für deine Fragen und Probleme.">
+    <div class="dropdown minimal-button">
+        <a class="btn btn-secondary btn-thin dropdown-toggle" title="Hilfe" data-toggle="dropdown">
+            <i class="fa fa-question"></i>
+        </a>
+        <div class="dropdown-menu">
+            <ul class="content list-group">
+                <li class="list-group-item list-group-item-action">
                     <span>
-                      <small>für SAP-Mitarbeiter, Partner und Kunden</small>
+                        <i class="fa fa-question-circle" aria-hidden="true"></i>
+                        <a href="https://schul-cloud.org/help" class="link">Hilfebereich</a>
                     </span>
-                  </ul>
-                </div>
-              </div>
+                </li>
+
+                <li id="intro-loggedin" class="list-group-item list-group-item-action">
+                    <span>
+                        <i class="fa fa-map-signs" aria-hidden="true"></i>
+                        <a href="https://schul-cloud.org/dashboard/#" class="link">Intro</a>
+                    </span>
+                </li>
+
+                <li class="list-group-item list-group-item-action">
+                    <span>
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                        <a href="https://schul-cloud.org/dashboard/#" class="link submit-contactHPI">Wunsch oder Problem senden</a>
+                    </span>
+                </li>
+                <li class="list-group-item list-group-item-action">
+                    <span>
+                        <i class="fa fa-comment" aria-hidden="true"></i>
+                        <a href="https://schul-cloud.org/dashboard/#" class="link submit-contactAdmin">Admin deiner Schule kontaktieren</a>
+                    </span>
+                </li>
             </ul>
-          </li>
-          <li class="visible-to-md">
-            <a href="https://open.sap.com/sessions/new">Anmelden</a>
-          </li>
-          <li class="register-link">
-            <a href="https://open.sap.com/account/new">Registrieren</a>
-          </li>
-        </ul>
-      </div>
+        </div>
     </div>
-  </nav>
-  <div class="wrapper">
-    <div class="container">
-      <noscript>
-        <div class="alert alert-warning-border mt10">
-          <span class="xikolo-icon icon-warning mr10"></span>
-          <span class="ml5 kill-underline-force">
-            <a target="_blank" href="http://www.enable-javascript.com/">Bitte aktivieren Sie Javascript in ihrem Browser!!</a>
-          </span>
+</li>
+
+
+                                <li class="nav-item school-data hidden-sm-down">HPI Schul-Cloud-Schule</li>
+
+                        <li class="nav-item" data-step="6" data-intro="Hier findest du Einstellungen und Log-Out.">
+                            <div class="btn-group" data-matomo-mask="">
+                              <div class="dropdown btn-avatar">
+                                <a class="btn btn-secondary btn-thin dropdown-toggle" title="Theresa Demo (Schüler)" data-toggle="dropdown">
+                                  <div class="avatar-circle">
+                                      <span class="initials" data-testid="initials">TD</span>
+                                  </div>
+                                </a>
+                                <input type="hidden" name="testUserGroup" id="testUserGroup" value="0">
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <div class="dropdown-name">Theresa Demo (Schüler)</div>
+                                    <a class="dropdown-item" href="https://schul-cloud.org/account/">Einstellungen</a>
+                                    <a class="dropdown-item" href="https://schul-cloud.org/logout/">Abmelden</a>
+                                </div>
+                              </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+
+                <section class="section-title">
+                    <div class="container-fluid">
+                        <div class="row" id="titlebar">
+                            <div class="col-sm-9">
+                                  <div>
+                                      <h4 id="page-title">Übersicht</h4>
+                                  </div>
+                                <div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <p id="preferences" hidden="">{"firstLogin":true,"releaseDate":"2019-03-13T13:48:32.000Z"}</p>
+                <p id="backendUrl" hidden="">https://api.schul-cloud.org</p>
+
+                <main id="main-content" class="container-fluid">
+                            <section class="container-fluid section-timetable" data-step="7" data-intro="Hier findest du eine Übersicht über deinen Stundenplan und anstehende Termine.">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h5>Stundenplan</h5>
+                    <time class="selected-date">Montag, 25. März 2019</time>
+                </div>
+            </div>
+
+            <div class="timetable">
+                <div class="row lesson-cards">
+                    <div>
+                            <a class="lesson-card" href="https://schul-cloud.org/courses/59a3cabaa2049554a93fec60" style="width: 7.333333333333333%; left: 48.333333333333336%;">
+                                <div class="card card-block" style="background-color: #83d1d1;
+                                        border-color: #83d1d1;">
+                                    <time class="lesson-time">11:50 - 12:34</time>
+                                    <h3 class="card-title">Mathe 9b</h3>
+                                    <p class="card-text">1.31</p>
+                                </div>
+                            </a>
+                            <a class="lesson-card" href="https://schul-cloud.org/courses/5a7acc5c994b406cfc028d5c" style="width: 7.5%; left: 57.49999999999999%;">
+                                <div class="card card-block" style="background-color: #ef9ae0;
+                                        border-color: #ef9ae0;">
+                                    <time class="lesson-time">12:45 - 13:30</time>
+                                    <h3 class="card-title">Englisch 7a</h3>
+                                    <p class="card-text">A1.16</p>
+                                </div>
+                            </a>
+                            <a class="lesson-card" href="https://schul-cloud.org/courses/5b7c136892d1db00110ff85d" style="width: 16.666666666666664%; left: 10%;">
+                                <div class="card card-block" style="background-color: #fda33e;
+                                        border-color: #fda33e;">
+                                    <time class="lesson-time">08:00 - 09:40</time>
+                                    <h3 class="card-title">Geografie 9b</h3>
+                                    <p class="card-text">1.6</p>
+                                </div>
+                            </a>
+                            <a class="lesson-card" href="https://schul-cloud.org/courses/5b8e7ad88133cb001215e875" style="width: 16.666666666666664%; left: 30%;">
+                                <div class="card card-block" style="background-color: #b999dd;
+                                        border-color: #b999dd;">
+                                    <time class="lesson-time">10:00 - 11:40</time>
+                                    <h3 class="card-title">English 12-1</h3>
+                                    <p class="card-text">231</p>
+                                </div>
+                            </a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="timeline">
+                        <table style="width:100%">
+                            <tbody><tr>
+                                    <td style="width:10%">
+                                        <div class="tick">7.00</div>
+                                    </td>
+                                    <td style="width:10%">
+                                        <div class="tick">8.00</div>
+                                    </td>
+                                    <td style="width:10%">
+                                        <div class="tick">9.00</div>
+                                    </td>
+                                    <td style="width:10%">
+                                        <div class="tick">10.00</div>
+                                    </td>
+                                    <td style="width:10%">
+                                        <div class="tick">11.00</div>
+                                    </td>
+                                    <td style="width:10%">
+                                        <div class="tick">12.00</div>
+                                    </td>
+                                    <td style="width:10%">
+                                        <div class="tick">13.00</div>
+                                    </td>
+                                    <td style="width:10%">
+                                        <div class="tick">14.00</div>
+                                    </td>
+                                    <td style="width:10%">
+                                        <div class="tick">15.00</div>
+                                    </td>
+                                    <td style="width:10%">
+                                        <div class="tick">16.00</div>
+                                    </td>
+                                    <td style="width:10%">
+                                        <div class="tick">17.00</div>
+                                    </td>
+                            </tr>
+                        </tbody></table>
+                        <div class="current-time" style="width:9.5%;">
+                            <span>07:50</span>
+                        </div>
+                            <div class="timelines" style="width:00%"></div>
+                            <div class="timelines" style="width:10%"></div>
+                            <div class="timelines" style="width:20%"></div>
+                            <div class="timelines" style="width:30%"></div>
+                            <div class="timelines" style="width:40%"></div>
+                            <div class="timelines" style="width:50%"></div>
+                            <div class="timelines" style="width:60%"></div>
+                            <div class="timelines" style="width:70%"></div>
+                            <div class="timelines" style="width:80%"></div>
+                            <div class="timelines" style="width:90%"></div>
+                            <div class="timelines" style="width:100%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="section section-tasks" data-step="8" data-intro="Hier findest du eine Übersicht über deine gestellten Aufgaben. Diese Aufgaben sind mit deinen Schülern geteilt und für diese sichtbar. Du kannst unter dem Punkt “Aufgaben” weitere Aufgaben erstellen und bearbeiten.">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h5>Gestellte Aufgaben</h5>
+                    </div>
+                </div>
+                <div class="row tasks card-deck-row">
+                    <div class="sc-card-wrapper col-xl-3 col-lg-4 col-md-6 col-sm-12" data-rss="" data-id="">
+                        <article class="sc-card" onclick="location.href=&#39;/homework/59afe3e31f513506904e1d53&#39;">
+                            <div class="sc-card-header" style="background:#faf77e;">
+                                <span class="sc-card-title">
+                                    <div>
+                                        <span class="title">[Physik 9b] Bestandteile einer Kamera</span>
+                                    </div>
+                                    <small class="d-block">in 7 Tagen</small>
+                                </span>
+                        
+                                <div class="sc-card-menu">
+                                </div>
+                            </div>
+                            <div class="sc-card-body ckcontent">
+                                In der folgenden Abbildung siehst Du den Strahlengang einer einfachen Kamera. Besuche die Seite https://www.lernhelfer.de/schuelerlexikon/ku...
+                            </div>
+                            <div class="sc-card-footer">
+                                <a href="https://schul-cloud.org/homework/59afe3e31f513506904e1d53" rel="canonical">Zur Aufgabe</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="sc-card-wrapper col-xl-3 col-lg-4 col-md-6 col-sm-12" data-rss="" data-id="">
+                        <article class="sc-card" onclick="location.href=&#39;/homework/5c6ec517a35fba0010480542&#39;">
+                            <div class="sc-card-header" style="background:#4dc45b;">
+                                <span class="sc-card-title">
+                                    <div>
+                                        <span class="title">[Biologie 9b] Videoanalyse</span>
+                                    </div>
+                                    <small class="d-block">in 2 Monaten</small>
+                                </span>
+                        
+                                <div class="sc-card-menu">
+                                </div>
+                            </div>
+                            <div class="sc-card-body ckcontent">
+                                Macht mal! 
+                            </div>
+                            <div class="sc-card-footer">
+                                <a href="https://schul-cloud.org/homework/5c6ec517a35fba0010480542" rel="canonical">Zur Aufgabe</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="sc-card-wrapper col-xl-3 col-lg-4 col-md-6 col-sm-12" data-rss="" data-id="">
+                        <article class="sc-card" onclick="location.href=&#39;/homework/5b98e2297c742300110690cb&#39;">
+                            <div class="sc-card-header" style="background:#ef9ae0;">
+                                <span class="sc-card-title">
+                                    <div>
+                                        <span class="title">[Englisch 7a] Look for Scottish recipes!</span>
+                                    </div>
+                                    <small class="d-block">in 9 Monaten</small>
+                                </span>
+                        
+                                <div class="sc-card-menu">
+                                </div>
+                            </div>
+                            <div class="sc-card-body ckcontent">
+                                Hier seht ihr eine Beispiellösung der o.g. Aufgabe: LINK 
+                            </div>
+                            <div class="sc-card-footer">
+                                <a href="https://schul-cloud.org/homework/5b98e2297c742300110690cb" rel="canonical">Zur Aufgabe</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>        <section class="section section-mytasks" data-step="9" data-intro="An dieser Stelle findest du eine Übersicht über deine private “To Do” Liste. Die Aufgaben, die du hier siehst, kannst du selbst unter “Aufgaben” auswählen und bearbeiten. Deine “To Do” Liste ist privat und daher nur für dich einsehbar.">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h5>Meine ToDos</h5>
+                    </div>
+                </div>
+                <div class="row tasks card-deck-row">
+                    <div class="col-md-8 offset-md-2 col-lg-12 offset-lg-0">
+                        <div class="alert">
+                            Keine aktuellen Einträge vorhanden.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section section-news" data-step="10" data-intro="Hier erhälst du einen Überblick über Neuigkeiten, die zum Beispiel von deiner Schulleitung oder dem Entwicklerteam erstellt werden können.">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h5>Neuigkeiten aus meiner Schule</h5>
+                    </div>
+                </div>
+                <div class="row tasks card-deck-row">
+                    <div class="sc-card-wrapper col-xl-3 col-lg-4 col-md-6 col-sm-12" data-rss="" data-id="">
+                        <article class="sc-card" onclick="location.href=&#39;/news/5bec25712f60eb001704fac1&#39;">
+                            <div class="sc-card-header" style="background:#03A9F4;">
+                                <span class="sc-card-title">
+                                    <div>
+                                        <span class="title">A Christmas Carol</span>
+                                    </div>
+                                    <small class="d-block">vor 4 Monaten</small>
+                                </span>
+                        
+                                <div class="sc-card-menu">
+                                </div>
+                            </div>
+                            <div class="sc-card-body ckcontent">
+                                Bald steht wieder unser jährlicher Wandertag zu einem englischen Theaterstück an. Passend zur kommenden Jahreszeit schauen wir uns dieses Ja...
+                            </div>
+                            <div class="sc-card-footer">
+                                <a href="https://schul-cloud.org/news/5bec25712f60eb001704fac1" rel="canonical">Weiterlesen</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="sc-card-wrapper col-xl-3 col-lg-4 col-md-6 col-sm-12" data-rss="" data-id="">
+                        <article class="sc-card" onclick="location.href=&#39;/news/5b9648631c9cf0001131040f&#39;">
+                            <div class="sc-card-header" style="background:#00BCD4;">
+                                <span class="sc-card-title">
+                                    <div>
+                                        <span class="title">Herzlich Willkommen in der Schul-Cloud!</span>
+                                    </div>
+                                    <small class="d-block">vor 6 Monaten</small>
+                                </span>
+                        
+                                <div class="sc-card-menu">
+                                </div>
+                            </div>
+                            <div class="sc-card-body ckcontent">
+                                Hier können Sie Ihre Neuigkeiten verfassen ! 
+                            </div>
+                            <div class="sc-card-footer">
+                                <a href="https://schul-cloud.org/news/5b9648631c9cf0001131040f" rel="canonical">Weiterlesen</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="sc-card-wrapper col-xl-3 col-lg-4 col-md-6 col-sm-12" data-rss="" data-id="">
+                        <article class="sc-card" onclick="location.href=&#39;/news/5b88f881ddc05e0011a4b39d&#39;">
+                            <div class="sc-card-header" style="background:#3F51B5;">
+                                <span class="sc-card-title">
+                                    <div>
+                                        <span class="title">J. W. Goethes *Faust* im Schultheater</span>
+                                    </div>
+                                    <small class="d-block">vor 7 Monaten</small>
+                                </span>
+                        
+                                <div class="sc-card-menu">
+                                </div>
+                            </div>
+                            <div class="sc-card-body ckcontent">
+                                Unser Schultheater hat diesmal ein ganz besonderes Stück für uns vorbereitet! In einer modernen Fassung von Goethes Faust sehen wir die Thea...
+                            </div>
+                            <div class="sc-card-footer">
+                                <a href="https://schul-cloud.org/news/5b88f881ddc05e0011a4b39d" rel="canonical">Weiterlesen</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+                </main>
+            </div>
+                <footer class="hide-inline small-footer">
+    <div class="imprint">
+        <div class="center">
+            <img src="./Übersicht - HPI Schul-Cloud - Deine digitale Lernumgebung_files/footer-logo.png" alt="Anbieterlogo">
+            <span>© 2019 Schul-Cloud </span>
+
+            <div>
+                <a href="https://schul-cloud.org/impressum" target="_blank">Impressum</a>
+                <span> - </span>
+                <a href="https://schul-cloud.org/impressum#data_security" target="_blank">Datenschutzerklärung</a>
+                <span> - </span>
+                <a href="mailto:info@schul-cloud.org?subject=Schul_Cloud%20Anfrage" target="_blank">Kontakt</a>
+                <span> - </span>
+                <a href="https://schul-cloud.org/team" target="_blank">Team</a>
+                <span> - </span>
+                <a href="https://schul-cloud.org/about" target="_blank">Über das Projekt</a>
+                <span> - </span>
+                <a href="https://schul-cloud.org/community" target="_blank">Mitmachen</a>
+                <span> - </span>
+                <a href="https://schul-cloud.org/partner" target="_blank">Partner</a>
+                <span> - </span>
+                <a href="https://github.com/schul-cloud/" target="_blank">GitHub</a>
+            </div>
+            <div>
+                <p class="made-with-love">Made with <span class="heart">❤</span> in Potsdam</p>
+            </div>
         </div>
-      </noscript>
     </div>
-    <section class="start-section">
-      <div class="start-section__video-container">
-        <div aria-labelledby="videoModalLabel" class="modal fade" id="videoModal" role="dialog" tabindex="-1">
-          <div class="modal-dialog start-section__video-container__video-modal" role="document">
-            <div class="modal-content">
-              <div class="modal-body">
-                <video class="start-section__video-container__video-modal__video" controls="controls" id="fullVideo">
-                  <source media="screen and (min-width:1000px)" src="https://player.vimeo.com/external/277477665.hd.mp4?s=cfb4a7fa05bb03fb1905e1276a34f4ca6779919e&amp;profile_id=174"
-                    type="video/mp4">
-                  <source media="screen and (min-width:680px) and (max-width: 999px)" src="https://player.vimeo.com/external/277477665.sd.mp4?s=cdbba4bb5d026b899abe827c8fb30ec65d636c72&amp;profile_id=165"
-                    type="video/mp4">
-                  <source media="screen and (max-width:679px)" src="https://player.vimeo.com/external/277477665.sd.mp4?s=cdbba4bb5d026b899abe827c8fb30ec65d636c72&amp;profile_id=164"
-                    type="video/mp4">
-                  <track kind="subtitles" label="English" src="/assets/openSAP_landing_page_video_en-0d27ff335a956d3510c2009bf609c55db9827ea0a58227c2855ed50db7346a83.vtt"
-                    srclang="en">
-                </video>
-              </div>
-            </div>
-          </div>
-        </div>
-        <script>
-          $(document).ready(function () {
-            $('#videoModal').on('show.bs.modal', function (event) {
-              $('#loopVideo').get(0).pause();
-            });
+</footer>
 
-            $('#videoModal').on('shown.bs.modal', function (event) {
-              $('#fullVideo').get(0).play();
-            });
 
-            $('#videoModal').on('hide.bs.modal', function (event) {
-              $('#loopVideo').get(0).play();
-              $('#fullVideo').get(0).pause();
-            });
+<div class="modal fade contactHPI-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title">Übersicht</h4>
+            </div>
+                    <form class="modal-form" method="post" action="https://schul-cloud.org/dashboard/">
 
-            $('#fullVideo').on('ended', function () {
-              $('#videoModal').delay(600).modal('hide');
-            });
-          });
-        </script>
-        <video autoplay="autoplay" class="start-section__video-container__video-loop" id="loopVideo" loop="loop"
-          muted="muted">
-          <source media="screen and (min-width:1400px)" src="https://player.vimeo.com/external/277607820.hd.mp4?s=c6d8310984cbb35c8235617fe75e1377777b0463&amp;profile_id=175"
-            type="video/mp4">
-          <source media="screen and (min-width:1000px) and (max-width: 1399px)" src="https://player.vimeo.com/external/277607820.hd.mp4?s=c6d8310984cbb35c8235617fe75e1377777b0463&amp;profile_id=174"
-            type="video/mp4">
-          <source media="screen and (min-width:680px) and (max-width: 999px)" src="https://player.vimeo.com/external/277607820.sd.mp4?s=26c7ad1856e637addf116a92d9e9fcd6a63162e2&amp;profile_id=165"
-            type="video/mp4">
-          <source media="screen and (max-width:679px)" src="https://player.vimeo.com/external/277607820.sd.mp4?s=26c7ad1856e637addf116a92d9e9fcd6a63162e2&amp;profile_id=164"
-            type="video/mp4">
-        </video>
-        <a class="start-section__play-video" data-target="#videoModal" data-toggle="modal">
-          <div class="start-section__play-video__video-play-button">
-            <svg version="1.0" viewBox="0 0 120 120" x="0px" xmlns="http://www.w3.org/2000/svg" y="0px">
-              <path d="M 60 0 C 26.858 0 0 26.858 0 60 C 0 93.143 26.858 120 60 120 C 93.142 120 120 93.143 120 60 C 120 26.858 93.142 0 60 0 Z M 48.225 85.8 L 48.225 38.7 L 81.367 62.25 L 48.225 85.8 Z"></path>
-            </svg>
-          </div>
-          <div class="start-section__play-video__text">Video abspielen</div>
-        </a>
-        <a class="start-section__scroll-hint hidden-xs" href="https://open.sap.com/#what-is-osap">
-          <div class="start-section__scroll-hint__text">Mehr erfahren</div>
-          <div class="start-section__scroll-hint__arrow"></div>
-        </a>
-        <div class="news-slider video-news">
-          <div class="container">
-            <div class="news-slider__container">
-              <div class="news-slider__action news-slider__action--left">
-                <div class="news-slider__arrow news-slider__arrow--left"></div>
-              </div>
-              <div class="news-slider__action news-slider__action--right">
-                <div class="news-slider__arrow news-slider__arrow--right"></div>
-              </div>
-              <div class="news-slider__item">
-                <div class="news-slider__item__text-container">
-                  <div class="news-slider__item__date">
-                    <time datetime="2018-06-19T09:15:00+00:00" title="Dienstag, 19. Juni 2018, 09:15 Uhr">19. Juni 2018</time>
-                  </div>
-                  <div class="news-slider__item__title">
-                    <a href="https://open.sap.com/news#post_a5637da5-6736-4f12-b6d4-3abed4289fe9">Catch up now with our SAP TechEd 2017 Recap!</a>
-                  </div>
-                </div>
-              </div>
-              <div class="news-slider__item">
-                <div class="news-slider__item__text-container">
-                  <div class="news-slider__item__date">
-                    <time datetime="2018-06-05T14:30:00+00:00" title="Dienstag, 05. Juni 2018, 14:30 Uhr">5. Juni 2018</time>
-                  </div>
-                  <div class="news-slider__item__title">
-                    <a href="https://open.sap.com/news#post_23dd7eda-33d8-4047-93d5-cee5d42985bc">New SAPPHIRE-related courses: SAP HANA Data Management Suite, SAP C/4HANA, SAP Leonardo and SAP S/4HANA
-                      Cloud, with SAP Screen Personas and Sketching Basics</a>
-                  </div>
-                </div>
-              </div>
-              <div class="news-slider__item">
-                <div class="news-slider__item__text-container">
-                  <div class="news-slider__item__date">
-                    <time datetime="2018-05-15T12:20:00+00:00" title="Dienstag, 15. Mai 2018, 12:20 Uhr">15. Mai 2018</time>
-                  </div>
-                  <div class="news-slider__item__title">
-                    <a href="https://open.sap.com/news#post_09d44faa-bd9b-4579-ba9c-1cd10fcf4dc3">Enroll now! Basics of Design Research</a>
-                  </div>
-                </div>
-              </div>
+            <div class="modal-body">
+                                    <div class="form-group">
+                        <label class="control-label" for="title">Danke für dein Feedback, es wird direkt an das Entwicklungsteam der HPI Schul-Cloud gesendet. Bitte achte darauf, keine Passwörter und andere sensible Daten mitzuschicken.</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <select name="feedbackType" id="feedbackType" type="text" class="form-control form-control-lg" required="" style="display: none;">
+                            <option value="userstory" selected="">Wunsch ans HPI senden</option>
+                            <option value="problem">Problem ans HPI senden</option>
+                        </select><div class="chosen-container chosen-container-single chosen-container-single-nosearch" title="" id="feedbackType_chosen" style="width: 100%;"><a class="chosen-single">
+  <span>Wunsch ans HPI senden</span>
+  <div><b></b></div>
+</a>
+<div class="chosen-drop">
+  <div class="chosen-search">
+    <input class="chosen-search-input" type="text" autocomplete="off" readonly="">
+  </div>
+  <ul class="chosen-results"></ul>
+</div></div>
+                    </div>
+                    
+                    <div id="userstoryDiv">
+                        <div id="roleDiv" class="form-group">
+                            <label class="control-label" for="message">Als...</label>
+                            <input type="text" name="role" id="role" placeholder="z.B. Schüler, Lehrer, Administrator, Hausmeister usw." class="form-control" required="">
+                        </div>
+                        <div id="desireDiv" class="form-group">
+                            <label class="control-label" for="message">möchte ich ...</label>
+                            <textarea class="form-control" id="desire" cols="50" name="desire" rows="6" required="" placeholder="z.B. eine im System angelegte Schüleraufgabe leicht auffinden und ändern können">                            </textarea>
+                        </div>
+                        <div id="benefitDiv" class="form-group">
+                            <label class="control-label" for="message">um ...</label>
+                            <textarea class="form-control" id="benefit" cols="50" name="benefit" rows="6" placeholder="z.B. sie zu aktualisieren" required="">                            </textarea>
+                        </div>
+                        <div id="acceptanceCriteriaDiv" class="form-group">
+                            <label class="control-label" for="message">Akzeptanzkriterien</label><span class="text-muted float-right"> (optional)</span>
+                            <textarea class="form-control" id="acceptance_criteria" cols="50" name="acceptance_criteria" rows="6" placeholder="z.B. Nach der Systemanmeldung gelange ich in maximal zwei Schritten zum Stundenkontext, kann die Schüleraufgabe dort mit einem Klick bearbeiten und die SchülerInnen bei Bedarf automatisch über die Änderung informieren.">                            </textarea>
+                        </div>
+                    </div>
+                    
+                    <div id="problemDiv" class="hidden">
+                        <div id="problemSummaryDiv" class="form-group">
+                            <label class="control-label" for="title">Kurzbeschreibung des Problems</label>
+                            <input type="text" name="title" id="problemTitle" placeholder="Kurzbeschreibung des Problems" class="form-control">
+                        </div>
+                        <div id="hasHappenedDiv" class="form-group">
+                            <label class="control-label" for="hasHappened">IST-Zustand: Was geschieht zur Zeit, nachdem ich welche Schritte durchgeführt habe?</label>
+                            <textarea class="form-control" id="hasHappened" cols="50" name="hasHappened" rows="6">                            </textarea>
+                        </div>
+                        <div id="supposedToHappenDiv" class="form-group">
+                            <label class="control-label" for="supposedToHappen">SOLL-Zustand: Was sollte stattdessen geschehen?</label>
+                            <textarea class="form-control" id="supposedToHappen" cols="50" name="supposedToHappen" rows="6">                            </textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <select name="category" id="category" data-placeholder="Kategorie wählen (optional)" class="chosen-select" tabindex="-1" style="display: none;">
+                            <option value="login_registration">Anmeldung/Registrierung</option>
+                            <option value="dashboard">Übersicht</option>
+                            <option value="courses">Kurse</option>
+                            <option value="classes">Klassen</option>
+                            <option value="calendar">Termine</option>
+                            <option value="homework">Aufgaben</option>
+                            <option value="files">Meine Dateien</option>
+                            <option value="content">Materialien</option>
+                            <option value="administration">Verwaltung</option>
+                            <option value="other">Sonstiges</option>
+                        </select><div class="chosen-container chosen-container-single chosen-container-single-nosearch" title="" id="category_chosen" style="width: 100%;"><a class="chosen-single">
+  <span>Anmeldung/Registrierung</span>
+  <div><b></b></div>
+</a>
+<div class="chosen-drop">
+  <div class="chosen-search">
+    <input class="chosen-search-input" type="text" autocomplete="off" readonly="" tabindex="-1">
+  </div>
+  <ul class="chosen-results"></ul>
+</div></div>
+                    </div>
+
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="home-section home-section--what-is-osap container" id="what-is-osap">
-      <div class="col-md-5 home-section--what-is-osap__image"></div>
-      <div class="col-md-7 home-section--what-is-osap__text">
-        <h3>Was ist openSAP?</h3>
-        <p>openSAP bietet kostenlose Online-Kurse, die Ihnen helfen, in der digitalen Transformation zu bestehen. Erfahren Sie
-          von SAPs neuesten Innovationen und lernen Sie von globalen Thought Leaders.</p>
-        <p>Alles, was Sie angeben müssen, ist eine E-Mail-Adresse.</p>
-        <a class="highlight-link-button" href="https://open.sap.com/account/new">Registrieren</a>
-      </div>
-    </section>
-    <section class="home-section home-section--topics container">
-      <h2>Entdecken Sie unsere spannenden Themen</h2>
-      <a class="home-section--topics__topic col-md-2" href="https://open.sap.com/courses?topic=Analytics">Analytics</a>
-      <a class="home-section--topics__topic col-md-2" href="https://open.sap.com/courses?topic=Cloud+Solutions">Cloud Solutions</a>
-      <a class="home-section--topics__topic col-md-2" href="https://open.sap.com/courses?topic=Continuous+Innovation">Continuous Innovation</a>
-      <a class="home-section--topics__topic col-md-2" href="https://open.sap.com/courses?topic=Digital+Transformation">Digital Transformation</a>
-      <a class="home-section--topics__topic col-md-2" href="https://open.sap.com/courses?topic=Enterprise+Management">Enterprise Management</a>
-      <a class="home-section--topics__topic col-md-2" href="https://open.sap.com/courses?topic=Human+Resources">Human Resources</a>
-      <a class="home-section--topics__topic col-md-2" href="https://open.sap.com/courses?topic=Industries">Industries</a>
-      <a class="home-section--topics__topic col-md-2" href="https://open.sap.com/courses?topic=SAP+Cloud+Platform">SAP Cloud Platform</a>
-      <a class="home-section--topics__topic col-md-2" href="https://open.sap.com/courses?topic=SAP+HANA">SAP HANA</a>
-      <a class="home-section--topics__topic col-md-2" href="https://open.sap.com/courses?topic=SAP+S%2F4HANA">SAP S/4HANA</a>
-      <a class="home-section--topics__topic col-md-2" href="https://open.sap.com/courses?topic=Social+Responsibility">Social Responsibility</a>
-      <a class="home-section--topics__topic col-md-2" href="https://open.sap.com/courses?topic=User+Experience">User Experience</a>
-    </section>
-    <section class="home-section home-section--learning-channels container">
-      <div class="col-md-7 home-section--learning-channels__channels">
-        <h2>Unsere Kursbereiche</h2>
-        <div class="col-md-6 home-section--learning-channels__channel inside-channel--enterprise">
-          <a href="https://open.sap.com/channels/enterprise">Enterprise MOOCs</a>
-          <p>Erfahren Sie alles über SAPs innovative Lösungen
-            <br>von SAP-Experten</p>
-        </div>
-        <div class="col-md-6 home-section--learning-channels__channel inside-channel--thought-leaders">
-          <a href="https://open.sap.com/channels/thought-leaders">Thought Leaders</a>
-          <p>Erfahren Sie alles über digitale Transformation mit einer Vielzahl an globalen Thought Leaders</p>
-        </div>
-      </div>
-      <div class="col-md-5 home-section--learning-channels__image"></div>
-    </section>
-    <section class="home-section home-section--courses">
-      <h2>Aktuelle und zukünftige Kurse</h2>
-      <div class="home-section--courses__box">
-        <div class="container">
-          <div class="home-section--courses__list">
-            <div class="home-courses columns channel-context">
-              <div class="course-item inside-channel--enterprise">
-                <div class="course-image-wrapper">
-                  <a class="course-image" href="https://open.sap.com/courses/hsgra1">
-                    <img src="/assets/openSAP_hsgra1_web.jpg">
-                  </a>
-                </div>
-                <div class="course-info-wrapper">
-                  <div class="course-info">
-                    <div class="course-title">
-                      <a href="https://open.sap.com/courses/hsgra1" title="Analyzing Connected Data with SAP HANA Graph">Analyzing Connected Data with SAP HANA Graph</a>
-                    </div>
-                    <div class="course-teacher">Markus Fath</div>
-                    <div class="course-shortinfo">
-                      <div class="shortinfo course-date">
-                        <span class="xikolo-icon icon-calendar vmiddle"></span>
-                        <span class="ml5">20 Juni 2018 - 19 Juli 2018</span>
-                      </div>
-                      <div class="shortinfo course-language">
-                        <span class="xikolo-icon icon-language vmiddle"></span>
-                        <span class="ml5">English</span>
-                      </div>
-                    </div>
-                    <div class="course-description">This free online course introduces SAP HANA graph and describes possible use cases, as well as showing
-                      you how to expose data to SAP HANA graph via nodes, edges, and workspaces, and much more. This course
-                      is aimed at data scientists, application developers, and technical business analysts. </div>
-                  </div>
-                  <div class="course-actions">
-                    <a class="course-action-button course-action-details" href="https://open.sap.com/courses/hsgra1">Kursdetails zeigen</a>
-                  </div>
-                </div>
-              </div>
-              <div class="course-item inside-channel--thought-leaders">
-                <div class="course-image-wrapper">
-                  <a class="course-image" href="https://open.sap.com/courses/ssw1-tl">
-                    <img src="/assets/openSAP_ssw1-tl_web.jpg">
-                  </a>
-                </div>
-                <div class="course-info-wrapper">
-                  <div class="course-info">
-                    <div class="course-title">
-                      <a href="https://open.sap.com/courses/ssw1-tl" title="Smart Service Welt – Data and Platform-Based Business Models">Smart Service Welt – Data and Platform-Based Business Models</a>
-                    </div>
-                    <div class="course-teacher">Prof. Dr. Henning Kagermann, Frank Riemensperger</div>
-                    <div class="course-shortinfo">
-                      <div class="shortinfo course-date">
-                        <span class="xikolo-icon icon-calendar vmiddle"></span>
-                        <span class="ml5">19 Juni 2018 - 25 Juli 2018</span>
-                      </div>
-                      <div class="shortinfo course-language">
-                        <span class="xikolo-icon icon-language vmiddle"></span>
-                        <span class="ml5">English</span>
-                      </div>
-                    </div>
-                    <div class="course-description">With this free online course, you’ll learn about the potential of smart services for business model innovation.
-                      You’ll also learn about key technological enablers for the implementation of smart services and the
-                      necessary changes in management and business organization. </div>
-                  </div>
-                  <div class="course-actions">
-                    <a class="course-action-button course-action-details" href="https://open.sap.com/courses/ssw1-tl">Kursdetails zeigen</a>
-                  </div>
-                </div>
-              </div>
-              <div class="course-item inside-channel--enterprise">
-                <div class="course-image-wrapper">
-                  <a class="course-image" href="https://open.sap.com/courses/java1">
-                    <img src="/assets/javaroadchinesewall_2.jpg">
-                  </a>
-                </div>
-                <div class="course-info-wrapper">
-                  <div class="course-info">
-                    <div class="course-title">
-                      <a href="https://open.sap.com/courses/java1" title="Object-Oriented Programming in Java">Object-Oriented Programming in Java</a>
-                    </div>
-                    <div class="course-teacher">Christiane Hagedorn, Ann Katrin Kuessner, Thomas Staubitz, Ralf Teusner</div>
-                    <div class="course-shortinfo">
-                      <div class="shortinfo course-date">
-                        <span class="xikolo-icon icon-calendar vmiddle"></span>
-                        <span class="ml5">13 Juni 2018 - 26 Juli 2018</span>
-                      </div>
-                      <div class="shortinfo course-language">
-                        <span class="xikolo-icon icon-language vmiddle"></span>
-                        <span class="ml5">English</span>
-                      </div>
-                    </div>
-                    <div class="course-description">In this free online course, you’ll learn the key concepts of object-oriented programming (OOP) as well
-                      as fundamental programming techniques. You’ll apply your newly acquired knowledge by implementing hands-on
-                      programming exercises in the Java programming language. The course will be completed by an exercise
-                      to model a small, object-oriented, real-world scenario. After completing this course, you’ll be able
-                      to model and implement small programs in Java and apply OOP best practices.
-                    </div>
-                  </div>
-                  <div class="course-actions">
-                    <a class="course-action-button course-action-details" href="https://open.sap.com/courses/java1">Kursdetails zeigen</a>
-                  </div>
-                </div>
-              </div>
-              <div class="course-item inside-channel--enterprise">
-                <div class="course-image-wrapper">
-                  <a class="course-image" href="https://open.sap.com/courses/cp6">
-                    <img src="/assets/openSAP_cp6_web.jpg">
-                  </a>
-                </div>
-                <div class="course-info-wrapper">
-                  <div class="course-info">
-                    <div class="course-title">
-                      <a href="https://open.sap.com/courses/cp6" title="Analytics with SAP Cloud Platform">Analytics with SAP Cloud Platform</a>
-                    </div>
-                    <div class="course-teacher">Sabrina Dick</div>
-                    <div class="course-shortinfo">
-                      <div class="shortinfo course-date">
-                        <span class="xikolo-icon icon-calendar vmiddle"></span>
-                        <span class="ml5">12 Juni 2018 - 18 Juli 2018</span>
-                      </div>
-                      <div class="shortinfo course-language">
-                        <span class="xikolo-icon icon-language vmiddle"></span>
-                        <span class="ml5">English</span>
-                      </div>
-                    </div>
-                    <div class="course-description">This free online course will provide you with an overview of the analytics services available with SAP
-                      Cloud Platform. The course is aimed at developers, application consultants, technology consultants,
-                      and data scientists. </div>
-                  </div>
-                  <div class="course-actions">
-                    <a class="course-action-button course-action-details" href="https://open.sap.com/courses/cp6">Kursdetails zeigen</a>
-                  </div>
-                </div>
-              </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-close">
+                    
+                </button>
+
+                
+
+                <button type="submit" class="btn btn-primary btn-submit">
+                    
+                </button>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="home-section--courses__more">
-        <a class="highlight-link-button" href="https://open.sap.com/courses">Alle Kurse ansehen</a>
-      </div>
-    </section>
-    <section class="home-section home-section--join">
-      <h2>Werden Sie Teil der openSAP-Community mit über 500.000 Mitgliedern</h2>
-      <div class="home-section--join__form container">
-        <form action="https://open.sap.com/account/new" accept-charset="UTF-8" method="get">
-          <input name="utf8" type="hidden" value="✓">
-          <div class="col-md-3">
-            <input type="text" name="first_name" id="first_name" value="" placeholder="Vorname">
-          </div>
-          <div class="col-md-3">
-            <input type="text" name="last_name" id="last_name" value="" placeholder="Nachname">
-          </div>
-          <div class="col-md-4">
-            <input type="email" name="email" id="email" value="" placeholder="E-Mail-Adresse">
-          </div>
-          <div class="col-md-2">
-            <input type="submit" name="commit" value="Registrieren">
-          </div>
         </form>
-      </div>
-    </section>
-    <a class="to-top" href="https://open.sap.com/#">
-      <div class="arrow"></div>
-    </a>
-    <script>
-      var $container = $(".news-slider__container");
-      var $sliderActionLeft = $(".news-slider__action--left");
-      var $sliderActionRight = $(".news-slider__action--right");
-      var $sliderItems = $(".news-slider__item");
 
-      var makeVisibleIfHidden = function ($el) {
-        if ($el.css('visibility') === 'hidden') {
-          $el.css('visibility', 'visible');
-        }
-      };
-
-      var containerTotalWidth = function () {
-        return Math.ceil($sliderItems.width()) * $sliderItems.length;
-      };
-
-      var containerVisibleWidth = function () {
-        return Math.ceil($container.width() / $sliderItems.width()) * $sliderItems.width();
-      };
-
-      var itemWidth = function () {
-        return Math.ceil($sliderItems.width());
-      };
-
-      $('.slider-item-text .title').ellipsis({
-        live: true
-      });
-
-      $(window).on({
-        resize: function () {
-          return $container.scrollLeft(0);
-        }
-      });
-
-      $container.scroll(function () {
-        $sliderActionLeft.css('left', $(this).scrollLeft() + 'px');
-        $sliderActionRight.css('right', -$(this).scrollLeft() + 'px');
-      });
-
-      $sliderActionLeft.click(function () {
-        makeVisibleIfHidden($sliderActionRight);
-        var currentScrollLeft = $container.scrollLeft();
-
-        if (currentScrollLeft === 0) return;
-
-        $container.animate({
-          scrollLeft: currentScrollLeft - itemWidth()
-        }, 300, function () {
-          if ($container.scrollLeft() === 0) {
-            $sliderActionLeft.css('visibility', 'hidden');
-          }
-        });
-      });
-
-      $sliderActionRight.click(function () {
-        makeVisibleIfHidden($sliderActionLeft);
-
-        var currentScrollLeft = Math.ceil($container.scrollLeft());
-        if (currentScrollLeft + containerVisibleWidth() >= containerTotalWidth()) {
-          return;
-        }
-
-        $container.animate({
-          scrollLeft: currentScrollLeft + itemWidth()
-        }, 300, function () {
-          if (Math.ceil($container.scrollLeft()) + containerVisibleWidth() >= containerTotalWidth()) {
-            $sliderActionRight.css('visibility', 'hidden');
-          }
-        });
-      });
-    </script>
-    <div class="push clearfix"></div>
-  </div>
-  <div class="footer">
-    <div class="footer-outer">
-      <div class="footer-inner">
-        <div class="container">
-          <div class="footer-content-top">
-            <div class="hidden-print">
-              <h4 class="pt20">Mehr Informationen</h4>
-              <div class="footer-nav">
-                <ul>
-                  <li>
-                    <a href="https://open.sap.com/pages/about">Über uns</a>
-                  </li>
-                  <li>
-                    <a href="https://open.sap.com/pages/gallery">Galerie</a>
-                  </li>
-                  <li>
-                    <a href="https://open.sap.com/pages/course_reactivation">Kursreaktivierung</a>
-                  </li>
-                  <li>
-                    <a target="_blank" href="https://blogs.sap.com/tag/opensap/">Blog</a>
-                  </li>
-                  <li>
-                    <a href="https://open.sap.com/feeds">Feeds</a>
-                  </li>
-                  <li>
-                    <a target="_blank" href="http://go.sap.com/training-certification.html">SAP Schulungsangebote</a>
-                  </li>
-                  <li>
-                    <a href="https://open.sap.com/polls/archive">Umfragen</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="hidden-print">
-              <h4 class="pt20">Hilfe</h4>
-              <div class="footer-nav">
-                <ul>
-                  <li>
-                    <a href="https://open.sap.com/pages/faq">FAQ</a>
-                  </li>
-                  <li>
-                    <a href="https://open.sap.com/pages/roa_guidelines">Richtlinien für Leistungsnachweise</a>
-                  </li>
-                  <li>
-                    <a href="https://open.sap.com/pages/badges">Digitale Badges</a>
-                  </li>
-                  <li>
-                    <a href="https://open.sap.com/pages/honor_code">Ehrenkodex</a>
-                  </li>
-                  <li>
-                    <a href="https://open.sap.com/pages/forum_rules">Forenregeln</a>
-                  </li>
-                  <li>
-                    <a href="https://open.sap.com/pages/p_a">Peer Assessment</a>
-                  </li>
-                  <li>
-                    <a href="javascript:openHelpdeskLayer();">Helpdesk</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="hidden-print">
-              <h4 class="pt20">Folgen Sie uns</h4>
-              <div class="footer-nav">
-                <ul class="socialmedia-links">
-                  <li>
-                    <a target="_blank" class="socialmedia-icon twitter" href="https://twitter.com/openSAP">Twitter</a>
-                  </li>
-                  <li>
-                    <a target="_blank" class="socialmedia-icon facebook" href="https://facebook.com/openSAPfanpage">Facebook</a>
-                  </li>
-                  <li>
-                    <a target="_blank" class="socialmedia-icon scn" href="http://scn.sap.com/community/opensap">SAP Community Network</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="footer-about">
-              <h4 class="pt20">Über openSAP</h4>
-              <p>openSAP bietet kostenlose MOOCs (Massive Open Online Courses) für alle an, die daran interessiert sind, sich
-                zu den neuesten Innovationen der SAP auszubilden und zu lernen wie man im digitalen Zeitalter besteht. openSAP
-                Kurse nutzen bewährte Schulungsraumkonzepte und kombinieren diese mit modernen und motivierenden Lernelementen
-                und einem Diskussionsforum zu einem zeitgemäßen Onlineformat.</p>
-              <a class="app-badge" target="_blank" href="https://itunes.apple.com/app/id1146510526?pt=575509&amp;ct=website&amp;mt=8">
-                <img alt="Laden im App Store" src="/assets/apple_app_store_badge-25178aeef6eb6b83b96f5f2d004eda3bffbb37122de64afbaef7107b384a4132.svg">
-              </a>
-              <a class="app-badge" target="_blank" href="https://play.google.com/store/apps/details?id=de.xikolo.opensap">
-                <img alt="Jetzt bei Google Play" src="/assets/google_play_badge-4db47198ca423f2791f74ce11fed32fd6be6b506fa8ec5fd425108a0a36205c3.png">
-              </a>
-            </div>
-          </div>
-          <div class="pt10 pb10">
-            <hr class="divider">
-            <div class="copyright">
-              <div class="pull-left">© 2013 - 2018
-                <ul class="horizontal slash">
-                  <li>
-                    <a target="_blank" href="http://www.sap.com/corporate-de/legal/copyright/index.epx">Copyright SAP</a>
-                  </li>
-                </ul>&nbsp;–
-                <ul class="horizontal dash">
-                  <li>
-                    <a target="_blank" href="http://www.sap.com/corporate-de/legal/impressum.epx">Impressum</a>
-                  </li>
-                  <li>
-                    <a target="_blank" href="https://open.sap.com/pages/privacy">Datenschutz</a>
-                  </li>
-                  <li>
-                    <a target="_blank" href="http://www.sap.com/corporate-de/about/legal/terms-of-use.html">Nutzungsbedingungen</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="pull-right">Powered by
-                <ul class="horizontal slash">
-                  <li>
-                    <a target="_blank" href="https://www.hpi.de/">HPI</a>
-                  </li>
-                  <li>
-                    <a target="_blank" href="https://open.hpi.de/">openHPI</a>
-                  </li>
-                </ul> (r5412)</div>
-              <div class="clearfix"></div>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-  <script>
-    $().ready(function () {
-      return $('button[id^="wmd-image-button-text"]').hide();
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        return $('button[id^="wmd-image-button-text"]').hide();
     });
-  </script>
-  <div class="dimmer" style="opacity: 0; display: none;"></div>
-  <div class="helpdesk-container hidden-print">
+</script>
+<div class="dimmer" style="opacity: 0; display: none;"></div>
+<div class="helpdesk-container hidden-print">
     <div class="js-helpdesk-button helpdesk-button" id="helpdesk-button" style="right: -1px;">
-      <div class="button-label">Helpdesk</div>
+        <div class="button-label">Assistent</div>
     </div>
     <div class="helpdesk-panel" id="helpdesk-panel" style="display: none;">
-      <div class="helpdesk-box1" id="helpdesk-ajax-container" style="display: none;">
-        <h4>
-          <span class="primary-color helpdesk-brand">openSAP </span>
-          <span>Helpdesk</span>
-        </h4>
-        <div id="chat-ui"></div>
-      </div>
-      <div class="helpdesk-box2"></div>
-      <div class="helpdesk-box3"></div>
-  </div>
-  <div aria-hidden="true" aria-labelledby="label" class="modal" id="onboarding-modal" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button class="close modal-close" data-dismiss="modal" type="button">
-            <span aria-hidden="true"> ×</span>
-          </button>
-          <h2 class="modal-title">Welcome to OPENSAP</h2>
+        <div class="helpdesk-box1" id="helpdesk-ajax-container" style="display: none;">
+            <h4>
+                <span class="primary-color helpdesk-brand">Schul-Cloud </span>
+                <span>Assistent</span>
+            </h4>
+            <div id="chat-ui"></div>
         </div>
-        <div class="modal-body">
-          <p class="onboarding-text">Welcome to OPENSAP! Take some time to have a look around and get to know the place!</p>
-          <img class="onboarding-image hidden"
-            src="/assets/home_screen-9f67669544f76e2b6256dd9f5559d40018dae96244d41c3ecc089af13760f77f.png" alt="Home screen">
-        </div>
-        <div class="modal-footer">
-          <div class="onboarding-dots-container"></div>
-          <button name="button" type="submit" class="btn btn-default" id="onboarding-skip">Skip</button>
-          <button name="button" type="submit" class="btn next-button" id="onboarding-start">Start</button>
-          <button name="button" type="submit" class="btn next-button" id="onboarding-done">Done</button>
-          <button name="button" type="submit" class="btn previous-button" id="onboarding-prev">Prev</button>
-          <button name="button" type="submit" class="btn next-button" id="onboarding-next">Next</button>
-        </div>
-      </div>
+        <div class="helpdesk-box2"></div>
+        <div class="helpdesk-box3"></div>
     </div>
-  </div>
-  <div class="has-spinner loading" id="loading-dimmer">
-    <div id="loading-dimmer-innerwrapper">
-      <div class="loading-animation">
-        <div class="spinner">
-          <div class="bounce1"></div>
-          <div class="bounce2"></div>
-          <div class="bounce3"></div>
+    <div aria-hidden="true" aria-labelledby="label" class="modal" id="onboarding-modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close modal-close" data-dismiss="modal" type="button">
+                        <span aria-hidden="true"> ×</span>
+                    </button>
+                    <h2 class="modal-title">Welcome to OPENSAP</h2>
+                </div>
+                <div class="modal-body">
+                    <p class="onboarding-text">Welcome to OPENSAP! Take some time to have a look around and get to know
+                        the place!</p>
+                    <img class="onboarding-image hidden" src="/assets/home_screen-9f67669544f76e2b6256dd9f5559d40018dae96244d41c3ecc089af13760f77f.png"
+                        alt="Home screen">
+                </div>
+                <div class="modal-footer">
+                    <div class="onboarding-dots-container"></div>
+                    <button name="button" type="submit" class="btn btn-default" id="onboarding-skip">Skip</button>
+                    <button name="button" type="submit" class="btn next-button" id="onboarding-start">Start</button>
+                    <button name="button" type="submit" class="btn next-button" id="onboarding-done">Done</button>
+                    <button name="button" type="submit" class="btn previous-button" id="onboarding-prev">Prev</button>
+                    <button name="button" type="submit" class="btn next-button" id="onboarding-next">Next</button>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  <div>
-    <div class="sweet-overlay" tabindex="-1"></div>
-    <div class="sweet-alert" tabindex="-1">
-      <div class="icon error">
-        <span class="x-mark">
-          <span class="line left"></span>
-          <span class="line right"></span>
-        </span>
-      </div>
-      <div class="icon warning">
-        <span class="body"></span>
-        <span class="dot"></span>
-      </div>
-      <div class="icon info"></div>
-      <div class="icon success">
-        <span class="line tip"></span>
-        <span class="line long"></span>
-        <div class="placeholder"></div>
-        <div class="fix"></div>
-      </div>
-      <div class="icon custom"></div>
-      <h2>Title</h2>
-      <p>Text</p>
-      <button class="confirm">OK</button>
-      <button class="cancel">Cancel</button>
+    <div class="has-spinner loading" id="loading-dimmer">
+        <div id="loading-dimmer-innerwrapper">
+            <div class="loading-animation">
+                <div class="spinner">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</body>
+    <div>
+        <div class="sweet-overlay" tabindex="-1"></div>
+        <div class="sweet-alert" tabindex="-1">
+            <div class="icon error">
+                <span class="x-mark">
+                    <span class="line left"></span>
+                    <span class="line right"></span>
+                </span>
+            </div>
+            <div class="icon warning">
+                <span class="body"></span>
+                <span class="dot"></span>
+            </div>
+            <div class="icon info"></div>
+            <div class="icon success">
+                <span class="line tip"></span>
+                <span class="line long"></span>
+                <div class="placeholder"></div>
+                <div class="fix"></div>
+            </div>
+            <div class="icon custom"></div>
+        </div>
+    </div>
 
-</html>
+
+
+<div class="modal fade contactAdmin-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title">Übersicht</h4>
+            </div>
+                    <form class="modal-form" method="post" action="https://schul-cloud.org/dashboard/">
+
+            <div class="modal-body">
+                                    <div class="form-group">
+                        <label class="control-label" for="title">Hier erreichst du den Administrator deiner Schule. Er kann dir z.B. bei Login-Problemen helfen und wird per E-Mail über deinen Kontaktgesuch informiert.</label>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="title">Kurzbeschreibung des Problems</label>
+                        <input type="text" name="title" id="title" placeholder="Kurzbeschreibung des Problems" class="form-control" required="">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="hasHappened">IST-Zustand: Was geschieht zur Zeit, nachdem ich welche Schritte durchgeführt habe?</label>
+                        <textarea class="form-control" id="hasHappened" cols="50" name="hasHappened" rows="6" required="">                        </textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="supposedToHappen">SOLL-Zustand: Was sollte stattdessen geschehen?</label>
+                        <textarea class="form-control" id="supposedToHappen" cols="50" name="supposedToHappen" rows="6" required="">                        </textarea>
+                    </div>
+                    <div class="form-group">
+                        <select data-placeholder="Kategorie wählen (optional)" class="form-control" name="category" id="category" style="display: none;">
+                            <optgroup label="Bereich">
+                                <option value="login_registration">Anmeldung/Registrierung</option>
+                                <option value="dashboard">Übersicht</option>
+                                <option value="courses">Kurse</option>
+                                <option value="classes">Klassen</option>
+                                <option value="calendar">Termine</option>
+                                <option value="homework">Aufgaben</option>
+                                <option value="files">Meine Dateien</option>
+                                <option value="content">Materialien</option>
+                                <option value="administration">Verwaltung</option>
+                                <option value="other">Sonstiges</option>
+                            </optgroup>
+                            <optgroup label="Technisches">
+                                <option value="technical_problem">Technische Probleme</option>
+                            </optgroup>
+                        </select><div class="chosen-container chosen-container-single chosen-container-single-nosearch" title="" id="category_chosen" style="width: 100%;"><a class="chosen-single">
+  <span>Anmeldung/Registrierung</span>
+  <div><b></b></div>
+</a>
+<div class="chosen-drop">
+  <div class="chosen-search">
+    <input class="chosen-search-input" type="text" autocomplete="off" readonly="">
+  </div>
+  <ul class="chosen-results"></ul>
+</div></div>
+                    </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-close">
+                    
+                </button>
+
+                
+
+                <button type="submit" class="btn btn-primary btn-submit">
+                    
+                </button>
+            </div>
+        </form>
+
+        </div>
+    </div>
+</div>
+
+        </section>
+
+
+    <script type="text/javascript">
+    var _paq = _paq || [];
+        _paq.push(['setCustomDimension', customDimensionId = 1, customDimensionValue = 'HPI Schul-Cloud-Schule']);
+        _paq.push(['setCustomDimension', customDimensionId = 4, customDimensionValue = 'student']);
+
+
+    _paq.push(['trackPageView']);
+
+    (function () {
+        var u = "//open.hpi.de/piwik/";
+        _paq.push(['setTrackerUrl', u + 'piwik.php']);
+        _paq.push(['setSiteId', '8']);
+        var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+        g.type = 'text/javascript';
+        g.async = true;
+        g.defer = true;
+        g.src = u + 'piwik.js';
+        s.parentNode.insertBefore(g, s);
+    })();
+</script>
+
+
+
+
+
+</body><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span><div><div class="gr_-editor gr-iframe-first-load" style="display: none;"><div class="gr_-editor_back"></div><iframe class="gr_-ifr gr-_dialog-content" src="./Übersicht - HPI Schul-Cloud - Deine digitale Lernumgebung_files/saved_resource.html"></iframe></div></div><grammarly-card><div></div></grammarly-card></html>

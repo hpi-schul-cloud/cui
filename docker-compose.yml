@@ -1,62 +1,17 @@
-version: "3"
-
+version: '3.3'
+networks: {rasa-network: {}}
 services:
-
-  rasa-core:
-    build:
-      context: ./rasa-core
-      dockerfile: Dockerfile
-    command: ["python", "run_server.py"]
-    # command: python -m rasa_core.server --debug -d model/openhpi_faq_de
-    environment:
-      - RASA_CORE_MODEL_PATH=./model/openhpi_faq_de
-      - RASA_CORE_QUESTIONS_PATH=./data/openhpi_faq_de/intent_questions.json
-      - RASA_NLU_PROJECT_NAME=openhpi_faq_de
-      - RASA_NLU_MODEL_NAME=
-      - RASA_NLU_SERVER_ADDRESS=http://rasa-nlu:5000
-      - RASA_NLU_SERVER_TOKEN=
-      - PYTHONPATH=/app/actions
+  rasa:
+    image: 'your_image'
     ports:
-      - "5005:5005"
-    volumes:
-      - ./rasa-core/data:/app/data
-      - ./rasa-core/actions:/app/actions
-      - ./rasa-core/model:/app/model
-      - ./rasa-core/logs:/app/logs
-      - ./rasa-nlu/data:/app/nlu
-    depends_on:
-      - rasa-nlu
-  
-  rasa-nlu:
-    build:
-      context: ./rasa-nlu
-      dockerfile: Dockerfile
-    command: ["python", "-m", "rasa_nlu.server", "--path", "./projects", "-c", "./config.yml"]
-    ports:
-      - "5000:5000"
-    volumes:
-      - ./rasa-nlu/config.yml:/app/config.yml
-      - ./rasa-nlu/data:/app/data
-      - ./rasa-nlu/projects:/app/projects
-    depends_on:
-      - duckling
-    
-  rasa-nlu-training:
-    build:
-      context: ./rasa-nlu
-      dockerfile: Dockerfile
-    command: ["cron", "-f"]
-    volumes:
-      - ./rasa-nlu/config.yml:/app/config.yml
-      - ./rasa-nlu/data:/app/data
-      - ./rasa-nlu/projects:/app/projects
-      - ./rasa-nlu/train-nlu.sh:/etc/cron.daily/train-nlu
-
-  duckling:
+      - 5005:5005
+    command: ["run", "-vv", "--endpoints", "endpoints.yml"]
+    networks: ['rasa-network']
+  duckling_server:
     image: rasa/duckling:latest
     ports:
-      - "8000:8000" 
-
+      - 8000:8000
+    networks: ['rasa-network']
   chat-ui:
     build:
       context: ./chat-ui
@@ -69,4 +24,4 @@ services:
       - './chat-ui:/usr/src/app'
       - '/usr/src/app/node_modules'
     depends_on:
-      - rasa-core
+      - rasa

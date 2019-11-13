@@ -1,0 +1,16 @@
+# This file contains the different endpoints your bot can use.
+
+action_endpoint:
+  url: "http://localhost:5055/webhook"
+
+
+#tracker_store:
+#  type: mongod
+#  url: mongodb://localhost:27017
+
+#event_broker:
+#  url: dev.saj.ai
+#  username: 'dev_saj'
+#  password: 'iNn0S4Ta7F0LnDDGc7qs'
+#  queue: 'rasa_status'
+#  type: pika

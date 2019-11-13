@@ -1,0 +1,45 @@
+intents:
+  - lesson-room
+  - lesson-time-start
+  - lesson-time-end
+  - next-lesson-time
+  - next-lesson-room
+  - first-lesson
+  - next-lesson
+  - school-ends
+  - inform
+  - news
+  - article-details
+
+actions:
+  - action_first-lesson
+  - action_get-news
+  - action_get-news-details
+  - action_next-lesson
+  - action_next-lesson-time
+  - action_school-ends
+  - action_get-lesson-room
+  - action_get_lesson_time_end
+  - action_get_lesson_time_start
+  - action_subject-set
+  - action_check_status
+  - utter_show-news-details
+  - utter_ask-subject
+
+templates:
+  utter_homework-todos:
+    - text: "Du musst noch Mathe und Bio erledigen."
+  utter_homework-deadline:
+    - text: "Mathe ist bis morgen. Für Bio hast du noch zwei Tage Zeit."
+  utter_ask-subject:
+    - text: "Bitte geb eine Unterrichtsstunde an."
+  utter_show-news-details:
+    - text: "These are some very important details."
+
+slots:
+  subject:
+    type: text
+  subject-set:
+    type: unfeaturized
+  news-topic:
+    type: text

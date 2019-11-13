@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+.send-button {
+  background-color: rgb(119, 180, 35);
+}
+
+.greeting-msg {
+  background-color: rgb(119, 180, 35);
+  color: white;
+}
 .form-group {
   display: flex;
   flex-direction: 'row';

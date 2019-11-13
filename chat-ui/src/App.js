@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import axios from 'axios'
 
@@ -35,14 +34,11 @@ class App extends Component {
   The greeting message can be changed here & you can create new greeting messages here
   */
   getGreetingMessage() {
-    var openwhoGreetingMessage = "Hello, I am your Helpdesk-Assistant. The topics I can help you with include, but are not limited to:\n-login\n-registration\n-confirmation email\n-enrollment/enroll\n-certificate\n-video/audio\n-subtitles\n-modules\nPlease describe your problem, or ask me something.";
-    var openhpiEngGreetingMessage = "Hello, I am your Helpdesk-Assistant. The topics I can help you with include, but are not limited to:\n-login\n-registration\n-courses\n-tests/homeworks\n-certificate\nPlease describe your problem, or ask me something."
-    var openhpiDeGreetingMessage = "Hallo, Ich bin dein Helpdesk-Assistent. Frag mich einfach etwas oder beschreib dein Problem. "
-    return openhpiDeGreetingMessage;
+    return"Hallo, ich bin dein Schul-Cloud Assistent. Du kannst mich alles über deinen Stundenplan fragen."
   }
 
   handleClick() {
-    if(!this.altclicked) {
+    if (!this.altclicked) {
       var list = document.getElementById('curr-conv');
       if (list) {
         list.parentNode.removeChild(list);
@@ -62,25 +58,26 @@ class App extends Component {
     axios.get('http://localhost:5005/conversations/default/respond?q=' + val)
       .then(response => {
         this.addAnswerToConversation(response.data.responses);
-        if (response.data.confidence < 0.2) {
-          this.addAlternativesToConversation(response.data.alternatives);
-        }
+        // if (response.data.confidence < 0.2) {
+        //   this.addAlternativesToConversation(response.data.alternatives);
+        // }
         const convElem = document.getElementById("conversation")
         convElem.scrollTo(0, convElem.scrollHeight);
       })
       .finally(() => {
-        this.setState({ waitingForResponse: false });
-        document.getElementsByClassName('Question-Box ' + this.getColorScheme())[0].focus();
+        this.setState({
+          waitingForResponse: false
+        });
       });
   }
 
   addAnswerToConversation(answers) {
     answers.forEach((answer) => {
-        let newElem = document.createElement('div');
-        newElem.classList.add('message-box', 'answer', this.getColorScheme());
-        newElem.innerHTML = answer.text.trim();
-        document.getElementById('conversation').appendChild(newElem);
-        this.currText = answer.text.trim();
+      let newElem = document.createElement('div');
+      newElem.classList.add('message-box', 'answer', this.getColorScheme());
+      newElem.innerHTML = answer.text.trim();
+      document.getElementById('conversation').appendChild(newElem);
+      this.currText = answer.text.trim();
     })
   }
 
@@ -138,14 +135,16 @@ class App extends Component {
   }
 
   handleChange(e) {
-    this.setState({ value: e.target.value });
+    this.setState({
+      value: e.target.value
+    });
   }
 
   render() {
     return (
       <div className="chat-ui">
         <div id="conversation">
-           <div className={'message-box '+ 'answer '+ this.getColorScheme()}>{this.getGreetingMessage()}</div>
+           <div className={'message-box ' + 'answer greeting-msg'}>{this.getGreetingMessage()}</div>
         </div>
         <form>
           <form
@@ -161,13 +160,13 @@ class App extends Component {
             <input
               type="text"
               value={this.state.value}
-              placeholder="Write message"
-              className={"Question-Box " + this.getColorScheme()}
+              placeholder="Frag uns nach deinem Stundenplan"
+              className={"Question-Box "}
               onChange={this.handleChange}
               autoComplete="off"
               disabled={this.state.waitingForResponse}
             />
-            <button type="button" onClick={this.handleClick} className={'btn-send ' + this.getColorScheme()}> <img src="/assets/send.png"/> </button>
+            <button type="button" onClick={this.handleClick} className={'btn-send send-button'}> <img src="/assets/send.png"/> </button>
           </form>
         </form>
       </div>

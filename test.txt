@@ -1,0 +1,30 @@
+## intent:homework-todos
+- Muss ich noch Hausaufgaben erledigen?
+- Welche Hausaufgaben sind noch offen?
+- Was hab ich noch zu tun?
+- Hab ich noch Hausaufgaben offen für morgen?
+- Was steht noch auf meiner ToDo Liste?
+- Hab ich noch Hausi zu tun?
+- Welche Hausis muss ich noch machen?
+
+## intent:homework-deadline
+- Wann muss ich Mathe abgeben?
+- Wann muss ich meine Hausaufgaben abgeben?
+- Was ist der Abgabetermin für meine Hausaufgaben?
+- Wann muss ich meine Hausis abgeben?
+- Wann muss ich Mathe abgeben?
+- Wann muss ich die abgeben?
+- Wann sind die fällig?
+- Wann sind meine Hausaufgaben fällig?
+
+## intent:article-details
+- Zeig mir [Starke Regenfälle](news-topic)
+- Ich möchte mehr über [Schöne Sommerferien](news-topic) lesen
+- Zeig mir den ganzen Artikel [Starke Regenfälle](news-topic) an
+- Ich möchte den ganzen Artikel [Schöne Sommerferien](news-topic) lesen
+- Ich möchte den ganzen Artikel [Schöne Sommerferien](news-topic) haben
+- Um was gehts in dem Artikel [Schöne Sommerferien](news-topic)?
+- Ich möchte die Neuigkeit [Starke Regenfälle](news-topic) lesen
+- Zeig mir die Neuigkeit [Schöne Sommerferien](news-topic)
+- Was ist der Inhalt von [Schöne Sommerferien](news-topic)?
+- Was ist der Inhalt des Artikels [Schöne Sommerferien](news-topic)?
