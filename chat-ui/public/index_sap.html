@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<!-- saved from url=(0021)https://open.sap.com/ -->
+<html lang="de" class=" desktop landscape js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script>
+    //<![CDATA[
+    window.gon = {};
+    gon.in_app = false;
+    //]]>
+  </script>
+  <meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport">
+  <link href="https://player.vimeo.com/" rel="preconnect">
+  <link href="https://player.vimeo.com/" rel="dns-prefetch">
+  <meta content="JdISH2e8gy37bHb_k6C_nB6B6Ur9NDob_e3QnLH4wTM" name="google-site-verification">
+  <meta name="csrf-param" content="authenticity_token">
+  <meta name="csrf-token" content="F6UQs3iq0NcQ/QbArvlcIg6RvjBSJEhl5D3bw3gnYHdgMEsy36KZZGG30ofyh+qITrL6M64JQIf/EAxgxLu8TQ==">
+  <title>openSAP-MOOCs für Unternehmen: überall, jederzeit und auf allen Geräten lernen! | openSAP</title>
+  <link href="https://open.sap.com/img/favicon/opensap_favicon.ico"
+    rel="shortcut icon" type="image/x-icon">
+  <link href="https://open.sap.com/web_manifest.json" rel="manifest">
+  <meta content="openSAP" name="apple-mobile-web-app-title">
+  <meta name="apple-itunes-app" content="app-id=1146510526">
+  <link rel="stylesheet" media="all" href="/assets/bootstrap-4c7301ad703cefa5545487ee100bfbd2d30b3576daa6a0a948210b33c3ca649e.css">
+  <link rel="stylesheet" media="all" href="/assets/application_opensap-3f79a209d6cf4e1b92ad20d2491a7b1b4792767750c5a573d3ae537ea567e43f.css">
+  <script src="/assets/application-55da619ea34b63a376aec8130f5b8dcd170b3cd4f42e864e0340117c90fb5a09.js"></script>
+  <script src="/assets/xikolo-locale-de-74e8ba76d7f67c6143dd8fbafe11a62455a6bf999782d5d57df08fc1e62341c1.js"></script>
+  <script>
+    //<![CDATA[
+    jQuery.timeago.settings.lang = "de";
+    //]]>
+  </script>
+  <script>
+    I18n.defaultLocale = "en";
+    I18n.locale = "de";
+    I18n.brand = "opensap";
+  </script>
+  <style type="text/css">
+    .inside-channel--enterprise {
+      --primary-color: #fbab00;
+    }
+
+    .inside-channel--thought-leaders {
+      --primary-color: #008fd3;
+    }
+  </style>
+  <meta content="{&quot;brand&quot;:&quot;opensap&quot;,&quot;site_name&quot;:&quot;openSAP&quot;,&quot;ui_primary_color&quot;:&quot;#F0AB00&quot;,&quot;default_course_list_mode&quot;:&quot;columns&quot;,&quot;on_demand&quot;:true,&quot;imagecrop_url&quot;:null,&quot;auto_translate_courses&quot;:null,&quot;auto_translate_languages&quot;:null}"
+    name="site-config">
+  <meta content="[]" name="enabled-features">
+  <meta content="{}" name="user-features">
+</head>
+
+<body class="opensap home-controller index-action loaded" data-images-url="" data-offset="150" data-sitename="openSAP" data-spy="scroll"
+  data-target=".scrollspy-target">
+  <nav class="navbar navbar-inverse hidden-print osap " role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-brand" style="position: relative">
+          <a href="https://open.sap.com/">
+            <img alt="Home" id="welcome01" src="/assets/logo_opensap-76d237a16e93caa8ccf4fc2113cf4abb4efd512fa74d140f966799446d0e4495.png">
+          </a>
+        </div>
+        <div class="dropdown pull-right">
+          <ul class="dropdown-menu" role="menu">
+            <li class="flag flag-de"></li>
+            <li class="flag flag-uk"></li>
+          </ul>
+        </div>
+      </div>
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-left">
+          <li>
+            <a href="https://open.sap.com/pages/about">Über openSAP</a>
+          </li>
+          <li class="dropdown dropdown-arrow">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="https://open.sap.com/#">Kursbereiche
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="channel-selector inside-channel--enterprise">
+                <a href="https://open.sap.com/channels/enterprise">Enterprise MOOCs</a>
+              </li>
+              <li class="channel-selector inside-channel--thought-leaders">
+                <a href="https://open.sap.com/channels/thought-leaders">Thought Leaders</a>
+              </li>
+            </ul>
+          </li>
+          <li id="navcourses">
+            <a id="button--course-navigation" href="https://open.sap.com/courses">Kurse</a>
+            <div class="dropdown-menu dropdown-megamenu">
+              <div class="col-md-4 category">
+                <div class="category-title">Aktuelle Kurse</div>
+                <ul class="courses">
+                  <li>
+                    <a href="https://open.sap.com/courses/hsgra1">Analyzing Connected Data with SAP HANA Graph</a>
+                  </li>
+                  <li>
+                    <a href="https://open.sap.com/courses/ssw1-tl">Smart Service Welt – Data and Platform-Based Business Models</a>
+                  </li>
+                  <li>
+                    <a href="https://open.sap.com/courses/java1">Object-Oriented Programming in Java</a>
+                  </li>
+                  <li>
+                    <a href="https://open.sap.com/courses/cp6">Analytics with SAP Cloud Platform</a>
+                  </li>
+                  <li>
+                    <a href="https://open.sap.com/courses/dleo1">SAP Leonardo Design-Led Engagements Demystified</a>
+                  </li>
+                </ul>
+                <a class="invisible-to-md" href="https://open.sap.com/courses">Alle Kurse anzeigen&nbsp;
+                  <i class="fa fa-angle-right"></i>
+                </a>
+              </div>
+              <div class="col-md-4 category">
+                <div class="category-title">Zukünftige Kurse</div>
+                <ul class="courses">
+                  <li>
+                    <a href="https://open.sap.com/courses/s4h12">Intelligent ERP with SAP S/4HANA Cloud</a>
+                  </li>
+                  <li>
+                    <a href="https://open.sap.com/courses/calli1">Calliope mini erfolgreich in der Schule einsetzen</a>
+                  </li>
+                  <li>
+                    <a href="https://open.sap.com/courses/ct1">Informatik für Einsteiger</a>
+                  </li>
+                  <li>
+                    <a href="https://open.sap.com/courses/sps4">Building Mobile Applications with SAP Screen Personas</a>
+                  </li>
+                  <li>
+                    <a href="https://open.sap.com/courses/bvis1-3">Be Visual! Sketching Basics for IT Business (Edition Q3/2018)</a>
+                  </li>
+                </ul>
+                <a class="invisible-to-md" href="https://open.sap.com/courses">Alle Kurse anzeigen&nbsp;
+                  <i class="fa fa-angle-right"></i>
+                </a>
+              </div>
+              <div class="col-md-4 category">
+                <div class="category-title">Kurse im Selbststudium</div>
+                <ul class="courses">
+                  <li>
+                    <a href="https://open.sap.com/courses/srm1-1">Procurement Transformation with SAP Ariba and SAP S/4HANA (Repeat)</a>
+                  </li>
+                  <li>
+                    <a href="https://open.sap.com/courses/hyb2">SAP Retail Omnichannel Commerce</a>
+                  </li>
+                  <li>
+                    <a href="https://open.sap.com/courses/dr1-3">Basics of Design Research (Edition Q2/2018)</a>
+                  </li>
+                  <li>
+                    <a href="https://open.sap.com/courses/hsdt1">Introduction to SAP HANA Dynamic Tiering</a>
+                  </li>
+                  <li>
+                    <a href="https://open.sap.com/courses/byd5">SAP Business ByDesign Project-Based Services</a>
+                  </li>
+                </ul>
+                <a class="invisible-to-md" href="https://open.sap.com/courses">Alle Kurse anzeigen&nbsp;
+                  <i class="fa fa-angle-right"></i>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a href="https://open.sap.com/news">Ankündigungen</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="language-chooser dropdown dropdown-arrow visible-md visible-lg visible-sm">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="https://open.sap.com/#">
+              <span class="xikolo-icon icon-language ml5"></span>
+              <span class="ml5">Deutsch</span>
+              <span class="caret"></span>
+            </a>
+            <ul aria-labelledby="languageChooser" class="dropdown-menu" role="menu">
+              <li>
+                <a href="https://open.sap.com/?locale=en">English</a>
+              </li>
+              <li class="active">
+                <a href="https://open.sap.com/?locale=de">Deutsch</a>
+              </li>
+              <li>
+                <a href="https://open.sap.com/?locale=fr">Français</a>
+              </li>
+              <li>
+                <a href="https://open.sap.com/?locale=cn">中文</a>
+              </li>
+            </ul>
+          </li>
+          <li class="visible-xs">
+            <div>
+              <span class="vmiddle white"></span>
+              <ul class="list-inline inline-block vmiddle">
+                <li>
+                  <a href="https://open.sap.com/?locale=en">English</a>
+                </li>
+                <li class="active">
+                  <a href="https://open.sap.com/?locale=de">Deutsch</a>
+                </li>
+                <li>
+                  <a href="https://open.sap.com/?locale=fr">Français</a>
+                </li>
+                <li>
+                  <a href="https://open.sap.com/?locale=cn">中文</a>
+                </li>
+                <li>
+                  <a href="https://open.sap.com/?locale=bg">Български</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="dropdown dropdown-arrow invisible-to-md">
+            <a class="dropdown-toggle js-login" data-toggle="dropdown" href="https://open.sap.com/#" id="js-login-toggle">Anmelden
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu login-dropdown pb10">
+              <div class="row" id="login-form">
+                <div class="col-md-6">
+                  <h4>Mit Passwort anmelden</h4>
+                  <div class="identity">
+                    <form class="simple_form login" action="https://open.sap.com/sessions" accept-charset="UTF-8" method="post">
+                      <input name="utf8" type="hidden" value="✓">
+                      <input type="hidden" name="authenticity_token" value="F6UQs3iq0NcQ/QbArvlcIg6RvjBSJEhl5D3bw3gnYHdgMEsy36KZZGG30ofyh+qITrL6M64JQIf/EAxgxLu8TQ==">
+                      <div class="login">
+                        <div class="login_error"></div>
+                        <div class="form-group email required login_email">
+                          <label class="email required" for="login_email">
+                            <abbr title="required">*</abbr> E-Mail</label>
+                          <div>
+                            <div>
+                              <input class="string email required form-control form-control" required="required" aria-required="true"
+                                placeholder="E-Mail" type="email" name="login[email]" id="login_email">
+                            </div>
+                          </div>
+                        </div>
+                        <div style="margin-bottom:0px" class="form-group password required login_password">
+                          <label class="password required" for="login_password">
+                            <abbr title="required">*</abbr> Passwort</label>
+                          <div>
+                            <div>
+                              <input class="password required form-control" required="required" aria-required="true" placeholder="Passwort"
+                                type="password" name="login[password]" id="login_password">
+                            </div>
+                          </div>
+                        </div>
+                        <a class="small" href="https://open.sap.com/account/reset/new">Passwort vergessen?</a>
+                        <div class="buttons has-spinner">
+                          <input type="submit" name="commit" value="Anmelden" class="btn btn-primary btn js-submit btn btn-primary full-width has-spinner"
+                            id="login" data-inactive-text="Laden ...">
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <hr class="divider">
+                  <h4>Neu hier?</h4>
+                  <a class="js-register btn  btn-default full-width" href="https://open.sap.com/account/new">Neues Benutzerkonto anlegen</a>
+                </div>
+                <div class="col-md-6">
+                  <h4>Oder anmelden mit:</h4>
+                  <ul class="omniauth">
+                    <li>
+                      <a class="sap" href="https://open.sap.com/auth/sap">
+                        <span>Single Sign On</span>
+                      </a>
+                    </li>
+                    <span>
+                      <small>für SAP-Mitarbeiter, Partner und Kunden</small>
+                    </span>
+                  </ul>
+                </div>
+              </div>
+            </ul>
+          </li>
+          <li class="visible-to-md">
+            <a href="https://open.sap.com/sessions/new">Anmelden</a>
+          </li>
+          <li class="register-link">
+            <a href="https://open.sap.com/account/new">Registrieren</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="wrapper">
+    <div class="container">
+      <noscript>
+        <div class="alert alert-warning-border mt10">
+          <span class="xikolo-icon icon-warning mr10"></span>
+          <span class="ml5 kill-underline-force">
+            <a target="_blank" href="http://www.enable-javascript.com/">Bitte aktivieren Sie Javascript in ihrem Browser!!</a>
+          </span>
+        </div>
+      </noscript>
+    </div>
+    <section class="start-section">
+      <div class="start-section__video-container">
+        <div aria-labelledby="videoModalLabel" class="modal fade" id="videoModal" role="dialog" tabindex="-1">
+          <div class="modal-dialog start-section__video-container__video-modal" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <video class="start-section__video-container__video-modal__video" controls="controls" id="fullVideo">
+                  <source media="screen and (min-width:1000px)" src="https://player.vimeo.com/external/277477665.hd.mp4?s=cfb4a7fa05bb03fb1905e1276a34f4ca6779919e&amp;profile_id=174"
+                    type="video/mp4">
+                  <source media="screen and (min-width:680px) and (max-width: 999px)" src="https://player.vimeo.com/external/277477665.sd.mp4?s=cdbba4bb5d026b899abe827c8fb30ec65d636c72&amp;profile_id=165"
+                    type="video/mp4">
+                  <source media="screen and (max-width:679px)" src="https://player.vimeo.com/external/277477665.sd.mp4?s=cdbba4bb5d026b899abe827c8fb30ec65d636c72&amp;profile_id=164"
+                    type="video/mp4">
+                  <track kind="subtitles" label="English" src="/assets/openSAP_landing_page_video_en-0d27ff335a956d3510c2009bf609c55db9827ea0a58227c2855ed50db7346a83.vtt"
+                    srclang="en">
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+          $(document).ready(function () {
+            $('#videoModal').on('show.bs.modal', function (event) {
+              $('#loopVideo').get(0).pause();
+            });
+
+            $('#videoModal').on('shown.bs.modal', function (event) {
+              $('#fullVideo').get(0).play();
+            });
+
+            $('#videoModal').on('hide.bs.modal', function (event) {
+              $('#loopVideo').get(0).play();
+              $('#fullVideo').get(0).pause();
+            });
+
+            $('#fullVideo').on('ended', function () {
+              $('#videoModal').delay(600).modal('hide');
+            });
+          });
+        </script>
+        <video autoplay="autoplay" class="start-section__video-container__video-loop" id="loopVideo" loop="loop"
+          muted="muted">
+          <source media="screen and (min-width:1400px)" src="https://player.vimeo.com/external/277607820.hd.mp4?s=c6d8310984cbb35c8235617fe75e1377777b0463&amp;profile_id=175"
+            type="video/mp4">
+          <source media="screen and (min-width:1000px) and (max-width: 1399px)" src="https://player.vimeo.com/external/277607820.hd.mp4?s=c6d8310984cbb35c8235617fe75e1377777b0463&amp;profile_id=174"
+            type="video/mp4">
+          <source media="screen and (min-width:680px) and (max-width: 999px)" src="https://player.vimeo.com/external/277607820.sd.mp4?s=26c7ad1856e637addf116a92d9e9fcd6a63162e2&amp;profile_id=165"
+            type="video/mp4">
+          <source media="screen and (max-width:679px)" src="https://player.vimeo.com/external/277607820.sd.mp4?s=26c7ad1856e637addf116a92d9e9fcd6a63162e2&amp;profile_id=164"
+            type="video/mp4">
+        </video>
+        <a class="start-section__play-video" data-target="#videoModal" data-toggle="modal">
+          <div class="start-section__play-video__video-play-button">
+            <svg version="1.0" viewBox="0 0 120 120" x="0px" xmlns="http://www.w3.org/2000/svg" y="0px">
+              <path d="M 60 0 C 26.858 0 0 26.858 0 60 C 0 93.143 26.858 120 60 120 C 93.142 120 120 93.143 120 60 C 120 26.858 93.142 0 60 0 Z M 48.225 85.8 L 48.225 38.7 L 81.367 62.25 L 48.225 85.8 Z"></path>
+            </svg>
+          </div>
+          <div class="start-section__play-video__text">Video abspielen</div>
+        </a>
+        <a class="start-section__scroll-hint hidden-xs" href="https://open.sap.com/#what-is-osap">
+          <div class="start-section__scroll-hint__text">Mehr erfahren</div>
+          <div class="start-section__scroll-hint__arrow"></div>
+        </a>
+        <div class="news-slider video-news">
+          <div class="container">
+            <div class="news-slider__container">
+              <div class="news-slider__action news-slider__action--left">
+                <div class="news-slider__arrow news-slider__arrow--left"></div>
+              </div>
+              <div class="news-slider__action news-slider__action--right">
+                <div class="news-slider__arrow news-slider__arrow--right"></div>
+              </div>
+              <div class="news-slider__item">
+                <div class="news-slider__item__text-container">
+                  <div class="news-slider__item__date">
+                    <time datetime="2018-06-19T09:15:00+00:00" title="Dienstag, 19. Juni 2018, 09:15 Uhr">19. Juni 2018</time>
+                  </div>
+                  <div class="news-slider__item__title">
+                    <a href="https://open.sap.com/news#post_a5637da5-6736-4f12-b6d4-3abed4289fe9">Catch up now with our SAP TechEd 2017 Recap!</a>
+                  </div>
+                </div>
+              </div>
+              <div class="news-slider__item">
+                <div class="news-slider__item__text-container">
+                  <div class="news-slider__item__date">
+                    <time datetime="2018-06-05T14:30:00+00:00" title="Dienstag, 05. Juni 2018, 14:30 Uhr">5. Juni 2018</time>
+                  </div>
+                  <div class="news-slider__item__title">
+                    <a href="https://open.sap.com/news#post_23dd7eda-33d8-4047-93d5-cee5d42985bc">New SAPPHIRE-related courses: SAP HANA Data Management Suite, SAP C/4HANA, SAP Leonardo and SAP S/4HANA
+                      Cloud, with SAP Screen Personas and Sketching Basics</a>
+                  </div>
+                </div>
+              </div>
+              <div class="news-slider__item">
+                <div class="news-slider__item__text-container">
+                  <div class="news-slider__item__date">
+                    <time datetime="2018-05-15T12:20:00+00:00" title="Dienstag, 15. Mai 2018, 12:20 Uhr">15. Mai 2018</time>
+                  </div>
+                  <div class="news-slider__item__title">
+                    <a href="https://open.sap.com/news#post_09d44faa-bd9b-4579-ba9c-1cd10fcf4dc3">Enroll now! Basics of Design Research</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="home-section home-section--what-is-osap container" id="what-is-osap">
+      <div class="col-md-5 home-section--what-is-osap__image"></div>
+      <div class="col-md-7 home-section--what-is-osap__text">
+        <h3>Was ist openSAP?</h3>
+        <p>openSAP bietet kostenlose Online-Kurse, die Ihnen helfen, in der digitalen Transformation zu bestehen. Erfahren Sie
+          von SAPs neuesten Innovationen und lernen Sie von globalen Thought Leaders.</p>
+        <p>Alles, was Sie angeben müssen, ist eine E-Mail-Adresse.</p>
+        <a class="highlight-link-button" href="https://open.sap.com/account/new">Registrieren</a>
+      </div>
+    </section>
+    <section class="home-section home-section--topics container">
+      <h2>Entdecken Sie unsere spannenden Themen</h2>
+      <a class="home-section--topics__topic col-md-2" href="https://open.sap.com/courses?topic=Analytics">Analytics</a>
+      <a class="home-section--topics__topic col-md-2" href="https://open.sap.com/courses?topic=Cloud+Solutions">Cloud Solutions</a>
+      <a class="home-section--topics__topic col-md-2" href="https://open.sap.com/courses?topic=Continuous+Innovation">Continuous Innovation</a>
+      <a class="home-section--topics__topic col-md-2" href="https://open.sap.com/courses?topic=Digital+Transformation">Digital Transformation</a>
+      <a class="home-section--topics__topic col-md-2" href="https://open.sap.com/courses?topic=Enterprise+Management">Enterprise Management</a>
+      <a class="home-section--topics__topic col-md-2" href="https://open.sap.com/courses?topic=Human+Resources">Human Resources</a>
+      <a class="home-section--topics__topic col-md-2" href="https://open.sap.com/courses?topic=Industries">Industries</a>
+      <a class="home-section--topics__topic col-md-2" href="https://open.sap.com/courses?topic=SAP+Cloud+Platform">SAP Cloud Platform</a>
+      <a class="home-section--topics__topic col-md-2" href="https://open.sap.com/courses?topic=SAP+HANA">SAP HANA</a>
+      <a class="home-section--topics__topic col-md-2" href="https://open.sap.com/courses?topic=SAP+S%2F4HANA">SAP S/4HANA</a>
+      <a class="home-section--topics__topic col-md-2" href="https://open.sap.com/courses?topic=Social+Responsibility">Social Responsibility</a>
+      <a class="home-section--topics__topic col-md-2" href="https://open.sap.com/courses?topic=User+Experience">User Experience</a>
+    </section>
+    <section class="home-section home-section--learning-channels container">
+      <div class="col-md-7 home-section--learning-channels__channels">
+        <h2>Unsere Kursbereiche</h2>
+        <div class="col-md-6 home-section--learning-channels__channel inside-channel--enterprise">
+          <a href="https://open.sap.com/channels/enterprise">Enterprise MOOCs</a>
+          <p>Erfahren Sie alles über SAPs innovative Lösungen
+            <br>von SAP-Experten</p>
+        </div>
+        <div class="col-md-6 home-section--learning-channels__channel inside-channel--thought-leaders">
+          <a href="https://open.sap.com/channels/thought-leaders">Thought Leaders</a>
+          <p>Erfahren Sie alles über digitale Transformation mit einer Vielzahl an globalen Thought Leaders</p>
+        </div>
+      </div>
+      <div class="col-md-5 home-section--learning-channels__image"></div>
+    </section>
+    <section class="home-section home-section--courses">
+      <h2>Aktuelle und zukünftige Kurse</h2>
+      <div class="home-section--courses__box">
+        <div class="container">
+          <div class="home-section--courses__list">
+            <div class="home-courses columns channel-context">
+              <div class="course-item inside-channel--enterprise">
+                <div class="course-image-wrapper">
+                  <a class="course-image" href="https://open.sap.com/courses/hsgra1">
+                    <img src="/assets/openSAP_hsgra1_web.jpg">
+                  </a>
+                </div>
+                <div class="course-info-wrapper">
+                  <div class="course-info">
+                    <div class="course-title">
+                      <a href="https://open.sap.com/courses/hsgra1" title="Analyzing Connected Data with SAP HANA Graph">Analyzing Connected Data with SAP HANA Graph</a>
+                    </div>
+                    <div class="course-teacher">Markus Fath</div>
+                    <div class="course-shortinfo">
+                      <div class="shortinfo course-date">
+                        <span class="xikolo-icon icon-calendar vmiddle"></span>
+                        <span class="ml5">20 Juni 2018 - 19 Juli 2018</span>
+                      </div>
+                      <div class="shortinfo course-language">
+                        <span class="xikolo-icon icon-language vmiddle"></span>
+                        <span class="ml5">English</span>
+                      </div>
+                    </div>
+                    <div class="course-description">This free online course introduces SAP HANA graph and describes possible use cases, as well as showing
+                      you how to expose data to SAP HANA graph via nodes, edges, and workspaces, and much more. This course
+                      is aimed at data scientists, application developers, and technical business analysts. </div>
+                  </div>
+                  <div class="course-actions">
+                    <a class="course-action-button course-action-details" href="https://open.sap.com/courses/hsgra1">Kursdetails zeigen</a>
+                  </div>
+                </div>
+              </div>
+              <div class="course-item inside-channel--thought-leaders">
+                <div class="course-image-wrapper">
+                  <a class="course-image" href="https://open.sap.com/courses/ssw1-tl">
+                    <img src="/assets/openSAP_ssw1-tl_web.jpg">
+                  </a>
+                </div>
+                <div class="course-info-wrapper">
+                  <div class="course-info">
+                    <div class="course-title">
+                      <a href="https://open.sap.com/courses/ssw1-tl" title="Smart Service Welt – Data and Platform-Based Business Models">Smart Service Welt – Data and Platform-Based Business Models</a>
+                    </div>
+                    <div class="course-teacher">Prof. Dr. Henning Kagermann, Frank Riemensperger</div>
+                    <div class="course-shortinfo">
+                      <div class="shortinfo course-date">
+                        <span class="xikolo-icon icon-calendar vmiddle"></span>
+                        <span class="ml5">19 Juni 2018 - 25 Juli 2018</span>
+                      </div>
+                      <div class="shortinfo course-language">
+                        <span class="xikolo-icon icon-language vmiddle"></span>
+                        <span class="ml5">English</span>
+                      </div>
+                    </div>
+                    <div class="course-description">With this free online course, you’ll learn about the potential of smart services for business model innovation.
+                      You’ll also learn about key technological enablers for the implementation of smart services and the
+                      necessary changes in management and business organization. </div>
+                  </div>
+                  <div class="course-actions">
+                    <a class="course-action-button course-action-details" href="https://open.sap.com/courses/ssw1-tl">Kursdetails zeigen</a>
+                  </div>
+                </div>
+              </div>
+              <div class="course-item inside-channel--enterprise">
+                <div class="course-image-wrapper">
+                  <a class="course-image" href="https://open.sap.com/courses/java1">
+                    <img src="/assets/javaroadchinesewall_2.jpg">
+                  </a>
+                </div>
+                <div class="course-info-wrapper">
+                  <div class="course-info">
+                    <div class="course-title">
+                      <a href="https://open.sap.com/courses/java1" title="Object-Oriented Programming in Java">Object-Oriented Programming in Java</a>
+                    </div>
+                    <div class="course-teacher">Christiane Hagedorn, Ann Katrin Kuessner, Thomas Staubitz, Ralf Teusner</div>
+                    <div class="course-shortinfo">
+                      <div class="shortinfo course-date">
+                        <span class="xikolo-icon icon-calendar vmiddle"></span>
+                        <span class="ml5">13 Juni 2018 - 26 Juli 2018</span>
+                      </div>
+                      <div class="shortinfo course-language">
+                        <span class="xikolo-icon icon-language vmiddle"></span>
+                        <span class="ml5">English</span>
+                      </div>
+                    </div>
+                    <div class="course-description">In this free online course, you’ll learn the key concepts of object-oriented programming (OOP) as well
+                      as fundamental programming techniques. You’ll apply your newly acquired knowledge by implementing hands-on
+                      programming exercises in the Java programming language. The course will be completed by an exercise
+                      to model a small, object-oriented, real-world scenario. After completing this course, you’ll be able
+                      to model and implement small programs in Java and apply OOP best practices.
+                    </div>
+                  </div>
+                  <div class="course-actions">
+                    <a class="course-action-button course-action-details" href="https://open.sap.com/courses/java1">Kursdetails zeigen</a>
+                  </div>
+                </div>
+              </div>
+              <div class="course-item inside-channel--enterprise">
+                <div class="course-image-wrapper">
+                  <a class="course-image" href="https://open.sap.com/courses/cp6">
+                    <img src="/assets/openSAP_cp6_web.jpg">
+                  </a>
+                </div>
+                <div class="course-info-wrapper">
+                  <div class="course-info">
+                    <div class="course-title">
+                      <a href="https://open.sap.com/courses/cp6" title="Analytics with SAP Cloud Platform">Analytics with SAP Cloud Platform</a>
+                    </div>
+                    <div class="course-teacher">Sabrina Dick</div>
+                    <div class="course-shortinfo">
+                      <div class="shortinfo course-date">
+                        <span class="xikolo-icon icon-calendar vmiddle"></span>
+                        <span class="ml5">12 Juni 2018 - 18 Juli 2018</span>
+                      </div>
+                      <div class="shortinfo course-language">
+                        <span class="xikolo-icon icon-language vmiddle"></span>
+                        <span class="ml5">English</span>
+                      </div>
+                    </div>
+                    <div class="course-description">This free online course will provide you with an overview of the analytics services available with SAP
+                      Cloud Platform. The course is aimed at developers, application consultants, technology consultants,
+                      and data scientists. </div>
+                  </div>
+                  <div class="course-actions">
+                    <a class="course-action-button course-action-details" href="https://open.sap.com/courses/cp6">Kursdetails zeigen</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="home-section--courses__more">
+        <a class="highlight-link-button" href="https://open.sap.com/courses">Alle Kurse ansehen</a>
+      </div>
+    </section>
+    <section class="home-section home-section--join">
+      <h2>Werden Sie Teil der openSAP-Community mit über 500.000 Mitgliedern</h2>
+      <div class="home-section--join__form container">
+        <form action="https://open.sap.com/account/new" accept-charset="UTF-8" method="get">
+          <input name="utf8" type="hidden" value="✓">
+          <div class="col-md-3">
+            <input type="text" name="first_name" id="first_name" value="" placeholder="Vorname">
+          </div>
+          <div class="col-md-3">
+            <input type="text" name="last_name" id="last_name" value="" placeholder="Nachname">
+          </div>
+          <div class="col-md-4">
+            <input type="email" name="email" id="email" value="" placeholder="E-Mail-Adresse">
+          </div>
+          <div class="col-md-2">
+            <input type="submit" name="commit" value="Registrieren">
+          </div>
+        </form>
+      </div>
+    </section>
+    <a class="to-top" href="https://open.sap.com/#">
+      <div class="arrow"></div>
+    </a>
+    <script>
+      var $container = $(".news-slider__container");
+      var $sliderActionLeft = $(".news-slider__action--left");
+      var $sliderActionRight = $(".news-slider__action--right");
+      var $sliderItems = $(".news-slider__item");
+
+      var makeVisibleIfHidden = function ($el) {
+        if ($el.css('visibility') === 'hidden') {
+          $el.css('visibility', 'visible');
+        }
+      };
+
+      var containerTotalWidth = function () {
+        return Math.ceil($sliderItems.width()) * $sliderItems.length;
+      };
+
+      var containerVisibleWidth = function () {
+        return Math.ceil($container.width() / $sliderItems.width()) * $sliderItems.width();
+      };
+
+      var itemWidth = function () {
+        return Math.ceil($sliderItems.width());
+      };
+
+      $('.slider-item-text .title').ellipsis({
+        live: true
+      });
+
+      $(window).on({
+        resize: function () {
+          return $container.scrollLeft(0);
+        }
+      });
+
+      $container.scroll(function () {
+        $sliderActionLeft.css('left', $(this).scrollLeft() + 'px');
+        $sliderActionRight.css('right', -$(this).scrollLeft() + 'px');
+      });
+
+      $sliderActionLeft.click(function () {
+        makeVisibleIfHidden($sliderActionRight);
+        var currentScrollLeft = $container.scrollLeft();
+
+        if (currentScrollLeft === 0) return;
+
+        $container.animate({
+          scrollLeft: currentScrollLeft - itemWidth()
+        }, 300, function () {
+          if ($container.scrollLeft() === 0) {
+            $sliderActionLeft.css('visibility', 'hidden');
+          }
+        });
+      });
+
+      $sliderActionRight.click(function () {
+        makeVisibleIfHidden($sliderActionLeft);
+
+        var currentScrollLeft = Math.ceil($container.scrollLeft());
+        if (currentScrollLeft + containerVisibleWidth() >= containerTotalWidth()) {
+          return;
+        }
+
+        $container.animate({
+          scrollLeft: currentScrollLeft + itemWidth()
+        }, 300, function () {
+          if (Math.ceil($container.scrollLeft()) + containerVisibleWidth() >= containerTotalWidth()) {
+            $sliderActionRight.css('visibility', 'hidden');
+          }
+        });
+      });
+    </script>
+    <div class="push clearfix"></div>
+  </div>
+  <div class="footer">
+    <div class="footer-outer">
+      <div class="footer-inner">
+        <div class="container">
+          <div class="footer-content-top">
+            <div class="hidden-print">
+              <h4 class="pt20">Mehr Informationen</h4>
+              <div class="footer-nav">
+                <ul>
+                  <li>
+                    <a href="https://open.sap.com/pages/about">Über uns</a>
+                  </li>
+                  <li>
+                    <a href="https://open.sap.com/pages/gallery">Galerie</a>
+                  </li>
+                  <li>
+                    <a href="https://open.sap.com/pages/course_reactivation">Kursreaktivierung</a>
+                  </li>
+                  <li>
+                    <a target="_blank" href="https://blogs.sap.com/tag/opensap/">Blog</a>
+                  </li>
+                  <li>
+                    <a href="https://open.sap.com/feeds">Feeds</a>
+                  </li>
+                  <li>
+                    <a target="_blank" href="http://go.sap.com/training-certification.html">SAP Schulungsangebote</a>
+                  </li>
+                  <li>
+                    <a href="https://open.sap.com/polls/archive">Umfragen</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="hidden-print">
+              <h4 class="pt20">Hilfe</h4>
+              <div class="footer-nav">
+                <ul>
+                  <li>
+                    <a href="https://open.sap.com/pages/faq">FAQ</a>
+                  </li>
+                  <li>
+                    <a href="https://open.sap.com/pages/roa_guidelines">Richtlinien für Leistungsnachweise</a>
+                  </li>
+                  <li>
+                    <a href="https://open.sap.com/pages/badges">Digitale Badges</a>
+                  </li>
+                  <li>
+                    <a href="https://open.sap.com/pages/honor_code">Ehrenkodex</a>
+                  </li>
+                  <li>
+                    <a href="https://open.sap.com/pages/forum_rules">Forenregeln</a>
+                  </li>
+                  <li>
+                    <a href="https://open.sap.com/pages/p_a">Peer Assessment</a>
+                  </li>
+                  <li>
+                    <a href="javascript:openHelpdeskLayer();">Helpdesk</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="hidden-print">
+              <h4 class="pt20">Folgen Sie uns</h4>
+              <div class="footer-nav">
+                <ul class="socialmedia-links">
+                  <li>
+                    <a target="_blank" class="socialmedia-icon twitter" href="https://twitter.com/openSAP">Twitter</a>
+                  </li>
+                  <li>
+                    <a target="_blank" class="socialmedia-icon facebook" href="https://facebook.com/openSAPfanpage">Facebook</a>
+                  </li>
+                  <li>
+                    <a target="_blank" class="socialmedia-icon scn" href="http://scn.sap.com/community/opensap">SAP Community Network</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer-about">
+              <h4 class="pt20">Über openSAP</h4>
+              <p>openSAP bietet kostenlose MOOCs (Massive Open Online Courses) für alle an, die daran interessiert sind, sich
+                zu den neuesten Innovationen der SAP auszubilden und zu lernen wie man im digitalen Zeitalter besteht. openSAP
+                Kurse nutzen bewährte Schulungsraumkonzepte und kombinieren diese mit modernen und motivierenden Lernelementen
+                und einem Diskussionsforum zu einem zeitgemäßen Onlineformat.</p>
+              <a class="app-badge" target="_blank" href="https://itunes.apple.com/app/id1146510526?pt=575509&amp;ct=website&amp;mt=8">
+                <img alt="Laden im App Store" src="/assets/apple_app_store_badge-25178aeef6eb6b83b96f5f2d004eda3bffbb37122de64afbaef7107b384a4132.svg">
+              </a>
+              <a class="app-badge" target="_blank" href="https://play.google.com/store/apps/details?id=de.xikolo.opensap">
+                <img alt="Jetzt bei Google Play" src="/assets/google_play_badge-4db47198ca423f2791f74ce11fed32fd6be6b506fa8ec5fd425108a0a36205c3.png">
+              </a>
+            </div>
+          </div>
+          <div class="pt10 pb10">
+            <hr class="divider">
+            <div class="copyright">
+              <div class="pull-left">© 2013 - 2018
+                <ul class="horizontal slash">
+                  <li>
+                    <a target="_blank" href="http://www.sap.com/corporate-de/legal/copyright/index.epx">Copyright SAP</a>
+                  </li>
+                </ul>&nbsp;–
+                <ul class="horizontal dash">
+                  <li>
+                    <a target="_blank" href="http://www.sap.com/corporate-de/legal/impressum.epx">Impressum</a>
+                  </li>
+                  <li>
+                    <a target="_blank" href="https://open.sap.com/pages/privacy">Datenschutz</a>
+                  </li>
+                  <li>
+                    <a target="_blank" href="http://www.sap.com/corporate-de/about/legal/terms-of-use.html">Nutzungsbedingungen</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="pull-right">Powered by
+                <ul class="horizontal slash">
+                  <li>
+                    <a target="_blank" href="https://www.hpi.de/">HPI</a>
+                  </li>
+                  <li>
+                    <a target="_blank" href="https://open.hpi.de/">openHPI</a>
+                  </li>
+                </ul> (r5412)</div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $().ready(function () {
+      return $('button[id^="wmd-image-button-text"]').hide();
+    });
+  </script>
+  <div class="dimmer" style="opacity: 0; display: none;"></div>
+  <div class="helpdesk-container hidden-print">
+    <div class="js-helpdesk-button helpdesk-button" id="helpdesk-button" style="right: -1px;">
+      <div class="button-label">Helpdesk</div>
+    </div>
+    <div class="helpdesk-panel" id="helpdesk-panel" style="display: none;">
+      <div class="helpdesk-box1" id="helpdesk-ajax-container" style="display: none;">
+        <h4>
+          <span class="primary-color helpdesk-brand">openSAP </span>
+          <span>Helpdesk</span>
+        </h4>
+        <div id="chat-ui"></div>
+      </div>
+      <div class="helpdesk-box2"></div>
+      <div class="helpdesk-box3"></div>
+  </div>
+  <div aria-hidden="true" aria-labelledby="label" class="modal" id="onboarding-modal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close modal-close" data-dismiss="modal" type="button">
+            <span aria-hidden="true"> ×</span>
+          </button>
+          <h2 class="modal-title">Welcome to OPENSAP</h2>
+        </div>
+        <div class="modal-body">
+          <p class="onboarding-text">Welcome to OPENSAP! Take some time to have a look around and get to know the place!</p>
+          <img class="onboarding-image hidden"
+            src="/assets/home_screen-9f67669544f76e2b6256dd9f5559d40018dae96244d41c3ecc089af13760f77f.png" alt="Home screen">
+        </div>
+        <div class="modal-footer">
+          <div class="onboarding-dots-container"></div>
+          <button name="button" type="submit" class="btn btn-default" id="onboarding-skip">Skip</button>
+          <button name="button" type="submit" class="btn next-button" id="onboarding-start">Start</button>
+          <button name="button" type="submit" class="btn next-button" id="onboarding-done">Done</button>
+          <button name="button" type="submit" class="btn previous-button" id="onboarding-prev">Prev</button>
+          <button name="button" type="submit" class="btn next-button" id="onboarding-next">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="has-spinner loading" id="loading-dimmer">
+    <div id="loading-dimmer-innerwrapper">
+      <div class="loading-animation">
+        <div class="spinner">
+          <div class="bounce1"></div>
+          <div class="bounce2"></div>
+          <div class="bounce3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="sweet-overlay" tabindex="-1"></div>
+    <div class="sweet-alert" tabindex="-1">
+      <div class="icon error">
+        <span class="x-mark">
+          <span class="line left"></span>
+          <span class="line right"></span>
+        </span>
+      </div>
+      <div class="icon warning">
+        <span class="body"></span>
+        <span class="dot"></span>
+      </div>
+      <div class="icon info"></div>
+      <div class="icon success">
+        <span class="line tip"></span>
+        <span class="line long"></span>
+        <div class="placeholder"></div>
+        <div class="fix"></div>
+      </div>
+      <div class="icon custom"></div>
+      <h2>Title</h2>
+      <p>Text</p>
+      <button class="confirm">OK</button>
+      <button class="cancel">Cancel</button>
+    </div>
+  </div>
+</body>
+
+</html>
